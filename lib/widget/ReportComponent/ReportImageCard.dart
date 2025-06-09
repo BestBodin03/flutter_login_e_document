@@ -36,7 +36,7 @@ class _ReportedImageCardState extends State<ReportedImageCard> {
           // Header with radio buttons
       Container(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        width: 512,
+        width: 632,
         height: 47,
         decoration: BoxDecoration(
           border: Border.all(

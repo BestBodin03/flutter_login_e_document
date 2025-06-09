@@ -310,6 +310,7 @@ class BODY4SLOT extends StatelessWidget {
             child: Container(
               child: widget01 ?? const SizedBox(),
               height: hig ?? 47,
+              padding: EdgeInsets.only(left: 8),
               decoration: const BoxDecoration(
                 border: Border(
                   left: BorderSide(
@@ -344,6 +345,7 @@ class BODY4SLOT extends StatelessWidget {
             child: Container(
               child: widget03 ?? const SizedBox(),
               height: hig ?? 47,
+              padding: EdgeInsets.only(left: 8),
               decoration: const BoxDecoration(
                 border: Border(
                   left: BorderSide(
@@ -909,6 +911,42 @@ class HEAD1SLOT extends StatelessWidget {
     );
   }
 }
+
+class HEAD1SLOTSMALL extends StatelessWidget {
+  final Widget? widget01;
+  final int width;         
+  final int padding;
+  final int height;
+
+  HEAD1SLOTSMALL({
+    Key? key,
+    this.widget01,
+    required this.width,
+    required this.padding,
+    required this.height,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Padding(
+      padding: EdgeInsets.all(padding.toDouble()), 
+      child: Row(
+        children: [
+          Container(
+            height: height.toDouble(),
+            width: width.toDouble(), 
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black, width: 3),
+            ),
+            child: widget01 ?? const SizedBox(),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 
 class HEAD1SLOTTINY extends StatelessWidget {
   HEAD1SLOTTINY({
@@ -3245,6 +3283,7 @@ class HEAD3SLOTWITHCHECKBOX extends StatelessWidget {
             flex: _ListFlex[0],
             child: Container(
               height: 47,
+              padding: EdgeInsets.only(left: 8),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black, width: 3),
               ),

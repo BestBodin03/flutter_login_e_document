@@ -34,7 +34,7 @@ class _ReportedRadioButtonState extends State<ReportedRadioButton> {
                 setState(() => _reportedToCustomer = val);
                 widget.onReportedChange(val);
               },
-              activeColor: Colors.blueAccent,
+              activeColor: Colors.blue,
             ),
             const Text(
               "YES",

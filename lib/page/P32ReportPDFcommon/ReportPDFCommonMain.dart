@@ -1233,18 +1233,22 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
 
 
 // INCOMING INSPECTION START
-                                    HEAD1SLOT(
-                                      padding: 0,
-                                      ListFlex: [1],
+                                    HEAD1SLOTSMALL(
+                                      padding: 8,
                                       height: 47,
+                                      width: 500,
                                       widget01: const Center(
-                                        child: Text(
+                                        child: Padding(
+                                          padding: EdgeInsets.only(left: 8),
+                                          child: Text(
                                           "INCOMING INSPECTION",
                                           style: TextStyle(
                                             fontSize: 20,
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
+                                          
+                                        )
                                       ),
                                     ),
                                   
@@ -1554,18 +1558,22 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
 
                                   Padding(
                                     padding: const EdgeInsets.only(top: 64),
-                                    child: HEAD1SLOT(
-                                      padding: 0,
-                                      ListFlex: [1],
+                                    child: HEAD1SLOTSMALL(
+                                      padding: 8,
                                       height: 47,
+                                      width: 500,
                                       widget01: const Center(
-                                        child: Text(
+                                        child: Padding(
+                                          padding: EdgeInsets.only(left: 8),
+                                          child: Text(
                                           "FINAL INSPECTION",
                                           style: TextStyle(
                                             fontSize: 20,
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
+                                          
+                                        )
                                       ),
                                     ),
                                   ),
@@ -2129,9 +2137,8 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                     ),
                                     widget03: Center(
                                       child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "OP-HQC-03-001"
-                                            : "",
+                                        ReportPDFCommonvar.INC02 =
+                                            "OP-HQC-03-001",
                                         style: TextStyle(
                                           fontSize: 16,
                                         ),

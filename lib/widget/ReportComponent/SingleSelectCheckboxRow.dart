@@ -33,6 +33,7 @@ class _SingleSelectCheckboxRowState extends State<SingleSelectCheckboxRow> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Checkbox(
+                  activeColor: Colors.blue,
                   value: _selectedIndex == index,
                   onChanged: (val) {
                     setState(() {
