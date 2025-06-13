@@ -1,5 +1,6 @@
-import 'package:fl_chart/fl_chart.dart';
+import 'dart:convert';
 
+import 'package:fl_chart/fl_chart.dart';
 class ReportPDFCommonvar {
   static bool iscontrol = false;
   static bool canf = true;
@@ -8,7 +9,7 @@ class ReportPDFCommonvar {
 
   static String STATUS = '';
 
-  static String CUSTOMERNAME= '';
+  static String CUSTOMERNAME='';
   static String PARTNAME = '';
   static String PARTNO = '';
   static String CONTROLPLANNO = '';
@@ -25,10 +26,6 @@ class ReportPDFCommonvar {
   static String TYPE = '-';
   static String SCMASKTYPE = "";
   static String SCMASKTYPEonTop = '';
-  static List<rawlist> rawlistHardness = [];
-  static List<rawlist> rawlistCompound = [];
-  static List<rawlist> rawlistRoughness = [];
-  static List<rawlist> rawlistCORE = [];
 
   //rawlistCORE
 
@@ -61,12 +58,6 @@ class ReportPDFCommonvar {
     ReportPDFCommonlist(),
     ReportPDFCommonlist(),
   ];
-  static List<FlSpot> graphupper = [];
-  static List<FlSpot> graphdata = [];
-  static List<FlSpot> graphdata2 = [];
-  static List<FlSpot> graphdata3 = [];
-  static List<FlSpot> graphdata4 = [];
-  static List<FlSpot> graphunder = [];
 }
 
 class ReportPDFCommonlist {

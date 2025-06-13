@@ -1,3 +1,8 @@
+import 'package:flutter/services.dart' show rootBundle;
+import 'dart:convert';
+
+import 'package:flutter/widgets.dart';
+
 class FINALCHECKlistCommonClass {
   FINALCHECKlistCommonClass({
     this.NO = 0,
@@ -13,7 +18,6 @@ class FINALCHECKlistCommonClass {
     this.SPECIFICATIONve = '',
     this.RESULT = '',
     this.CONTROLlimmit = '',
-    this.datapackset = const [],
     this.LOAD = '',
     this.Cross = '',
     this.Remark = '',
@@ -34,7 +38,6 @@ class FINALCHECKlistCommonClass {
   String SPECIFICATIONve;
   String RESULT;
   String CONTROLlimmit;
-  List<datainlist> datapackset;
   String LOAD;
   String Cross;
   String Remark;
@@ -43,199 +46,11 @@ class FINALCHECKlistCommonClass {
 //
 }
 
-// class datainlist {
-//   datainlist({
-//     this.dimensionX = 0,
-//     this.dimensionY = 0,
-//     this.DATA01 = '',
-//     this.DATA02 = '',
-//     this.DATA03 = '',
-//     this.DATA04 = '',
-//     this.DATA05 = '',
-//     this.DATA06 = '',
-//     this.DATA07 = '',
-//     this.DATA08 = '',
-//     this.DATA09 = '',
-//     this.DATA10 = '',
-//     this.DATA11 = '',
-//     this.DATA12 = '',
-//     this.DATA13 = '',
-//     this.DATA14 = '',
-//     this.DATA15 = '',
-//     this.DATA16 = '',
-//     this.DATA17 = '',
-//     this.DATA18 = '',
-//     this.DATA19 = '',
-//     this.DATA20 = '',
-//     this.DATAAVG = '',
-//   });
-
-//   int dimensionX;
-//   int dimensionY;
-
-//   String DATA01;
-//   String DATA02;
-//   String DATA03;
-//   String DATA04;
-//   String DATA05;
-//   String DATA06;
-//   String DATA07;
-//   String DATA08;
-//   String DATA09;
-//   String DATA10;
-//   String DATA11;
-//   String DATA12;
-//   String DATA13;
-//   String DATA14;
-//   String DATA15;
-//   String DATA16;
-//   String DATA17;
-//   String DATA18;
-//   String DATA19;
-//   String DATA20;
-//   String DATAAVG;
-// }
-
-class datainlist {
-  datainlist({
-    this.TYPE = '',
-    this.dimensionX = 0,
-    this.dimensionY = 0,
-    this.DATA01 = '',
-    this.DATA02 = '',
-    this.DATA03 = '',
-    this.DATA04 = '',
-    this.DATA05 = '',
-    this.DATA06 = '',
-    this.DATA07 = '',
-    this.DATA08 = '',
-    this.DATA09 = '',
-    this.DATA10 = '',
-    this.DATA11 = '',
-    this.DATA12 = '',
-    this.DATA13 = '',
-    this.DATA14 = '',
-    this.DATA15 = '',
-    this.DATA16 = '',
-    this.DATA17 = '',
-    this.DATA18 = '',
-    this.DATA19 = '',
-    this.DATA20 = '',
-    this.DATA01p = '',
-    this.DATA02p = '',
-    this.DATA03p = '',
-    this.DATA04p = '',
-    this.DATA05p = '',
-    this.DATA06p = '',
-    this.DATA07p = '',
-    this.DATA08p = '',
-    this.DATA09p = '',
-    this.DATA10p = '',
-    this.DATA11p = '',
-    this.DATA12p = '',
-    this.DATA13p = '',
-    this.DATA14p = '',
-    this.DATA15p = '',
-    this.DATA16p = '',
-    this.DATA17p = '',
-    this.DATA18p = '',
-    this.DATA19p = '',
-    this.DATA20p = '',
-    this.DATAAVG = '',
-    this.DATA01c = '',
-    this.DATA02c = '',
-    this.DATA03c = '',
-    this.DATA04c = '',
-    this.DATA05c = '',
-    this.DATA06c = '',
-    this.DATA07c = '',
-    this.DATA08c = '',
-    this.DATA09c = '',
-    this.DATA10c = '',
-    this.DATA11c = '',
-    this.DATA12c = '',
-    this.DATA13c = '',
-    this.DATA14c = '',
-    this.DATA15c = '',
-    this.DATA16c = '',
-    this.DATA17c = '',
-    this.DATA18c = '',
-    this.DATA19c = '',
-    this.DATA20c = '',
-  });
-  String TYPE;
-  int dimensionX;
-  int dimensionY;
-
-  String DATA01;
-  String DATA02;
-  String DATA03;
-  String DATA04;
-  String DATA05;
-  String DATA06;
-  String DATA07;
-  String DATA08;
-  String DATA09;
-  String DATA10;
-  String DATA11;
-  String DATA12;
-  String DATA13;
-  String DATA14;
-  String DATA15;
-  String DATA16;
-  String DATA17;
-  String DATA18;
-  String DATA19;
-  String DATA20;
-  String DATA01p;
-  String DATA02p;
-  String DATA03p;
-  String DATA04p;
-  String DATA05p;
-  String DATA06p;
-  String DATA07p;
-  String DATA08p;
-  String DATA09p;
-  String DATA10p;
-  String DATA11p;
-  String DATA12p;
-  String DATA13p;
-  String DATA14p;
-  String DATA15p;
-  String DATA16p;
-  String DATA17p;
-  String DATA18p;
-  String DATA19p;
-  String DATA20p;
-  String DATAAVG;
-
-  String DATA01c;
-  String DATA02c;
-  String DATA03c;
-  String DATA04c;
-  String DATA05c;
-  String DATA06c;
-  String DATA07c;
-  String DATA08c;
-  String DATA09c;
-  String DATA10c;
-  String DATA11c;
-  String DATA12c;
-  String DATA13c;
-  String DATA14c;
-  String DATA15c;
-  String DATA16c;
-  String DATA17c;
-  String DATA18c;
-  String DATA19c;
-  String DATA20c;
-}
-
 class BasicCommonDATA {
   BasicCommonDATA({
     this.PO = '',
     this.CP = '',
-    this.CUSTOMER = '',
+    this.CUSTOMERNAME = '',
     this.PROCESS = '',
     this.PARTNAME = '',
     this.PARTNO = '',
@@ -268,7 +83,7 @@ class BasicCommonDATA {
 
   String PO;
   String CP;
-  String CUSTOMER;
+  String CUSTOMERNAME;
   String PROCESS;
   String PARTNAME;
   String PARTNO;
@@ -304,14 +119,101 @@ class BasicCommonDATA {
   String Inspected_sign;
   String Check_sign;
   String Approve_sign;
+
+  factory BasicCommonDATA.fromJson(Map<String, dynamic> json) {
+    return switch (json) {
+      {
+        'PO': String PO,
+        'CP': String CP,
+        'CUSTOMERNAME': String CUSTOMERNAME,
+        'PROCESS': String PROCESS,
+        'PARTNAME': String PARTNAME,
+        'PARTNO': String PARTNO,
+        'CUSLOT': String CUSLOT,
+        'TPKLOT': String TPKLOT,
+        'MATERIAL': String MATERIAL,
+        'QTY': String QTY,
+        'PICstd': String PICstd,
+        'UNITSAP': String UNITSAP,
+        'PIC01': String PIC01,
+        'PIC02': String PIC02,
+        'PIC03': String PIC03,
+
+        'PARTNAMEref': String PARTNAMEref,
+        'PARTref': String PARTref,
+        'PASS': String PASS,
+        'INC01': String INC01,
+        'INC02': String INC02,
+      } => BasicCommonDATA(
+        PO: PO,
+        CP: CP,
+        CUSTOMERNAME: CUSTOMERNAME,
+        PROCESS: PROCESS,
+        PARTNAME: PARTNAME,
+        PARTNO: PARTNO,
+        CUSLOT: CUSLOT,
+        TPKLOT: TPKLOT,
+        MATERIAL: MATERIAL,
+        QTY: QTY,
+        PICstd: PICstd,
+        UNITSAP: UNITSAP,
+        PIC01: PIC01,
+        PIC02: PIC02,
+        PIC03: PIC03,
+        PARTNAMEref: PARTNAMEref,
+        PARTref: PARTref,
+        PASS: PASS,
+        INC01: INC01,
+        INC02: INC02,
+
+      ),
+      _=> throw const FormatException('เกิดข้อผิดผลาดในการโหลดข้อมูล')
+
+    };
+
+  }
 }
 
 class CommonReportOutput {
   CommonReportOutput({
-    this.datain = const [],
+    this.datain = const [],  // DATA MUST CONVERT FROM JSON TO FLUTTER OBJ AND COLLECT TO THIS
     required this.databasic,
   });
 
   List<FINALCHECKlistCommonClass> datain;
   BasicCommonDATA databasic;
+  
+  factory CommonReportOutput.fromJson(Map<String, dynamic> json) {
+    return switch (json) {
+      {
+        'databasic': BasicCommonDATA databasic,
+      } => CommonReportOutput(
+        databasic: databasic,
+      ),
+      _=> throw const FormatException('เกิดข้อผิดผลาดในการโหลดข้อมูล')
+    };
+  }
 }
+
+
+// Future<CommonReportOutput> fetchCommonReportOutput() async {
+//   final String response = await rootBundle.loadString('assets/mockData/testCP.json');
+//   final data = jsonDecode(response) as Map<BasicCommonDATA, dynamic>;
+//   return CommonReportOutput.fromJson(data);
+// }
+
+Future<CommonReportOutput> fetchCommonReportOutput() async {
+  final String response = await rootBundle.loadString('assets/mockData/testCP.json');
+  
+  // Print the raw JSON response
+  print('Raw JSON response:\n$response'); // good for long strings
+
+  final data = jsonDecode(response) as Map<String, dynamic>;
+  
+  // Optional: print decoded data
+  print('Decoded JSON:\n$data');
+
+  return CommonReportOutput.fromJson(data);
+}
+
+

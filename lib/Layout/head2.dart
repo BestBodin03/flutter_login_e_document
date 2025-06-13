@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newmaster/page/P32ReportPDFcommon/ReportPDFCommonvar.dart';
 import 'package:newmaster/widget/ReportComponent/SingleSelectCheckboxRow.dart';
 
 import '../widget/ReportComponent/CommonReport.dart';
@@ -24,8 +25,36 @@ class headerreport2 extends StatelessWidget {
   String? MATERIAL;
   String? INSPECTIONSTDNO;
 
-  @override
+    factory headerreport2.fromJson(Map<String, dynamic> json) {
+    return switch (json) {
+      {
+        'CUSTOMERNAME': String CUSTOMERNAME,
+        'PARTNAME': String PARTNAME,
+        'PARTNO': String PARTNO,
+        'CONTROLPLANNO': String CONTROLPLANNO,
+        'PRODUCTSTAGES': String PRODUCTSTAGES,
+        'PROCESS': String PROCESS,
+        'MATERIAL': String MATERIAL,
+        'INSPECTIONSTDNO': String INSPECTIONSTDNO,
+      } =>
+        headerreport2(
+          CUSTOMERNAME: CUSTOMERNAME,
+          PARTNAME: PARTNAME,
+          PARTNO: PARTNO,
+          CONTROLPLANNO: CONTROLPLANNO,
+          PRODUCTSTAGES: PRODUCTSTAGES,
+          PROCESS: PROCESS,
+          MATERIAL: MATERIAL,
+          INSPECTIONSTDNO: INSPECTIONSTDNO,
+        ),
+      _ => throw const FormatException('เกิดข้อผิดผลาดในการโหลดข้อมูล')
+    };
+  }
+
+    @override
   Widget build(BuildContext context) {
+    ReportPDFCommonvar.CUSTOMERNAME = CUSTOMERNAME ?? '';
+    print("CUSTOMERNAME: ${ReportPDFCommonvar.CUSTOMERNAME}");
     return Column(
       children: [
         HEAD2SLOTNEW(
@@ -146,37 +175,8 @@ class headerreport2 extends StatelessWidget {
             ),
             ],
           ),
-          // widget03: Row(
-          //   children: [
-          //     Expanded(
-          //       child: Column(
-          //         children: const [
-          //           Padding(
-          //             padding: EdgeInsets.only(
-          //               top: 40,
-          //             ),
-          //             child: Text(
-          //               "PAGE",
-          //               style: TextStyle(
-          //                 fontSize: 24,
-          //               ),
-          //             ),
-          //           ),
-          //           Padding(
-          //             padding: EdgeInsets.only(top: 30, bottom: 10),
-          //             child: Text(
-          //               "1/1",
-          //               style: TextStyle(
-          //                 fontSize: 16,
-          //               ),
-          //             ),
-          //           ),
-          //         ],
-          //       ),
-          //     ),
-          //   ],
-          // ),
         ),
+
         HEAD3SLOTWITHCHECKBOX(
           ListFlex: [2, 3, 5],
           widget01: const Align(
@@ -190,9 +190,11 @@ class headerreport2 extends StatelessWidget {
             ),
           ),
 
-          widget02: const Center(
+          widget02: Center(
             child: Text(
-              "CENTRAL SPRING CO., LTD.",
+              ReportPDFCommonvar.CUSTOMERNAME !=''
+              ? ReportPDFCommonvar.CUSTOMERNAME
+              : "No data",
             style: TextStyle(
               fontSize: 16,
             ),
@@ -212,7 +214,7 @@ class headerreport2 extends StatelessWidget {
       widget01: const Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              "CUSTOMER NAME",
+              "PART NAME",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16, // กำหนดขนาดตามต้องการ
@@ -231,7 +233,7 @@ class headerreport2 extends StatelessWidget {
       widget03: const Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              "CUSTOMER NAME",
+              "PROCESS",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16, // กำหนดขนาดตามต้องการ
@@ -255,7 +257,7 @@ class headerreport2 extends StatelessWidget {
       widget01: const Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              "CUSTOMER NAME",
+              "PART NO.",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16, // กำหนดขนาดตามต้องการ
@@ -274,7 +276,7 @@ class headerreport2 extends StatelessWidget {
       widget03: const Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              "CUSTOMER NAME",
+              "MATERIAL",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16, // กำหนดขนาดตามต้องการ
@@ -298,7 +300,7 @@ class headerreport2 extends StatelessWidget {
       widget01: const Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              "CUSTOMER NAME",
+              "CONTROL PLAN NO.",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16, // กำหนดขนาดตามต้องการ
@@ -317,7 +319,7 @@ class headerreport2 extends StatelessWidget {
       widget03: const Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              "CUSTOMER NAME",
+              "INSPECTION STD NO.",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16, // กำหนดขนาดตามต้องการ
@@ -339,29 +341,3 @@ class headerreport2 extends StatelessWidget {
     );
   }
 }
-
-        // BODY2SLOT(
-        //   ListFlex: [4, 16],
-        //   widget01: const Center(
-        //     child: Text(
-        //       "Customer Lot No.",
-        //       style: TextStyle(
-        //         fontSize: 16,
-        //         fontWeight: FontWeight.bold,
-        //       ),
-        //     ),
-        //   ),
-        //   widget02: Align(
-        //     alignment: Alignment.centerLeft,
-        //     child: Padding(
-        //       padding: const EdgeInsets.only(left: 15),
-        //       child: Text(
-        //         // ReportPDFCommonvar.CUSLOT,
-        //         CUSLOT ?? '',
-        //         style: const TextStyle(
-        //           fontSize: 16,
-        //         ),
-        //       ),
-        //     ),
-        //   ),
-        // ),

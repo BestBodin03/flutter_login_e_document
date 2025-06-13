@@ -74,3 +74,17 @@ If(
         Notify("บันทึกข้อมูลสำเร็จ", NotificationType.Success)
     )
 )
+
+
+    If(
+        !IsBlank(whoLoggedIn.EmployeeId),
+        Set(varFlowResult, CreateNewValveCheckSheet.Run(
+            JSON({ text: whoLoggedIn.EmployeeId })
+        )),
+        Notify("ไม่พบรหัสพนักงาน โปรดเข้าสู่ระบบ", NotificationType.Error)
+    );
+
+    If(
+        !IsBlank(whoLoggedIn.EmployeeId),
+        Notify("ระบบกำลังสร้างแบบฟอร์มตรวจสอบวาล์ว", NotificationType.Information)
+    );
