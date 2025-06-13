@@ -1,0 +1,35 @@
+// comment.Bson
+{ "_id": "65e83ad3379ccb8e7025a110", "COMMENT": "For Internal Reference", "activeid": "active_id", "masterID": "COMMENT-17097182279907tl4d0ze2M3I8Bn" }
+
+// frequency.bson
+{ "_id": "5f2699151bdc4fd3300b3fde", "value": "pcs/rcv.Lot" }
+
+// intruments.bosn
+{ "_id": "5f1811371bdc4fd330a6b335", "value": "SUR-BAL-013" }
+
+// items.bson
+{ "_id": "5f2699c943e7cf2b40d84587", "TYPE": "TYPE-5f26988e43e7cf2b40d84585", "ITEMs": "Appearance for rust", "POINT": "", "RESULTFORMAT": "Text", "INTERSECTION": "", "GRAPHTYPE": "", "DOCUMENTS": "OP-HQC-03-001", "masterID": "ITEMs-5f2699c943e7cf2b40d84587", "activeid": "active_id" }
+
+// machine.bson
+{ "_id": "5f2a592643e7cf2b40d8459a", "METHOD": "Visual", "MACHINE": [], "masterID": "MACHINE-5f2a592643e7cf2b40d8459a", "activeid": "active_id" }
+
+// master.bson
+{ "_id": "5f2a592643e7cf2b40d8459a", "METHOD": "Visual", "MACHINE": [], "masterID": "MACHINE-5f2a592643e7cf2b40d8459a", "activeid": "active_id" }
+
+// method.bson
+{ "_id": "5f2a593d43e7cf2b40d8459b", "ITEMs": "ITEMs-5f2699c943e7cf2b40d84587", "METHOD": "MACHINE-5f2a592643e7cf2b40d8459a", "masterID": "METHOD-5f2a593d43e7cf2b40d8459b", "activeid": "active_id", "DOCUMENTSM": "OP-HQC-03-001" }
+
+//resultformat.bson
+{ "_id": "5f26993f1bdc4fd3300b4134", "value": "Picture" }
+
+// specification.bson
+{ "_id": "5f2a595543e7cf2b40d8459c", "ITEMs": "ITEMs-5f2699c943e7cf2b40d84587", "SPECIFICATION": "No rust", "masterID": "SPECIFICATION-5f2a595543e7cf2b40d8459c", "activeid": "active_id" }
+
+// tolerance.bson
+{ "_id": "5f2699621bdc4fd3300b4256", "condition": "BTW", "value": { "HI": "HI", "LO": "LO" } }
+
+// type.bson
+{ "_id": "5f26988e43e7cf2b40d84585", "TYPE": "Attribute", "masterID": "TYPE-5f26988e43e7cf2b40d84585", "activeid": "active_id" }
+
+// unit.bson
+{ "_id": "5f2699ab43e7cf2b40d84586", "TYPE": "TYPE-5f26988e43e7cf2b40d84585", "UNIT": "", "masterID": "UNIT-5f2699ab43e7cf2b40d84586", "activeid": "active_id", "DESIMAL": "" }

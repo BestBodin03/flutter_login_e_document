@@ -46,3 +46,5 @@ app.*.map.json
 #ignore mock data
 lib/mockData/*
 
+#ignore mock data in assest
+

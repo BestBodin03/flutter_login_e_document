@@ -1,0 +1,83 @@
+[{
+  "_id": {
+    "$oid": "5f171c36fe12be0020dbd354"
+  },
+  "TYPE": "Length",
+  "masterID": "TYPE-5f171c36fe12be0020dbd354",
+  "activeid": "active_id",
+  "decimal": 1
+},
+{
+  "_id": {
+    "$oid": "5f171c43fe12be0020dbd355"
+  },
+  "TYPE": "Hardness",
+  "masterID": "TYPE-5f171c43fe12be0020dbd355",
+  "activeid": "active_id",
+  "decimal": 0
+},
+{
+  "_id": {
+    "$oid": "5f171c50fe12be0020dbd356"
+  },
+  "TYPE": "Appearance",
+  "masterID": "TYPE-5f171c50fe12be0020dbd356",
+  "activeid": "no_active_id",
+  "decimal": 0
+},
+{
+  "_id": {
+    "$oid": "5f19a78afe12be0020dbd3a7"
+  },
+  "TYPE": "Roughness",
+  "masterID": "TYPE-5f19a78afe12be0020dbd3a7",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a79ffe12be0020dbd3a8"
+  },
+  "TYPE": "Attribute",
+  "masterID": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a7acfe12be0020dbd3a9"
+  },
+  "TYPE": "Relative",
+  "masterID": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a7b7fe12be0020dbd3aa"
+  },
+  "TYPE": "Photo",
+  "masterID": "TYPE-5f19a7b7fe12be0020dbd3aa",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a7c2fe12be0020dbd3ab"
+  },
+  "TYPE": "Density",
+  "masterID": "TYPE-5f19a7c2fe12be0020dbd3ab",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60407ff193e8d91950acb5d1"
+  },
+  "TYPE": "Concentration",
+  "masterID": "TYPE-60407ff193e8d91950acb5d1",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "647431bde23c7c8a8a6cc0df"
+  },
+  "TYPE": "Coating area",
+  "activeid": "active_id",
+  "masterID": "TYPE-1685336509950gULbsiRy4U3yivg"
+}]

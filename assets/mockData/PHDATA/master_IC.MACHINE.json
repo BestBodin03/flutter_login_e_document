@@ -1,0 +1,38 @@
+[{
+  "_id": {
+    "$oid": "5f2a592643e7cf2b40d8459a"
+  },
+  "METHOD": "Visual",
+  "MACHINE": [],
+  "masterID": "MACHINE-5f2a592643e7cf2b40d8459a",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f2a5b4843e7cf2b40d845a1"
+  },
+  "METHOD": "Micrometer",
+  "MACHINE": [],
+  "masterID": "MACHINE-5f2a5b4843e7cf2b40d845a1",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "65e82c9e379ccb8e7025a105"
+  },
+  "METHOD": "Micrometer",
+  "DESIMAL": "",
+  "MACHINE": [],
+  "activeid": "active_id",
+  "masterID": "MACHINE-17097145900157l2h1cai3MyeKoX"
+},
+{
+  "_id": {
+    "$oid": "65e839f3379ccb8e7025a10e"
+  },
+  "METHOD": "Roughness Tester",
+  "DESIMAL": "",
+  "MACHINE": [],
+  "activeid": "active_id",
+  "masterID": "MACHINE-1709718003673lbA0DkWGUtsfETQ"
+}]

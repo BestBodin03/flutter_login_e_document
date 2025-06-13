@@ -1,0 +1,1121 @@
+[{
+  "_id": {
+    "$oid": "5f19a906fe12be0020dbd3b9"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "ITEMs": "Diameter",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "test1",
+  "masterID": "ITEMs-5f19a906fe12be0020dbd3b9",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a922fe12be0020dbd3ba"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "ITEMs": "Compound Layer",
+  "POINT": "",
+  "RESULTFORMAT": "OCR",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-5f19a922fe12be0020dbd3ba",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a93efe12be0020dbd3bb"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "ITEMs": "Total Nitriding Layer",
+  "POINT": "",
+  "RESULTFORMAT": "OCR",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-5f19a93efe12be0020dbd3bb",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a97cfe12be0020dbd3bc"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Surface Hardness",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-5f19a97cfe12be0020dbd3bc",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a9a1fe12be0020dbd3bd"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Hardness @ 0.1 mm. (From Graph)",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f19a9a1fe12be0020dbd3bd",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a9dafe12be0020dbd3be"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Core Hardness",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f19a9dafe12be0020dbd3be",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19aa43fe12be0020dbd3bf"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "ITEMs": "Appearance for Rust",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-001",
+  "masterID": "ITEMs-5f19aa43fe12be0020dbd3bf",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19aa53fe12be0020dbd3c0"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "ITEMs": "Appearance for Scratch or Dent",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "masterID": "ITEMs-5f19aa53fe12be0020dbd3c0",
+  "activeid": "active_id",
+  "CALCULATE": "",
+  "GRAPHINTERSECTION": ""
+},
+{
+  "_id": {
+    "$oid": "5f19aa82fe12be0020dbd3c1"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "ITEMs": "Hardness Case Depth (CDE@ 550 Hmv)",
+  "POINT": "",
+  "RESULTFORMAT": "Graph",
+  "INTERSECTION": "550",
+  "GRAPHTYPE": "CDE",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f19aa82fe12be0020dbd3c1",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19aaa2fe12be0020dbd3c2"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "ITEMs": "Diffusion depth (Core +50)",
+  "POINT": "",
+  "RESULTFORMAT": "Graph",
+  "INTERSECTION": "50",
+  "GRAPHTYPE": "CDT(S)",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f19aaa2fe12be0020dbd3c2",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19aaf8fe12be0020dbd3c3"
+  },
+  "TYPE": "TYPE-5f19a7b7fe12be0020dbd3aa",
+  "ITEMs": "Sump Photo ( X 100 )",
+  "POINT": "",
+  "RESULTFORMAT": "Picture",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-020",
+  "masterID": "ITEMs-5f19aaf8fe12be0020dbd3c3",
+  "activeid": "active_id",
+  "CALCULATE": "",
+  "GRAPHINTERSECTION": ""
+},
+{
+  "_id": {
+    "$oid": "5f19ab1ffe12be0020dbd3c4"
+  },
+  "TYPE": "TYPE-5f19a7c2fe12be0020dbd3ab",
+  "ITEMs": "Costing Weight",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f19ab1ffe12be0020dbd3c4",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f2101c2fe12be0020dbd3ee"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "ITEMs": "Hardness Case Depth at Point A (CDE @550 Hmv)",
+  "POINT": "",
+  "RESULTFORMAT": "Graph",
+  "INTERSECTION": "550",
+  "GRAPHTYPE": "CDE",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f2101c2fe12be0020dbd3ee",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f2101fffe12be0020dbd3ef"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "ITEMs": "Hardness Case Depth at Point B (CDE @550 Hmv)",
+  "POINT": "",
+  "RESULTFORMAT": "Graph",
+  "INTERSECTION": "550",
+  "GRAPHTYPE": "CDE",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f2101fffe12be0020dbd3ef",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f210214fe12be0020dbd3f0"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "ITEMs": "Hardness Case Depth at Point C (CDE @550 Hmv)",
+  "POINT": "",
+  "RESULTFORMAT": "Graph",
+  "INTERSECTION": "550",
+  "GRAPHTYPE": "CDE",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f210214fe12be0020dbd3f0",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f2128e6fe12be0020dbd3f5"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "ITEMs": "Hardness Case Depth (CDE@ 513 Hmv)",
+  "POINT": "",
+  "RESULTFORMAT": "Graph",
+  "INTERSECTION": "513",
+  "GRAPHTYPE": "CDE",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f2128e6fe12be0020dbd3f5",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f2a6c7d43e7cf2b40d845aa"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "ITEMs": "Total Case Depth",
+  "POINT": "",
+  "RESULTFORMAT": "OCR",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "CDE",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f2a6c7d43e7cf2b40d845aa",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f2a707e43e7cf2b40d845ab"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Hardness @ 15 µm.",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f2a707e43e7cf2b40d845ab",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f3f7b6b43e7cf2b40d8471a"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "ITEMs": "Total Case Depth (Graph)",
+  "POINT": "",
+  "RESULTFORMAT": "Graph",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "CDT(N)",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f3f7b6b43e7cf2b40d8471a",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f43719c43e7cf2b40d84728"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Core Hardness (For Ref.)",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f43719c43e7cf2b40d84728",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f4a47c743e7cf2b40d84a01"
+  },
+  "TYPE": "",
+  "ITEMs": "",
+  "POINT": "",
+  "RESULTFORMAT": "",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f4a47c743e7cf2b40d84a01",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f7c33407b54e417581531f2"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Surface Hardness at Point A",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-5f7c33407b54e417581531f2",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f7c33607b54e417581531f3"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Surface Hardness at Point B",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-5f7c33607b54e417581531f3",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f7c363b7b54e417581531fa"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Hardness @ 10 µm.",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f7c363b7b54e417581531fa",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f7c37f67b54e417581531fc"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Hardness @ 13 µm.",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f7c37f67b54e417581531fc",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f87b1857b54e4175815336c"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "ITEMs": "Total Case Depth (Core +30)",
+  "POINT": "",
+  "RESULTFORMAT": "Graph",
+  "INTERSECTION": "30",
+  "GRAPHTYPE": "CDT(S)",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f87b1857b54e4175815336c",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f87b28f7b54e4175815336e"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "ITEMs": "Hardness Case Depth at Point A (CDE @513 Hmv)",
+  "POINT": "",
+  "RESULTFORMAT": "Graph",
+  "INTERSECTION": "513",
+  "GRAPHTYPE": "CDE",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f87b28f7b54e4175815336e",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f87b2b57b54e4175815336f"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "ITEMs": "Hardness Case Depth at Point B (CDE @513 Hmv)",
+  "POINT": "",
+  "RESULTFORMAT": "Graph",
+  "INTERSECTION": "513",
+  "GRAPHTYPE": "CDE",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f87b2b57b54e4175815336f",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f97dec08f69d225f85b46be"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Hardness @ 12 µm.",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f97dec08f69d225f85b46be",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f97df408f69d225f85b46c1"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "ITEMs": "Total Case Depth Point A (Core +50)",
+  "POINT": "",
+  "RESULTFORMAT": "Graph",
+  "INTERSECTION": "50",
+  "GRAPHTYPE": "CDT(S)",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f97df408f69d225f85b46c1",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f97df5e8f69d225f85b46c2"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "ITEMs": "Total Case Depth Point B (Core +50)",
+  "POINT": "",
+  "RESULTFORMAT": "Graph",
+  "INTERSECTION": "50",
+  "GRAPHTYPE": "CDT(S)",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f97df5e8f69d225f85b46c2",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "6025ea5b93e8d91950acb59b"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "ITEMs": "Appearance for Pin hole",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "masterID": "ITEMs-6025ea5b93e8d91950acb59b",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60403f1693e8d91950acb5c0"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "ITEMs": "Appearance for Contaminant",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "masterID": "ITEMs-60403f1693e8d91950acb5c0",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60405bcf93e8d91950acb5c3"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "ITEMs": "Appearance for Black stain",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "masterID": "ITEMs-60405bcf93e8d91950acb5c3",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60405dfe93e8d91950acb5c5"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Hardness @ 18 µm.",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-60405dfe93e8d91950acb5c5",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60405e0e93e8d91950acb5c6"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Hardness @ 20 µm.",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-60405e0e93e8d91950acb5c6",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60405e1d93e8d91950acb5c7"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Hardness @ 25 µm.",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-60405e1d93e8d91950acb5c7",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60405e3393e8d91950acb5c8"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Hardness @ 30 µm.",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-60405e3393e8d91950acb5c8",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60405f0b93e8d91950acb5c9"
+  },
+  "TYPE": "TYPE-5f19a78afe12be0020dbd3a7",
+  "ITEMs": "Surface Roughness  (Ra)",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-60405f0b93e8d91950acb5c9",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "60407f6193e8d91950acb5cf"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "ITEMs": "Porous Thickness",
+  "POINT": "",
+  "RESULTFORMAT": "OCR",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-60407f6193e8d91950acb5cf",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60407f8f93e8d91950acb5d0"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "ITEMs": "Water wet ability",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "masterID": "ITEMs-60407f8f93e8d91950acb5d0",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "604080ce93e8d91950acb5d3"
+  },
+  "TYPE": "TYPE-5f19a78afe12be0020dbd3a7",
+  "ITEMs": "Surface Roughness  (Rz)",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-604080ce93e8d91950acb5d3",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "6040810993e8d91950acb5d4"
+  },
+  "TYPE": "TYPE-5f19a78afe12be0020dbd3a7",
+  "ITEMs": "Surface Roughness  (HSC)",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-6040810993e8d91950acb5d4",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "6040817293e8d91950acb5d5"
+  },
+  "TYPE": "TYPE-60407ff193e8d91950acb5d1",
+  "ITEMs": "Remain of CN on part",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-6040817293e8d91950acb5d5",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "6040842693e8d91950acb5d9"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Surface Hardness @ Point A",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-6040842693e8d91950acb5d9",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "6040844d93e8d91950acb5da"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Surface Hardness @ Point B",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-6040844d93e8d91950acb5da",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "6040849893e8d91950acb5db"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "ITEMs": "Compound Layer @ Point A",
+  "POINT": "",
+  "RESULTFORMAT": "OCR",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-6040849893e8d91950acb5db",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "604084d993e8d91950acb5dc"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "ITEMs": "Compound Layer @ Point B",
+  "POINT": "",
+  "RESULTFORMAT": "OCR",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-604084d993e8d91950acb5dc",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "604091b993e8d91950acb5e8"
+  },
+  "TYPE": "TYPE-5f19a78afe12be0020dbd3a7",
+  "ITEMs": "Surface Roughness  (Ry)",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-604091b993e8d91950acb5e8",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "604091cd93e8d91950acb5e9"
+  },
+  "TYPE": "TYPE-5f19a78afe12be0020dbd3a7",
+  "ITEMs": "Surface Roughness  (Rmax)",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-604091cd93e8d91950acb5e9",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "604091de93e8d91950acb5ea"
+  },
+  "TYPE": "TYPE-5f19a78afe12be0020dbd3a7",
+  "ITEMs": "Surface Roughness  (R)",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-604091de93e8d91950acb5ea",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "607ec01f93e8d91950acb5f9"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "ITEMs": "Total Nitriding @ Point A",
+  "POINT": "",
+  "RESULTFORMAT": "OCR",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-607ec01f93e8d91950acb5f9",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "607ec03193e8d91950acb5fa"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "ITEMs": "Total Nitriding @ Point B",
+  "POINT": "",
+  "RESULTFORMAT": "OCR",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-015",
+  "masterID": "ITEMs-607ec03193e8d91950acb5fa",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60a4863093e8d91950acb6f6"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Hardness @ 19 µm.",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-60a4863093e8d91950acb6f6",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60a486af93e8d91950acb6f7"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Hardness @ 0.9 mm.",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-60a486af93e8d91950acb6f7",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60a486bf93e8d91950acb6f8"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "ITEMs": "Hardness @ 1.0 mm.",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-60a486bf93e8d91950acb6f8",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "63f6060b9ea2e30a1031d844"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "ITEMs": "Appearance for Compound layer cogging in the spring hole",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "masterID": "ITEMs-63f6060b9ea2e30a1031d844",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "63f606389ea2e30a1031d845"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "ITEMs": "Appearance for Blot by pilling",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "masterID": "ITEMs-63f606389ea2e30a1031d845",
+  "activeid": "no_active_id",
+  "CALCULATE": "",
+  "GRAPHINTERSECTION": ""
+},
+{
+  "_id": {
+    "$oid": "63f6065e9ea2e30a1031d846"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "ITEMs": "Appearance for Rusty",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "masterID": "ITEMs-63f6065e9ea2e30a1031d846",
+  "activeid": "no_active_id",
+  "CALCULATE": "",
+  "GRAPHINTERSECTION": ""
+},
+{
+  "_id": {
+    "$oid": "64d08683e23c7c8a8a6cc0e4"
+  },
+  "TYPE": "TYPE-1685336509950gULbsiRy4U3yivg",
+  "ITEMs": "testest",
+  "RESULTFORMAT": "Number",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "",
+  "activeid": "no_active_id",
+  "masterID": "ITEMs-1691387523585ELbv8u0CjJhpgF0"
+},
+{
+  "_id": {
+    "$oid": "64d08915e23c7c8a8a6cc0e5"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "ITEMs": "Coating Thickness (Tester)",
+  "RESULTFORMAT": "Number",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1691388181635cKRPhFZGjV8NPHf",
+  "INTERSECTION": ""
+},
+{
+  "_id": {
+    "$oid": "64d089cde23c7c8a8a6cc0e6"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "ITEMs": "Crystal grain size",
+  "RESULTFORMAT": "Number",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "",
+  "activeid": "active_id",
+  "masterID": "ITEMs-16913883652668GehKhDNPycrc2e"
+},
+{
+  "_id": {
+    "$oid": "64d08a49e23c7c8a8a6cc0e7"
+  },
+  "TYPE": "TYPE-1685336509950gULbsiRy4U3yivg",
+  "ITEMs": "Coating weight",
+  "RESULTFORMAT": "CAL1",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "CALCULATE-1691388575077pnMol5RlCt8VRuM",
+  "DOCUMENTS": "",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1691388489639ipOPUZXtG0CxvlH",
+  "INTERSECTION": ""
+},
+{
+  "_id": {
+    "$oid": "64d09061e23c7c8a8a6cc0eb"
+  },
+  "TYPE": "TYPE-1685336509950gULbsiRy4U3yivg",
+  "ITEMs": "Coating Thickness(Micro)",
+  "RESULTFORMAT": "CAL1",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "CALCULATE-1691389342247i5TJg7crCwa9jtf",
+  "DOCUMENTS": "",
+  "activeid": "no_active_id",
+  "masterID": "ITEMs-1691390049929bPXWlButx4tHtCt"
+},
+{
+  "_id": {
+    "$oid": "64d0cd6be23c7c8a8a6cc0ec"
+  },
+  "TYPE": "TYPE-5f19a7b7fe12be0020dbd3aa",
+  "ITEMs": "SEM Photo ( X 2000 )",
+  "RESULTFORMAT": "Picture",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "OP-HQC-03-020",
+  "activeid": "active_id",
+  "masterID": "ITEMs-16914056753711Wwl85tH1FC90vo"
+},
+{
+  "_id": {
+    "$oid": "64d1e03fe23c7c8a8a6cc0f4"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "ITEMs": "Coating Thickness (Micro)",
+  "RESULTFORMAT": "CAL2",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "CALCULATE-1691389342247i5TJg7crCwa9jtf",
+  "DOCUMENTS": "",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1691476031091XFUkY0o0SxWFloz",
+  "INTERSECTION": ""
+},
+{
+  "_id": {
+    "$oid": "6515558e10e825e132a7f08e"
+  },
+  "TYPE": "TYPE-5f19a7b7fe12be0020dbd3aa",
+  "ITEMs": "SEM Photo ( X 1000 )",
+  "RESULTFORMAT": "Picture",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "OP-HQC-03-020",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1695896974170hmDyDXKdwNZS6o0"
+},
+{
+  "_id": {
+    "$oid": "6515559f10e825e132a7f08f"
+  },
+  "TYPE": "TYPE-5f19a7b7fe12be0020dbd3aa",
+  "ITEMs": "SEM Photo ( X 500 )",
+  "RESULTFORMAT": "Picture",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "OP-HQC-03-020",
+  "activeid": "active_id",
+  "masterID": "ITEMs-16958969915938sggDCJ6xYNsvrl"
+},
+{
+  "_id": {
+    "$oid": "651e9810b4c16d3dfc438ca2"
+  },
+  "TYPE": "TYPE-5f19a7b7fe12be0020dbd3aa",
+  "ITEMs": "Sump Photo ( X 200 )",
+  "RESULTFORMAT": "Picture",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "OP-HQC-03-020",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1696503824972CV2lxe25skTl6RS"
+},
+{
+  "_id": {
+    "$oid": "651e98cdb4c16d3dfc438ca4"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "ITEMs": "Appearance after phosphate coating",
+  "RESULTFORMAT": "Text",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "OP-HQC-03-001",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1696504013546QTRdQw8l3FIxFjd"
+},
+{
+  "_id": {
+    "$oid": "65bc9093a13edc0452eaff19"
+  },
+  "TYPE": "TYPE-5f19a7b7fe12be0020dbd3aa",
+  "ITEMs": "SEM Photo ( X 100 )",
+  "RESULTFORMAT": "Picture",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "OP-HQC-03-020",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1706856595940lMgMDIYc2GUkrXq"
+},
+{
+  "_id": {
+    "$oid": "668501ef4914d3df6ed4ead6"
+  },
+  "TYPE": "TYPE-1685336509950gULbsiRy4U3yivg",
+  "ITEMs": "Coating weight (Sodium Stearate Layer)",
+  "RESULTFORMAT": "CAL2",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "CALCULATE-1719993193545CVlbikg3Yg9mwNc",
+  "DOCUMENTS": "",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1719992815483r4Zf04w7q7oiVR1",
+  "INTERSECTION": ""
+},
+{
+  "_id": {
+    "$oid": "668502124914d3df6ed4ead7"
+  },
+  "TYPE": "TYPE-1685336509950gULbsiRy4U3yivg",
+  "ITEMs": "Coating weight (Metal Soap Layer)",
+  "RESULTFORMAT": "CAL2",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "CALCULATE-171999335711562ZHIw2gxAaB374",
+  "DOCUMENTS": "",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1719992850383xSl7B17V1Cy69Ke",
+  "INTERSECTION": ""
+},
+{
+  "_id": {
+    "$oid": "6690e8257646e5a386c3e804"
+  },
+  "TYPE": "TYPE-1685336509950gULbsiRy4U3yivg",
+  "ITEMs": "Coating weight (Phosphate Layer)",
+  "RESULTFORMAT": "CAL2",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "CALCULATE-17237194204221zDP5TeO3zaJM5B",
+  "DOCUMENTS": "",
+  "activeid": "active_id",
+  "masterID": "ITEMs-17207726459731Gd0BPrJZ9UHaeW",
+  "INTERSECTION": ""
+},
+{
+  "_id": {
+    "$oid": "66ebf9646394b759a5e0f2fa"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "ITEMs": "Appearance after Lube coating",
+  "RESULTFORMAT": "Text",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "OP-HQC-03-001",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1726740836926TAYetixWOnQMmyO"
+},
+{
+  "_id": {
+    "$oid": "6712301a8309a3ea61fa3b95"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "ITEMs": "Appearance in spline",
+  "RESULTFORMAT": "Text",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "",
+  "activeid": "active_id",
+  "masterID": "ITEMs-17292452100716NGgyXiwAlwNsmx"
+},
+{
+  "_id": {
+    "$oid": "6719aedb8309a3ea61fa3b9f"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "ITEMs": "Appearance for sludge",
+  "RESULTFORMAT": "Text",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "",
+  "activeid": "active_id",
+  "masterID": "ITEMs-17297364110731Z5vMVWLgBV1YJk"
+},
+{
+  "_id": {
+    "$oid": "671f53918309a3ea61fa3bb2"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "ITEMs": "Salt spray testing",
+  "RESULTFORMAT": "Text",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1730106257865Klln16fUmDtKN27"
+},
+{
+  "_id": {
+    "$oid": "671f73cc8309a3ea61fa3bb6"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "ITEMs": "Coating Thickness (Cal.)",
+  "RESULTFORMAT": "CAL1",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "CALCULATE-1730115465237nj5md8wS2TfDANV",
+  "DOCUMENTS": "",
+  "activeid": "active_id",
+  "masterID": "ITEMs-17301145084358AQfWMDFoxdT1Be",
+  "INTERSECTION": ""
+}]

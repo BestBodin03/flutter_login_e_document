@@ -1,0 +1,197 @@
+[{
+  "_id": {
+    "$oid": "5f2699c943e7cf2b40d84587"
+  },
+  "TYPE": "TYPE-5f26988e43e7cf2b40d84585",
+  "ITEMs": "Appearance for rust",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-001",
+  "masterID": "ITEMs-5f2699c943e7cf2b40d84587",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f2a5a4743e7cf2b40d8459d"
+  },
+  "TYPE": "TYPE-5f26988e43e7cf2b40d84585",
+  "ITEMs": "Appearance for scratch",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "masterID": "ITEMs-5f2a5a4743e7cf2b40d8459d",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f2a5b2343e7cf2b40d845a0"
+  },
+  "TYPE": "TYPE-5f2a5b0843e7cf2b40d8459e",
+  "ITEMs": "Diameter",
+  "POINT": "",
+  "RESULTFORMAT": "Number",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "",
+  "masterID": "ITEMs-5f2a5b2343e7cf2b40d845a0",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "6025e89b93e8d91950acb599"
+  },
+  "TYPE": "TYPE-5f26988e43e7cf2b40d84585",
+  "ITEMs": "Appearance for pin hole",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "masterID": "ITEMs-6025e89b93e8d91950acb599",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "63f6045a9ea2e30a1031d83d"
+  },
+  "TYPE": "TYPE-5f26988e43e7cf2b40d84585",
+  "ITEMs": "Appearance for compound layer clogging in the spring hole",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "masterID": "ITEMs-63f6045a9ea2e30a1031d83d",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "63f604779ea2e30a1031d83e"
+  },
+  "TYPE": "TYPE-5f26988e43e7cf2b40d84585",
+  "ITEMs": "Appearance for blot by pilling ",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "masterID": "ITEMs-63f604779ea2e30a1031d83e",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "63f604999ea2e30a1031d83f"
+  },
+  "TYPE": "TYPE-5f26988e43e7cf2b40d84585",
+  "ITEMs": "Appearance for dent",
+  "POINT": "",
+  "RESULTFORMAT": "Text",
+  "INTERSECTION": "",
+  "GRAPHTYPE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "masterID": "ITEMs-63f604999ea2e30a1031d83f",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "65bcb52b379ccb8e7025a0ff"
+  },
+  "TYPE": "TYPE-1706865731865DBO5UOg5y8rdKZy",
+  "ITEMs": "Inner Diameter",
+  "RESULTFORMAT": "Number",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1706865963090Hair9cUJusV3rtG"
+},
+{
+  "_id": {
+    "$oid": "65bcb570379ccb8e7025a100"
+  },
+  "TYPE": "TYPE-1706865731865DBO5UOg5y8rdKZy",
+  "ITEMs": "Outer Diameter",
+  "RESULTFORMAT": "Number",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1706866032568j0cgETHisL8tMvS"
+},
+{
+  "_id": {
+    "$oid": "65e82d06379ccb8e7025a108"
+  },
+  "TYPE": "TYPE-1706865731865DBO5UOg5y8rdKZy",
+  "ITEMs": "Diameter Before Treatment",
+  "RESULTFORMAT": "Number",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "",
+  "activeid": "no_active_id",
+  "masterID": "ITEMs-17097146948979CGm8F5GtuFkHK9",
+  "INTERSECTION": ""
+},
+{
+  "_id": {
+    "$oid": "65e83532379ccb8e7025a10a"
+  },
+  "TYPE": "TYPE-5f26988e43e7cf2b40d84585",
+  "ITEMs": "Appearance for Dent",
+  "RESULTFORMAT": "Text",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1709716786969znnRPMwyJnNSth2"
+},
+{
+  "_id": {
+    "$oid": "65e839db379ccb8e7025a10d"
+  },
+  "TYPE": "TYPE-1706865731865DBO5UOg5y8rdKZy",
+  "ITEMs": "Surface Roughness (Rz)",
+  "RESULTFORMAT": "Number",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1709717979367WAS4Sx593L17EZp"
+},
+{
+  "_id": {
+    "$oid": "6763cbdf8309a3ea61fa3bc8"
+  },
+  "TYPE": "TYPE-5f26988e43e7cf2b40d84585",
+  "ITEMs": "Appearance for bending or deformation",
+  "RESULTFORMAT": "Text",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "OP-HQC-03-002",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1734593503688kXRSvxVfFGpdGkV"
+},
+{
+  "_id": {
+    "$oid": "6763ccf28309a3ea61fa3bc9"
+  },
+  "TYPE": "TYPE-5f26988e43e7cf2b40d84585",
+  "ITEMs": "Appearance for contaminant",
+  "RESULTFORMAT": "Text",
+  "GRAPHTYPE": "",
+  "GRAPHINTERSECTION": "",
+  "CALCULATE": "",
+  "DOCUMENTS": "OP-HQC-03-001",
+  "activeid": "active_id",
+  "masterID": "ITEMs-1734593778758Pees5UbBnz9KeLJ"
+}]

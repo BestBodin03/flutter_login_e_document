@@ -1,0 +1,189 @@
+[{
+  "_id": {
+    "$oid": "5f19b223fe12be0020dbd3dc"
+  },
+  "ITEMs": "ITEMs-5f19aa43fe12be0020dbd3bf",
+  "SPECIFICATION": "No Rust",
+  "masterID": "SPECIFICATION-5f19b223fe12be0020dbd3dc",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19b245fe12be0020dbd3dd"
+  },
+  "ITEMs": "ITEMs-5f19aa53fe12be0020dbd3c0",
+  "SPECIFICATION": "No Scratch, No Dent",
+  "masterID": "SPECIFICATION-5f19b245fe12be0020dbd3dd",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19b25efe12be0020dbd3de"
+  },
+  "ITEMs": "ITEMs-5f19aaf8fe12be0020dbd3c3",
+  "SPECIFICATION": "Complete coating",
+  "masterID": "SPECIFICATION-5f19b25efe12be0020dbd3de",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "60403f6293e8d91950acb5c1"
+  },
+  "ITEMs": "ITEMs-6025ea5b93e8d91950acb59b",
+  "SPECIFICATION": "No Pin hole",
+  "masterID": "SPECIFICATION-60403f6293e8d91950acb5c1",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60403fe193e8d91950acb5c2"
+  },
+  "ITEMs": "ITEMs-60403f1693e8d91950acb5c0",
+  "SPECIFICATION": "No oil, water, foreign matters and residual salt",
+  "masterID": "SPECIFICATION-60403fe193e8d91950acb5c2",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60405c2793e8d91950acb5c4"
+  },
+  "ITEMs": "ITEMs-60405bcf93e8d91950acb5c3",
+  "SPECIFICATION": "< 30% of all surface",
+  "masterID": "SPECIFICATION-60405c2793e8d91950acb5c4",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "6040840093e8d91950acb5d8"
+  },
+  "ITEMs": "ITEMs-60407f8f93e8d91950acb5d0",
+  "SPECIFICATION": "100% wet",
+  "masterID": "SPECIFICATION-6040840093e8d91950acb5d8",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "63f607149ea2e30a1031d84a"
+  },
+  "ITEMs": "ITEMs-63f6060b9ea2e30a1031d844",
+  "SPECIFICATION": "No Compound layer cogging in the spring hole",
+  "masterID": "SPECIFICATION-63f607149ea2e30a1031d84a",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "63f607a89ea2e30a1031d84b"
+  },
+  "ITEMs": "ITEMs-63f606389ea2e30a1031d845",
+  "SPECIFICATION": "No Blot by pilling",
+  "masterID": "SPECIFICATION-63f607a89ea2e30a1031d84b",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "63f607bf9ea2e30a1031d84c"
+  },
+  "ITEMs": "ITEMs-5f19aa43fe12be0020dbd3bf",
+  "SPECIFICATION": "No Dent",
+  "masterID": "SPECIFICATION-63f607bf9ea2e30a1031d84c",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "642bd5e79ea2e30a1031d86c"
+  },
+  "ITEMs": "ITEMs-60403f1693e8d91950acb5c0",
+  "SPECIFICATION": "No oil, water, foreign matters.",
+  "masterID": "SPECIFICATION-642bd5e79ea2e30a1031d86c",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "64d1e3d0e23c7c8a8a6cc0f5"
+  },
+  "ITEMs": "ITEMs-16914056753711Wwl85tH1FC90vo",
+  "SPECIFICATION": "Complete coating",
+  "activeid": "active_id",
+  "masterID": "SPECIFICATION-1691476944565a54UU4Ba077DMRX"
+},
+{
+  "_id": {
+    "$oid": "6515573910e825e132a7f092"
+  },
+  "ITEMs": "ITEMs-1695896974170hmDyDXKdwNZS6o0",
+  "SPECIFICATION": "Complete coating",
+  "activeid": "active_id",
+  "masterID": "SPECIFICATION-1695897401380lzBFAgYv0fhum7t"
+},
+{
+  "_id": {
+    "$oid": "651e9981b4c16d3dfc438ca6"
+  },
+  "ITEMs": "ITEMs-1696504013546QTRdQw8l3FIxFjd",
+  "SPECIFICATION": "Coating all surface",
+  "activeid": "active_id",
+  "masterID": "SPECIFICATION-1696504193151rC5hD362rKAG8Z7"
+},
+{
+  "_id": {
+    "$oid": "651e9a7db4c16d3dfc438ca7"
+  },
+  "ITEMs": "ITEMs-1696503824972CV2lxe25skTl6RS",
+  "SPECIFICATION": "Complete coating",
+  "activeid": "active_id",
+  "masterID": "SPECIFICATION-1696504445098qqJ3WhZzJP7SjHq"
+},
+{
+  "_id": {
+    "$oid": "65bc9ccba13edc0452eaff1c"
+  },
+  "ITEMs": "ITEMs-16958969915938sggDCJ6xYNsvrl",
+  "SPECIFICATION": "Complete coating",
+  "activeid": "active_id",
+  "masterID": "SPECIFICATION-1706859723891rM0nNaKQVt138f6"
+},
+{
+  "_id": {
+    "$oid": "65bcb346379ccb8e7025a0fb"
+  },
+  "ITEMs": "ITEMs-1706856595940lMgMDIYc2GUkrXq",
+  "SPECIFICATION": "Complete coating",
+  "activeid": "active_id",
+  "masterID": "SPECIFICATION-1706865478127kfxeh8gBccbNXjq"
+},
+{
+  "_id": {
+    "$oid": "671600fb8309a3ea61fa3b97"
+  },
+  "ITEMs": "ITEMs-17292452100716NGgyXiwAlwNsmx",
+  "SPECIFICATION": "No remain coating inside",
+  "activeid": "active_id",
+  "masterID": "SPECIFICATION-1729495291251P5d5Co0cho2Ohml"
+},
+{
+  "_id": {
+    "$oid": "6719b0a18309a3ea61fa3ba1"
+  },
+  "ITEMs": "ITEMs-17297364110731Z5vMVWLgBV1YJk",
+  "SPECIFICATION": "No sludge",
+  "activeid": "active_id",
+  "masterID": "SPECIFICATION-1729736865078mCdBrq5kLwxFfny"
+},
+{
+  "_id": {
+    "$oid": "671f53e68309a3ea61fa3bb4"
+  },
+  "ITEMs": "ITEMs-1730106257865Klln16fUmDtKN27",
+  "SPECIFICATION": "No Rust (after 24 hr.)",
+  "activeid": "active_id",
+  "masterID": "SPECIFICATION-1730106342054NsXdLtrxmS92Nww"
+},
+{
+  "_id": {
+    "$oid": "672ac3698309a3ea61fa3bbc"
+  },
+  "ITEMs": "ITEMs-5f19aa43fe12be0020dbd3bf",
+  "SPECIFICATION": "No na",
+  "activeid": "no_active_id",
+  "masterID": "SPECIFICATION-1730855785468IyjRLN9yvZ9QzJy"
+}]

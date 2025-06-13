@@ -1,0 +1,166 @@
+[{
+  "_id": {
+    "$oid": "5f19ab6ffe12be0020dbd3c5"
+  },
+  "METHOD": "Micro Vickers Hardness tester",
+  "MACHINE": [
+    "HI-HMV-002",
+    "HI-HMV-001"
+  ],
+  "masterID": "MACHINE-5f19ab6ffe12be0020dbd3c5",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19ab89fe12be0020dbd3c6"
+  },
+  "METHOD": "Rockwell Hardness tester",
+  "MACHINE": [],
+  "masterID": "MACHINE-5f19ab89fe12be0020dbd3c6",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19abcefe12be0020dbd3c7"
+  },
+  "METHOD": "Vicker Hardness tester",
+  "MACHINE": [],
+  "masterID": "MACHINE-5f19abcefe12be0020dbd3c7",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19ac08fe12be0020dbd3c8"
+  },
+  "METHOD": "Reference from graph",
+  "MACHINE": [
+    "Ref-graph"
+  ],
+  "masterID": "MACHINE-5f19ac08fe12be0020dbd3c8",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19af93fe12be0020dbd3d5"
+  },
+  "METHOD": "Visual",
+  "MACHINE": [
+    "APP-PHBP12"
+  ],
+  "masterID": "MACHINE-5f19af93fe12be0020dbd3d5",
+  "activeid": "active_id",
+  "DESIMAL": "0"
+},
+{
+  "_id": {
+    "$oid": "5f19b00efe12be0020dbd3da"
+  },
+  "METHOD": "Sump",
+  "MACHINE": [
+    "SUR-MCS-001"
+  ],
+  "masterID": "MACHINE-5f19b00efe12be0020dbd3da",
+  "activeid": "active_id",
+  "DESIMAL": "0"
+},
+{
+  "_id": {
+    "$oid": "5f3f694943e7cf2b40d84712"
+  },
+  "METHOD": "Microscope X 100",
+  "MACHINE": [],
+  "masterID": "MACHINE-5f3f694943e7cf2b40d84712",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f3f6a8e43e7cf2b40d84713"
+  },
+  "METHOD": "Micro scope",
+  "MACHINE": [
+    "SUR-MCS-001"
+  ],
+  "masterID": "MACHINE-5f3f6a8e43e7cf2b40d84713",
+  "activeid": "active_id",
+  "DESIMAL": "0"
+},
+{
+  "_id": {
+    "$oid": "5f3f6e7443e7cf2b40d84716"
+  },
+  "METHOD": "Microscope  (X 1000)",
+  "MACHINE": [],
+  "masterID": "MACHINE-5f3f6e7443e7cf2b40d84716",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "6040837a93e8d91950acb5d6"
+  },
+  "METHOD": "UV VIS Spectroscopy",
+  "MACHINE": [
+    "LCR-UVS-001"
+  ],
+  "masterID": "MACHINE-6040837a93e8d91950acb5d6",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "6040880a93e8d91950acb5e2"
+  },
+  "METHOD": "Roughness Tester",
+  "MACHINE": [
+    "SUR-RGH-001"
+  ],
+  "masterID": "MACHINE-6040880a93e8d91950acb5e2",
+  "activeid": "active_id",
+  "DESIMAL": "0"
+},
+{
+  "_id": {
+    "$oid": "63900985d5032819b81a26d5"
+  },
+  "METHOD": "Micrometer",
+  "MACHINE": [
+    "SUR-MIC-001"
+  ],
+  "masterID": "MACHINE-63900985d5032819b81a26d5",
+  "activeid": "active_id",
+  "DESIMAL": "0"
+},
+{
+  "_id": {
+    "$oid": "64d0ce20e23c7c8a8a6cc0ee"
+  },
+  "METHOD": "Thickness Tester",
+  "DESIMAL": "0",
+  "MACHINE": [
+    "SUR-THI-002"
+  ],
+  "activeid": "active_id",
+  "masterID": "MACHINE-1691405856165Ezc8HKtjbDLgjlB"
+},
+{
+  "_id": {
+    "$oid": "64d0d202e23c7c8a8a6cc0f1"
+  },
+  "METHOD": "Weighing Balance",
+  "DESIMAL": "4",
+  "MACHINE": [
+    "SUR-BAL-013"
+  ],
+  "activeid": "active_id",
+  "masterID": "MACHINE-1691406850689EzNfY1FwNf9rwvY"
+},
+{
+  "_id": {
+    "$oid": "65d5be2a379ccb8e7025a103"
+  },
+  "METHOD": "SEM",
+  "DESIMAL": "",
+  "MACHINE": [
+    "CTC-SEM-001"
+  ],
+  "activeid": "active_id",
+  "masterID": "MACHINE-17085066663797zdIs7ysoy4VCU2"
+}]

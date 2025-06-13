@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "5f2699151bdc4fd3300b3fde"
+  },
+  "value": "pcs/rcv.Lot"
+},
+{
+  "_id": {
+    "$oid": "5f2a64411bdc4fd33029464e"
+  },
+  "value": "pcs/cus.Lot"
+},
+{
+  "_id": {
+    "$oid": "66e7da90e18f43d3f7b21311"
+  },
+  "value": "100% Check"
+}]

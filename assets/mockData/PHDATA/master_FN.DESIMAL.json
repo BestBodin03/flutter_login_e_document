@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "66de67fedd1fa17fa7ac0a78"
+  },
+  "ITEMs": "ITEMs-17207726459731Gd0BPrJZ9UHaeW",
+  "MACHINE": "",
+  "UNIT": "",
+  "DESIMAL01": "2",
+  "DESIMAL02": "2",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "66de683cdd1fa17fa7ac0a7c"
+  },
+  "ITEMs": "ITEMs-1719992850383xSl7B17V1Cy69Ke",
+  "MACHINE": "",
+  "UNIT": "",
+  "DESIMAL01": "2",
+  "DESIMAL02": "2",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "66de683ddd1fa17fa7ac0a7d"
+  },
+  "ITEMs": "ITEMs-1719992815483r4Zf04w7q7oiVR1",
+  "MACHINE": "",
+  "UNIT": "",
+  "DESIMAL01": "2",
+  "DESIMAL02": "2",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "6716074beb4358ccb033f70e"
+  },
+  "ITEMs": "ITEMs-5f19ab1ffe12be0020dbd3c4",
+  "MACHINE": "",
+  "UNIT": "",
+  "DESIMAL01": "2",
+  "DESIMAL02": "2",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "67160781eb4358ccb033f710"
+  },
+  "ITEMs": "ITEMs-60405f0b93e8d91950acb5c9",
+  "MACHINE": "",
+  "UNIT": "",
+  "DESIMAL01": "2",
+  "DESIMAL02": "2",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "671607b7eb4358ccb033f713"
+  },
+  "ITEMs": "ITEMs-1691390049929bPXWlButx4tHtCt",
+  "MACHINE": "",
+  "UNIT": "",
+  "DESIMAL01": "2",
+  "DESIMAL02": "2",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "6716080deb4358ccb033f715"
+  },
+  "ITEMs": "ITEMs-1691388181635cKRPhFZGjV8NPHf",
+  "MACHINE": "",
+  "UNIT": "",
+  "DESIMAL01": "1",
+  "DESIMAL02": "1",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "67160963eb4358ccb033f717"
+  },
+  "ITEMs": "ITEMs-1691388489639ipOPUZXtG0CxvlH",
+  "MACHINE": "",
+  "UNIT": "",
+  "DESIMAL01": "2",
+  "DESIMAL02": "2",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "67163a57eb4358ccb033f735"
+  },
+  "ITEMs": "ITEMs-604080ce93e8d91950acb5d3",
+  "MACHINE": "",
+  "UNIT": "",
+  "DESIMAL01": "2",
+  "DESIMAL02": "2",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "671747659135c56bfef2e698"
+  },
+  "ITEMs": "ITEMs-1691476031091XFUkY0o0SxWFloz",
+  "MACHINE": "",
+  "UNIT": "",
+  "DESIMAL01": "1",
+  "DESIMAL02": "1",
+  "activeid": "active_id"
+}]

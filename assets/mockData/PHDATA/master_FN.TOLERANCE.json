@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "5f1a80981bdc4fd330b5469f"
+  },
+  "condition": "BTW",
+  "value": {
+    "HI": "HI",
+    "LO": "LO"
+  }
+},
+{
+  "_id": {
+    "$oid": "5f1a80a51bdc4fd330b546fd"
+  },
+  "condition": "LOL(<)",
+  "value": {
+    "HI": "HI"
+  }
+},
+{
+  "_id": {
+    "$oid": "5f1a80b11bdc4fd330b54742"
+  },
+  "condition": "HIM(>)",
+  "value": {
+    "LO": "LO"
+  }
+},
+{
+  "_id": {
+    "$oid": "5ee11aa7062a7d3869de195f"
+  },
+  "condition": "Actual"
+}]

@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "5f180b011bdc4fd330a68ff3"
+  },
+  "value": "Picture"
+},
+{
+  "_id": {
+    "$oid": "5f180b0d1bdc4fd330a69039"
+  },
+  "value": "Number"
+},
+{
+  "_id": {
+    "$oid": "5f180b171bdc4fd330a69072"
+  },
+  "value": "Text"
+},
+{
+  "_id": {
+    "$oid": "5f180b281bdc4fd330a690db"
+  },
+  "value": "Graph"
+},
+{
+  "_id": {
+    "$oid": "5f180b421bdc4fd330a6916e"
+  },
+  "value": "OCR"
+},
+{
+  "_id": {
+    "$oid": "5f180b521bdc4fd330a691cb"
+  },
+  "value": "CAL1"
+},
+{
+  "_id": {
+    "$oid": "66b4ebc11536c41211b9289c"
+  },
+  "value": "CAL2"
+}]

@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "5f26993f1bdc4fd3300b4134"
+  },
+  "value": "Picture"
+},
+{
+  "_id": {
+    "$oid": "5f2699491bdc4fd3300b4183"
+  },
+  "value": "Number"
+},
+{
+  "_id": {
+    "$oid": "5f2699501bdc4fd3300b41b9"
+  },
+  "value": "Text"
+},
+{
+  "_id": {
+    "$oid": "667167f847cf7522362b38f2"
+  },
+  "value": "CAL1"
+}]

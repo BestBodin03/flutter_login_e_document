@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "5f1a83ea1bdc4fd330b55b64"
+  },
+  "value": "pcs/Lot"
+},
+{
+  "_id": {
+    "$oid": "607ebaa5a7ee861fd2dc42b1"
+  },
+  "value": "100% Check"
+},
+{
+  "_id": {
+    "$oid": "607ebc8ba7ee861fd2dc48eb"
+  },
+  "value": "pcs/M."
+},
+{
+  "_id": {
+    "$oid": "607ebcbca7ee861fd2dc499d"
+  },
+  "value": "time/Year."
+},
+{
+  "_id": {
+    "$oid": "607ebcc8a7ee861fd2dc49d5"
+  },
+  "value": "pcs/Y."
+},
+{
+  "_id": {
+    "$oid": "630f3bed0460261ddb013f7e"
+  },
+  "value": "time/6M"
+},
+{
+  "_id": {
+    "$oid": "64daf4d7536d954773da4da9"
+  },
+  "value": "pcs/D."
+},
+{
+  "_id": {
+    "$oid": "65fa54ee915673c819ab9489"
+  },
+  "value": "AQL/Lot"
+}]

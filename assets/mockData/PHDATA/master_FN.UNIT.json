@@ -1,0 +1,220 @@
+[{
+  "_id": {
+    "$oid": "5f19a7d5fe12be0020dbd3ac"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "UNIT": "mm.",
+  "masterID": "UNIT-5f19a7d5fe12be0020dbd3ac",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a7defe12be0020dbd3ad"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "UNIT": "cm.",
+  "masterID": "UNIT-5f19a7defe12be0020dbd3ad",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a7fefe12be0020dbd3ae"
+  },
+  "TYPE": "TYPE-5f171c36fe12be0020dbd354",
+  "UNIT": "µm.",
+  "masterID": "UNIT-5f19a7fefe12be0020dbd3ae",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a80bfe12be0020dbd3af"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "UNIT": "Hmv",
+  "masterID": "UNIT-5f19a80bfe12be0020dbd3af",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a81afe12be0020dbd3b0"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "UNIT": "HRC",
+  "masterID": "UNIT-5f19a81afe12be0020dbd3b0",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a821fe12be0020dbd3b1"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "UNIT": "Hv.",
+  "masterID": "UNIT-5f19a821fe12be0020dbd3b1",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a870fe12be0020dbd3b2"
+  },
+  "TYPE": "TYPE-5f19a78afe12be0020dbd3a7",
+  "UNIT": "µm.",
+  "masterID": "UNIT-5f19a870fe12be0020dbd3b2",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a880fe12be0020dbd3b3"
+  },
+  "TYPE": "TYPE-5f19a79ffe12be0020dbd3a8",
+  "UNIT": "",
+  "masterID": "UNIT-5f19a880fe12be0020dbd3b3",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a890fe12be0020dbd3b4"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "UNIT": "mm.",
+  "masterID": "UNIT-5f19a890fe12be0020dbd3b4",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a89bfe12be0020dbd3b5"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "UNIT": "cm.",
+  "masterID": "UNIT-5f19a89bfe12be0020dbd3b5",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a8a4fe12be0020dbd3b6"
+  },
+  "TYPE": "TYPE-5f19a7acfe12be0020dbd3a9",
+  "UNIT": "µm.\t",
+  "masterID": "UNIT-5f19a8a4fe12be0020dbd3b6",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a8b5fe12be0020dbd3b7"
+  },
+  "TYPE": "TYPE-5f19a7b7fe12be0020dbd3aa",
+  "UNIT": "",
+  "masterID": "UNIT-5f19a8b5fe12be0020dbd3b7",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f19a8dffe12be0020dbd3b8"
+  },
+  "TYPE": "TYPE-5f19a7c2fe12be0020dbd3ab",
+  "UNIT": "g/m2",
+  "masterID": "UNIT-5f19a8dffe12be0020dbd3b8",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f2229e443e7cf2b40d84583"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "UNIT": "-",
+  "masterID": "UNIT-5f2229e443e7cf2b40d84583",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f3c8bc643e7cf2b40d845e4"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "UNIT": "HRA",
+  "masterID": "UNIT-5f3c8bc643e7cf2b40d845e4",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f3c8bd043e7cf2b40d845e5"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "UNIT": "HR15N",
+  "masterID": "UNIT-5f3c8bd043e7cf2b40d845e5",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "5f3c8bda43e7cf2b40d845e6"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "UNIT": "HR30N",
+  "masterID": "UNIT-5f3c8bda43e7cf2b40d845e6",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "6040800593e8d91950acb5d2"
+  },
+  "TYPE": "TYPE-60407ff193e8d91950acb5d1",
+  "UNIT": "ppm.",
+  "masterID": "UNIT-6040800593e8d91950acb5d2",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "6040920a93e8d91950acb5eb"
+  },
+  "TYPE": "TYPE-5f19a78afe12be0020dbd3a7",
+  "UNIT": "HSC",
+  "masterID": "UNIT-6040920a93e8d91950acb5eb",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "60920f9c93e8d91950acb6df"
+  },
+  "TYPE": "TYPE-5f171c43fe12be0020dbd355",
+  "UNIT": "HK",
+  "masterID": "UNIT-60920f9c93e8d91950acb6df",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "647431f6e23c7c8a8a6cc0e0"
+  },
+  "UNIT": "g/m²",
+  "TYPE": "TYPE-1685336509950gULbsiRy4U3yivg",
+  "DESIMAL": "2",
+  "activeid": "active_id",
+  "masterID": "UNIT-1685336566913raJ1fXZkYpgjtrb"
+},
+{
+  "_id": {
+    "$oid": "64743294e23c7c8a8a6cc0e1"
+  },
+  "UNIT": "mg/m²",
+  "TYPE": "TYPE-1685336509950gULbsiRy4U3yivg",
+  "DESIMAL": "",
+  "activeid": "active_id",
+  "masterID": "UNIT-1685336724741FywbXODndwoh8MO"
+},
+{
+  "_id": {
+    "$oid": "647432fee23c7c8a8a6cc0e2"
+  },
+  "UNIT": "µm.2",
+  "TYPE": "TYPE-1685336509950gULbsiRy4U3yivg",
+  "DESIMAL": "",
+  "activeid": "no_active_id",
+  "masterID": "UNIT-1685336830945qYAxgUtrqhPLjvo"
+},
+{
+  "_id": {
+    "$oid": "6474332ee23c7c8a8a6cc0e3"
+  },
+  "UNIT": "2µm.\t",
+  "TYPE": "TYPE-1685336509950gULbsiRy4U3yivg",
+  "DESIMAL": "",
+  "activeid": "no_active_id",
+  "masterID": "UNIT-16853368784518Rut4YoY3MWlus8"
+}]

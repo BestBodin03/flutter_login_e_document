@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "5f2a595543e7cf2b40d8459c"
+  },
+  "ITEMs": "ITEMs-5f2699c943e7cf2b40d84587",
+  "SPECIFICATION": "No rust",
+  "masterID": "SPECIFICATION-5f2a595543e7cf2b40d8459c",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "5f2a62bc43e7cf2b40d845a7"
+  },
+  "ITEMs": "ITEMs-5f2a5a4743e7cf2b40d8459d",
+  "SPECIFICATION": "No Scratch",
+  "masterID": "SPECIFICATION-5f2a62bc43e7cf2b40d845a7",
+  "activeid": "active_id"
+},
+{
+  "_id": {
+    "$oid": "63f6052f9ea2e30a1031d843"
+  },
+  "ITEMs": "ITEMs-63f6045a9ea2e30a1031d83d",
+  "SPECIFICATION": "No compound layer clogging in the spring hole",
+  "masterID": "SPECIFICATION-63f6052f9ea2e30a1031d843",
+  "activeid": "no_active_id"
+},
+{
+  "_id": {
+    "$oid": "65e83568379ccb8e7025a10c"
+  },
+  "ITEMs": "ITEMs-1709716786969znnRPMwyJnNSth2",
+  "SPECIFICATION": "No Scratch, No Dent",
+  "activeid": "active_id",
+  "masterID": "SPECIFICATION-1709716840589JNDw3NzeY3JhAxw"
+}]
