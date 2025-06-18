@@ -8,40 +8,37 @@ class ReportPDFCommonvar {
   static bool HIDEDATAPIC = false;
 
   static String STATUS = '';
-
-  static String CUSTOMERNAME='';
+  static String CP = '';
+  static String FG = '';
+  static String CUSTOMER = '';
+  static String PART = '';
   static String PARTNAME = '';
-  static String PARTNO = '';
-  static String CONTROLPLANNO = '';
-  static String PRODUCTSTAGES = '';
+  static String MATERIAL = '';
+  static String CUST_FULLNM = '';
   static String PROCESS = '';
-  static String MATERIAL= '';
   static String INSPECTIONSTDNO = '';
+  static String CUSLOT = '';
+  static String TPKLOT = '';
+  static String Pimg = '';
 
-  static String TPKLOTEDIT = '';
+  static String USER_STATUS = '';
+  static String reportset = '';
 
-  static String PICstd = '';
-  static String PIC01 = '';
-  static String PIC02 = '';
-  static String TYPE = '-';
-  static String SCMASKTYPE = "";
-  static String SCMASKTYPEonTop = '';
+  static String CusApprovedBySigned = '';
+  static String CusCheckedBySigned = '';
 
-  //rawlistCORE
-
-  static List<rawlist> rawlistGraph = [];
-  static rawlist rawlistGraphCore = rawlist();
-
-  static String remark = '';
-
-  static String PASS = '';
+  static String ApprovedByQASigned = '';
+  static String ApproveSigned = '';
+  static String CheckedBySigned = '';
+  static String IssuedBySigned = '';
 
   static String commp = 'Compound layer';
-
-  static String INC01 = '';
-  static String INC02 = '';
-
+  static String TPKLOTEDIT = '';
+  static String TYPE = '';
+  static String PASS = '';
   static String SignInsBy = '';
+
+  
 
   static List<ReportPDFCommonlist> datalist = [
     ReportPDFCommonlist(),
@@ -62,69 +59,61 @@ class ReportPDFCommonvar {
 
 class ReportPDFCommonlist {
   ReportPDFCommonlist({
+    this.NO = 0,
+    this.TYPE = '',
     this.ITEM = '',
     this.ITEMname = '',
     this.METHOD = '',
     this.METHODname = '',
     this.SCMARK = '',
-    this.FREQ = '',
-    this.SPECIFICATION = '',
+    this.PCS = '',
+    this.FREQUENCY = '',
+    // this.SPECIFICATION = '',
     this.SPECIFICATIONname = '',
-    this.SPECIFICATIONve = '',
-    this.RESULT = '',
-    this.CONTROLlimmit = '',
-    this.DATA01 = '',
-    this.DATA02 = '',
-    this.DATA03 = '',
-    this.DATAAVG = '',
+    // this.SPECIFICATIONve = '',
+    // this.RESULT = '',
+    // this.CONTROLlimmit = '',
+    this.LOAD = '',
+    this.Cross = '',
     this.REMARK = '',
+    this.REMARKDETAIL = '',
+    // this.SRAWDATA = '',
+    // this.RESULTDSW = '',
   });
+  int NO;
+  String TYPE;
   String ITEM;
-  String ITEMname = '';
-  String METHOD = '';
-  String METHODname = '';
-  String SCMARK = '';
-  String FREQ = '';
-  String SPECIFICATION = '';
-  String SPECIFICATIONname = '';
-  String SPECIFICATIONve = '';
-  String RESULT = '';
-  String CONTROLlimmit = '';
-  String DATA01 = '';
-  String DATA02 = '';
-  String DATA03 = '';
-  String DATAAVG = '';
-  String REMARK = '';
-}
-
-class rawlist {
-  rawlist({
-    this.DATANO = '',
-    this.DATAPCS = '',
-    this.DATA = '',
-  });
-  String DATANO;
-  String DATAPCS = '';
-  String DATA = '';
+  String ITEMname;
+  String METHOD;
+  String METHODname;
+  String SCMARK;
+  String PCS;
+  String FREQUENCY;
+  // String SPECIFICATION;
+  String SPECIFICATIONname;
+  // String SPECIFICATIONve;
+  // String RESULT;
+  // String CONTROLlimmit;
+  String LOAD;
+  String Cross;
+  String REMARK;
+  String REMARKDETAIL;
+  // String SRAWDATA;
+  // String RESULTDSW;
 }
 
 ReportPDFACTclear() {
   ReportPDFCommonvar.PO = '';
 
-  ReportPDFCommonvar.CUSTOMERNAME= '';
+  ReportPDFCommonvar.CP = '';
+  ReportPDFCommonvar.FG = '';
+  ReportPDFCommonvar.CUSTOMER = '';
+  ReportPDFCommonvar.PART = '';
   ReportPDFCommonvar.PARTNAME = '';
-  ReportPDFCommonvar.PARTNO = '';
-  ReportPDFCommonvar.CONTROLPLANNO = '';
-  ReportPDFCommonvar.PRODUCTSTAGES = '';
-  ReportPDFCommonvar.PROCESS = '';
-  ReportPDFCommonvar.MATERIAL= '';
-  ReportPDFCommonvar.INSPECTIONSTDNO = '';
-
-  ReportPDFCommonvar.PICstd = '';
-  ReportPDFCommonvar.PIC01 = '';
-  ReportPDFCommonvar.PIC02 = '';
-
-  ReportPDFCommonvar.SignInsBy = '';
+  ReportPDFCommonvar.MATERIAL = '';
+  ReportPDFCommonvar.CUST_FULLNM = '';
+  ReportPDFCommonvar.TPKLOTEDIT = '';
+  ReportPDFCommonvar.TYPE = '';
   ReportPDFCommonvar.datalist = [
     ReportPDFCommonlist(),
     ReportPDFCommonlist(),
