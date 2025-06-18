@@ -1,35 +1,59 @@
-// comment.Bson
-{ "_id": "65e83ad3379ccb8e7025a110", "COMMENT": "For Internal Reference", "activeid": "active_id", "masterID": "COMMENT-17097182279907tl4d0ze2M3I8Bn" }
+jsonList = jsonDecode(), {Key: Value}
 
-// frequency.bson
-{ "_id": "5f2699151bdc4fd3300b3fde", "value": "pcs/rcv.Lot" }
+CP = jsonList[0]['CP']
+FG = jsonList[0]['FG']
 
-// intruments.bosn
-{ "_id": "5f1811371bdc4fd330a6b335", "value": "SUR-BAL-013" }
+- Header -
 
-// items.bson
-{ "_id": "5f2699c943e7cf2b40d84587", "TYPE": "TYPE-5f26988e43e7cf2b40d84585", "ITEMs": "Appearance for rust", "POINT": "", "RESULTFORMAT": "Text", "INTERSECTION": "", "GRAPHTYPE": "", "DOCUMENTS": "OP-HQC-03-001", "masterID": "ITEMs-5f2699c943e7cf2b40d84587", "activeid": "active_id" }
+CUSTOMER = jsonList[0]['CUSTOMER']
+PART = jsonList[0]['PART']
+PARTNAME = jsonList[0]['PARTNAME']
+MATERIAL = jsonList[0]['MATERIAL']
+CUST_FULLNM = jsonList[0]['CUST_FULLNM']
+PROCESS = jsonList[0]['PROCESS']
+INSPECTIONSTDNO = jsonList[0]['INSPECTIONSTDNO']
 
-// machine.bson
-{ "_id": "5f2a592643e7cf2b40d8459a", "METHOD": "Visual", "MACHINE": [], "masterID": "MACHINE-5f2a592643e7cf2b40d8459a", "activeid": "active_id" }
+- IC -
+SEQ = jsonList[0]['FINAL'][0]['SEQ']
+ITEM = 
+ITEMname =
+SCMARK = jsonList[0]['FINAL'][0]['SEQ']
+DOCUMENT = 2 files
+METHOD = 2 files
+METHODname = 2 files
+PCS = jsonList[0]['FINAL'][0]['PCS']
+FREQUENCY = jsonList[0]['FINAL'][0]['FREQUENCY']
+SPECIFICATIONname = jsonList[0]['FINAL'][0]['SPECIFICATION']['name']
+REMARK = 2 files
+REMARKDETAIL = 2 files
 
-// master.bson
-{ "_id": "5f2a592643e7cf2b40d8459a", "METHOD": "Visual", "MACHINE": [], "masterID": "MACHINE-5f2a592643e7cf2b40d8459a", "activeid": "active_id" }
+- FN -
+SEQ = jsonList[0]['FINAL'][0]['SEQ']
+ITEM = 
+ITEMname =
+SCMARK = jsonList[0]['FINAL'][0]['SEQ']
+DOCUMENT = 2 files
+METHOD = 2 files
+METHODname = 2 files
+PCS = jsonList[0]['FINAL'][0]['PCS']
+FREQUENCY = jsonList[0]['FINAL'][0]['FREQUENCY']
+SPECIFICATIONname = jsonList[0]['FINAL'][0]['SPECIFICATION']['name']
+REMARK = 2 files
+REMARKDETAIL = 2 files
 
-// method.bson
-{ "_id": "5f2a593d43e7cf2b40d8459b", "ITEMs": "ITEMs-5f2699c943e7cf2b40d84587", "METHOD": "MACHINE-5f2a592643e7cf2b40d8459a", "masterID": "METHOD-5f2a593d43e7cf2b40d8459b", "activeid": "active_id", "DOCUMENTSM": "OP-HQC-03-001" }
+//- IMG -
+Pimg = jsonData[0]['Pimg']['P1']
 
-//resultformat.bson
-{ "_id": "5f26993f1bdc4fd3300b4134", "value": "Picture" }
+//- signed -
+CusApprovedBySigned = ''
+CusCheckedBySigned = ''
 
-// specification.bson
-{ "_id": "5f2a595543e7cf2b40d8459c", "ITEMs": "ITEMs-5f2699c943e7cf2b40d84587", "SPECIFICATION": "No rust", "masterID": "SPECIFICATION-5f2a595543e7cf2b40d8459c", "activeid": "active_id" }
+ApprovedByQASigned = ''
+ApproveSigned = ''
+CheckedBySigned = ''
+IssuedBySigned = ''
 
-// tolerance.bson
-{ "_id": "5f2699621bdc4fd3300b4256", "condition": "BTW", "value": { "HI": "HI", "LO": "LO" } }
 
-// type.bson
-{ "_id": "5f26988e43e7cf2b40d84585", "TYPE": "Attribute", "masterID": "TYPE-5f26988e43e7cf2b40d84585", "activeid": "active_id" }
 
-// unit.bson
-{ "_id": "5f2699ab43e7cf2b40d84586", "TYPE": "TYPE-5f26988e43e7cf2b40d84585", "UNIT": "", "masterID": "UNIT-5f2699ab43e7cf2b40d84586", "activeid": "active_id", "DESIMAL": "" }
+
+

@@ -7,6 +7,8 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:newmaster/page/P32ReportPDFcommon/entities_models/ReportPDF.dart';
+import 'package:newmaster/page/P32ReportPDFcommon/entities_models/ReportPDFModels.dart';
 import 'package:newmaster/widget/ReportComponent/ReportImageCard.dart';
 import 'package:newmaster/widget/ReportComponent/SignSideWithCustomerInspectionStandard.dart';
 import 'package:newmaster/widget/ReportComponent/SingleSelectCheckboxRow.dart';
@@ -28,7 +30,6 @@ import '../../widget/common/ComInputText.dart';
 import '../../widget/common/IMGview.dart';
 import '../../widget/common/Safty.dart';
 import 'ReportPDFCommonvar.dart';
-import 'classtest.dart';
 
 Uint8List imageBytes = base64Decode(inspectStandarSampleImg);
 
@@ -46,17 +47,30 @@ class ReportPDFCommon extends StatefulWidget {
 
 class _ReportPDFCommonState extends State<ReportPDFCommon> {
   @override
-  void initState() {
-    ReportPDFCommonvar.TPKLOTEDIT = '';
-    print("ma rel");
-    if (ReportPDFCommonvar.PO != '') {
-      ReportPDFCommonvar.canf = false;
-      // context
-      //     .read<ReportPDFCommon_Cubit>()
-      //     .ReportPDFCommonCubit(ReportPDFCommonvar.PO, "");
-    }
-    super.initState();
+void initState() {
+  super.initState();
+  ReportPDFCommonvar.TPKLOTEDIT = '';
+  print("ma rel");
+  
+  if (ReportPDFCommonvar.PO != '') {
+    ReportPDFCommonvar.canf = false;
+    // context
+    //     .read<ReportPDFCommon_Cubit>()
+    //     .ReportPDFCommonCubit(ReportPDFCommonvar.PO, "");
   }
+}
+
+void _showErrorDialog() {
+  // แสดง dialog หรือ snackbar เมื่อโหลดข้อมูลไม่สำเร็จ
+  if (mounted) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง'),
+        backgroundColor: Colors.red,
+      ),
+    );
+  }
+}
 
   final GlobalKey _globalKey = GlobalKey();
 
@@ -71,28 +85,15 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
     if (_dataCOMMON.datain.isNotEmpty) {
       //
       ReportPDFCommonvar.STATUS = 'REPORT READY';
-      ReportPDFCommonvar.CUSTOMERNAME= ReportPDFCommonvar.CUSTOMERNAME; // DATA LOAD AT THIS
+      ReportPDFCommonvar.CP = '';
+      ReportPDFCommonvar.FG = '';
+      ReportPDFCommonvar.CUSTOMER = '';
+      ReportPDFCommonvar.PART = '';
       ReportPDFCommonvar.PARTNAME = '';
-      ReportPDFCommonvar.PARTNO = '';
-      ReportPDFCommonvar.CONTROLPLANNO = '';
-      ReportPDFCommonvar.PRODUCTSTAGES = '';
-      ReportPDFCommonvar.PROCESS = '';
-      ReportPDFCommonvar.MATERIAL= '';
-      ReportPDFCommonvar.INSPECTIONSTDNO = '';
-
-      ReportPDFCommonvar.PIC01 = _dataCOMMON.databasic.PIC01;
-      ReportPDFCommonvar.PIC02 = _dataCOMMON.databasic.PIC02;
-      ReportPDFCommonvar.PICstd = _dataCOMMON.databasic.PICstd;
+      ReportPDFCommonvar.MATERIAL = '';
+      ReportPDFCommonvar.CUST_FULLNM = '';
 
       ReportPDFCommonvar.PASS = _dataCOMMON.databasic.PASS;
-      ReportPDFCommonvar.remark = '';
-      if (_dataCOMMON.databasic.PARTNAMEref != '') {
-        ReportPDFCommonvar.remark =
-            'Reference data from\n${_dataCOMMON.databasic.PARTNAMEref}\n${_dataCOMMON.databasic.PARTref}';
-      }
-
-      ReportPDFCommonvar.INC01 = _dataCOMMON.databasic.INC01;
-      ReportPDFCommonvar.INC02 = _dataCOMMON.databasic.INC02;
 
       // for (var i = 0; i < _dataCOMMON.datain.length; i++) {
       //   String Loadin = '';
@@ -122,38 +123,18 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
           // );
           // print(">>>${ReportPDFCommonvar.rawlistGraph.length}");
           // ReportPDFCommonvar.rawlistGraph.removeLast();
-          if (ReportPDFCommonvar.rawlistGraph.length > 2) {
-            ReportPDFCommonvar.rawlistGraphCore = rawlist(
-              DATAPCS: "Core",
-              DATA: ReportPDFCommonvar
-                  .rawlistGraph[ReportPDFCommonvar.rawlistGraph.length - 1]
-                  .DATA,
-            );
-            // print(">>>${ReportPDFCommonvar.rawlistGraph.length}");
-
-            ReportPDFCommonvar.rawlistGraph
-                .removeAt(ReportPDFCommonvar.rawlistGraph.length - 1);
-          }
 
       // print(ReportPDFCommonvar.datalist);
     } else {
       ReportPDFCommonvar.STATUS = 'WATTING or NO-DATA';
 
-      ReportPDFCommonvar.CUSTOMERNAME= ReportPDFCommonvar.CUSTOMERNAME; // DATA LOAD AT THIS
+      ReportPDFCommonvar.CP = '';
+      ReportPDFCommonvar.FG = '';
+      ReportPDFCommonvar.CUSTOMER = '';
+      ReportPDFCommonvar.PART = '';
       ReportPDFCommonvar.PARTNAME = '';
-      ReportPDFCommonvar.PARTNO = '';
-      ReportPDFCommonvar.CONTROLPLANNO = '';
-      ReportPDFCommonvar.PRODUCTSTAGES = '';
-      ReportPDFCommonvar.PROCESS = '';
-      ReportPDFCommonvar.MATERIAL= '';
-      ReportPDFCommonvar.INSPECTIONSTDNO = '';
-
-      ReportPDFCommonvar.PICstd = '';
-      ReportPDFCommonvar.PIC01 = '';
-      ReportPDFCommonvar.PIC02 = '';
-
-      ReportPDFCommonvar.INC01 = '';
-      ReportPDFCommonvar.INC02 = '';
+      ReportPDFCommonvar.MATERIAL = '';
+      ReportPDFCommonvar.CUST_FULLNM = '';
 
       ReportPDFCommonvar.datalist = [
         ReportPDFCommonlist(),
@@ -170,10 +151,6 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
         ReportPDFCommonlist(),
         ReportPDFCommonlist(),
       ];
-
-      ReportPDFCommonvar.rawlistGraphCore = rawlist();
-
-      ReportPDFCommonvar.rawlistGraph = [];
 
     }
 
@@ -495,14 +472,14 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                           children: [
                                             // Header section
                                             headerreport2(
-                                              CUSTOMERNAME: ReportPDFCommonvar.CUSTOMERNAME,
-                                              PARTNAME: ReportPDFCommonvar.PROCESS,
-                                              PARTNO: ReportPDFCommonvar.PARTNAME,
-                                              CONTROLPLANNO: ReportPDFCommonvar.PARTNO,
-                                              PRODUCTSTAGES: ReportPDFCommonvar.PRODUCTSTAGES,
-                                              PROCESS: ReportPDFCommonvar.PROCESS,
+                                              CUSTOMERNAME: ReportPDFCommonvar.CUSTOMER,
+                                              PARTNAME: ReportPDFCommonvar.PARTNAME,
+                                              PARTNO: ReportPDFCommonvar.PART,
+                                              CONTROLPLANNO: ReportPDFCommonvar.CP,
+                                              PRODUCTSTAGES: ReportPDFCommonvar.CUSTOMER,
+                                              PROCESS: ReportPDFCommonvar.CUST_FULLNM,
                                               MATERIAL: ReportPDFCommonvar.MATERIAL,
-                                              INSPECTIONSTDNO: ReportPDFCommonvar.INSPECTIONSTDNO,
+                                              INSPECTIONSTDNO: ReportPDFCommonvar.CUSTOMER,
                                             ),
 
                                             const SizedBox(height: 16), // spacing
@@ -600,237 +577,60 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                     ),
                                   ),
 
-                                  BODY7SLOT(
-                                    ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                    widget01: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC01 != ''
-                                            ? "Appearance for Rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
+                                  Column(
+                                    children: List.generate(3, (index) {
+                                      final remark = ReportPDFCommonvar.datalist[index].REMARK;
+                                      return BODY7SLOT(
+                                        ListFlex: [6, 1, 2, 2, 2, 4, 2],
+                                        widget01: Center(
+                                          child: Text(
+                                            "${index + 1}", // or any meaningful label
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    widget02: const Center(
-                                      child: Text(
-                                        "",
-                                        style: TextStyle(
-                                          fontSize: 16,
+                                        widget02: const Center(
+                                          child: Text(
+                                            "",
+                                            style: TextStyle(fontSize: 16),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    widget03: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC01 != ''
-                                            ? "Visual"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
+                                        widget03: Center(
+                                          child: Text(
+                                            "2", // replace if needed
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    widget04: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC01 != ''
-                                            ? "10 pcs/rcv.Lot"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
+                                        widget04: Center(
+                                          child: Text(
+                                            "3", // replace if needed
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    widget05: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC01 != ''
-                                            ? "No Rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
+                                        widget05: Center(
+                                          child: Text(
+                                            "4", // replace if needed
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    widget06: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC01 != ''
-                                            ? "No Rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
+                                        widget06: Center(
+                                          child: Text(
+                                            "5", // replace if needed
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    widget07: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.datalist[0].REMARK,
-                                        style: TextStyle(
-                                          fontSize: ReportPDFCommonvar
-                                                      .datalist[0]
-                                                      .REMARK
-                                                      .length >
-                                                  30
-                                              ? 12
-                                              : 16,
+                                        widget07: Center(
+                                          child: Text(
+                                            remark,
+                                            style: TextStyle(
+                                              fontSize: remark.length > 30 ? 12 : 16,
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                    ),
+                                      );
+                                    }),
                                   ),
 
-                                  BODY7SLOT(
-                                    ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                    widget01: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Appearance for scratch"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget02: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? ""
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget03: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Visual"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget04: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "10 pcs/rcv.Lot"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget05: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "No Scratch"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget06: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "No Scratch"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget07: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.datalist[0].REMARK,
-                                        style: TextStyle(
-                                          fontSize: ReportPDFCommonvar
-                                                      .datalist[0]
-                                                      .REMARK
-                                                      .length >
-                                                  30
-                                              ? 12
-                                              : 16,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
 
-                                  BODY7SLOT(
-                                    ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                    widget01: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Appearance for rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget02: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? ""
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget03: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "OP-HQC-03-001"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget04: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Visual"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget05: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "10 pcs. / Receiving lot"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget06: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "No rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget07: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.datalist[0].REMARK,
-                                        style: TextStyle(
-                                          fontSize: ReportPDFCommonvar
-                                                      .datalist[0]
-                                                      .REMARK
-                                                      .length >
-                                                  30
-                                              ? 12
-                                              : 16,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
 // INCOMING INSPECTION END
 
 //  FINAL INSPECTION START
@@ -924,550 +724,59 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                     ),
                                   ),
 
-                                  BODY7SLOT(
-                                    ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                    widget01: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Appearance for rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
+                                  Column(
+                                    children: List.generate(7, (index) {
+                                      final remark = ReportPDFCommonvar.datalist[index].REMARK;
+                                      return BODY7SLOT(
+                                        ListFlex: [6, 1, 2, 2, 2, 4, 2],
+                                        widget01: Center(
+                                          child: Text(
+                                            "${index + 1}", // Dynamic Label
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    widget02: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? ""
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
+                                        widget02: Center(
+                                          child: Text(
+                                            "2", // replace if needed with dynamic content
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    widget03: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "OP-HQC-03-001"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
+                                        widget03: Center(
+                                          child: Text(
+                                            "3", // replace if needed
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    widget04: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Visual"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
+                                        widget04: Center(
+                                          child: Text(
+                                            "4", // replace if needed
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    widget05: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "10 pcs. / Receiving lot"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
+                                        widget05: Center(
+                                          child: Text(
+                                            "5", // replace if needed
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    widget06: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "No rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
+                                        widget06: Center(
+                                          child: Text(
+                                            "6", // replace if needed
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    widget07: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.datalist[0].REMARK,
-                                        style: TextStyle(
-                                          fontSize: ReportPDFCommonvar
-                                                      .datalist[0]
-                                                      .REMARK
-                                                      .length >
-                                                  30
-                                              ? 12
-                                              : 16,
+                                        widget07: Center(
+                                          child: Text(
+                                            remark,
+                                            style: TextStyle(
+                                              fontSize: remark.length > 30 ? 12 : 16,
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                    ),
+                                      );
+                                    }),
                                   ),
 
-                                  BODY7SLOT(
-                                    ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                    widget01: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Appearance for rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget02: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? ""
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget03: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "OP-HQC-03-001"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget04: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Visual"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget05: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "10 pcs. / Receiving lot"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget06: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "No rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget07: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.datalist[0].REMARK,
-                                        style: TextStyle(
-                                          fontSize: ReportPDFCommonvar
-                                                      .datalist[0]
-                                                      .REMARK
-                                                      .length >
-                                                  30
-                                              ? 12
-                                              : 16,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-
-                                  BODY7SLOT(
-                                    ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                    widget01: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Appearance for rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget02: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? ""
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget03: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "OP-HQC-03-001"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget04: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Visual"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget05: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "10 pcs. / Receiving lot"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget06: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "No rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget07: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.datalist[0].REMARK,
-                                        style: TextStyle(
-                                          fontSize: ReportPDFCommonvar
-                                                      .datalist[0]
-                                                      .REMARK
-                                                      .length >
-                                                  30
-                                              ? 12
-                                              : 16,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-
-                                  BODY7SLOT(
-                                    ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                    widget01: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Appearance for rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget02: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? ""
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget03: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "OP-HQC-03-001"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget04: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Visual"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget05: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "10 pcs. / Receiving lot"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget06: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "No rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget07: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.datalist[0].REMARK,
-                                        style: TextStyle(
-                                          fontSize: ReportPDFCommonvar
-                                                      .datalist[0]
-                                                      .REMARK
-                                                      .length >
-                                                  30
-                                              ? 12
-                                              : 16,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-
-                                  BODY7SLOT(
-                                    ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                    widget01: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Appearance for rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget02: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? ""
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget03: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "OP-HQC-03-001"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget04: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Visual"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget05: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "10 pcs. / Receiving lot"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget06: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "No rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget07: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.datalist[0].REMARK,
-                                        style: TextStyle(
-                                          fontSize: ReportPDFCommonvar
-                                                      .datalist[0]
-                                                      .REMARK
-                                                      .length >
-                                                  30
-                                              ? 12
-                                              : 16,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-
-                                  BODY7SLOT(
-                                    ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                    widget01: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Appearance for rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget02: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? ""
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget03: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "OP-HQC-03-001"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget04: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Visual"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget05: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "10 pcs. / Receiving lot"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget06: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "No rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget07: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.datalist[0].REMARK,
-                                        style: TextStyle(
-                                          fontSize: ReportPDFCommonvar
-                                                      .datalist[0]
-                                                      .REMARK
-                                                      .length >
-                                                  30
-                                              ? 12
-                                              : 16,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-
-                                  BODY7SLOT(
-                                    ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                    widget01: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Appearance for rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget02: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? ""
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget03: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 =
-                                            "OP-HQC-03-001",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget04: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "Visual"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget05: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "10 pcs. / Receiving lot"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget06: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.INC02 != ''
-                                            ? "No rust"
-                                            : "",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                    widget07: Center(
-                                      child: Text(
-                                        ReportPDFCommonvar.datalist[0].REMARK,
-                                        style: TextStyle(
-                                          fontSize: ReportPDFCommonvar
-                                                      .datalist[0]
-                                                      .REMARK
-                                                      .length >
-                                                  30
-                                              ? 12
-                                              : 16,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
 
 // Final Inspection END
 
@@ -1483,11 +792,9 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                   SIGNWITHCUSTOMERSLOT(
                                     signs: true,
                                     PASS: ReportPDFCommonvar.PASS,
-                                    PICS: _dataCOMMON.databasic.PICstd,
-                                    NAME01:
-                                        _dataCOMMON.databasic.Inspected_sign,
-                                    NAME02: _dataCOMMON.databasic.Check_sign,
-                                    NAME03: _dataCOMMON.databasic.Approve_sign,
+                                    NAME01:_dataCOMMON.databasic.ApproveSigned,
+                                    NAME02: _dataCOMMON.databasic.CheckedBySigned,
+                                    NAME03: _dataCOMMON.databasic.IssuedBySigned,
                                     // NAME01: "",
                                     // NAME02: "",
                                     // NAME03: "",

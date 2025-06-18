@@ -53,8 +53,8 @@ class headerreport2 extends StatelessWidget {
 
     @override
   Widget build(BuildContext context) {
-    ReportPDFCommonvar.CUSTOMERNAME = CUSTOMERNAME ?? '';
-    print("CUSTOMERNAME: ${ReportPDFCommonvar.CUSTOMERNAME}");
+    ReportPDFCommonvar.CUSTOMER = CUSTOMERNAME ?? '';
+    print("CUSTOMERNAME: ${ReportPDFCommonvar.CUSTOMER}");
     return Column(
       children: [
         HEAD2SLOTNEW(
@@ -192,8 +192,8 @@ class headerreport2 extends StatelessWidget {
 
           widget02: Center(
             child: Text(
-              ReportPDFCommonvar.CUSTOMERNAME !=''
-              ? ReportPDFCommonvar.CUSTOMERNAME
+              ReportPDFCommonvar.CUSTOMER !=''
+              ? ReportPDFCommonvar.CUSTOMER
               : "No data",
             style: TextStyle(
               fontSize: 16,
