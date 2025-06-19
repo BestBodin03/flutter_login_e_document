@@ -7,6 +7,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:newmaster/bloc/BlocEvent/PhInspectionStandardBloc.dart';
 import 'package:newmaster/page/P32ReportPDFcommon/entities_models/ReportPDF.dart';
 import 'package:newmaster/page/P32ReportPDFcommon/entities_models/ReportPDFModels.dart';
 import 'package:newmaster/widget/ReportComponent/ReportImageCard.dart';
@@ -60,24 +61,13 @@ void initState() {
   }
 }
 
-void _showErrorDialog() {
-  // แสดง dialog หรือ snackbar เมื่อโหลดข้อมูลไม่สำเร็จ
-  if (mounted) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง'),
-        backgroundColor: Colors.red,
-      ),
-    );
-  }
-}
-
   final GlobalKey _globalKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     ReportPDFCommoncontext = context;
-
+    create: (context) => ReportPdfBloc();
+    child: const headerreport2();
     CommonReportOutput _dataCOMMON = widget.dataCommon ??
         CommonReportOutput(
           databasic: BasicCommonDATA(),
@@ -95,34 +85,25 @@ void _showErrorDialog() {
 
       ReportPDFCommonvar.PASS = _dataCOMMON.databasic.PASS;
 
-      // for (var i = 0; i < _dataCOMMON.datain.length; i++) {
-      //   String Loadin = '';
-      //   if (_dataCOMMON.datain[i].LOAD != '' &&
-      //       _dataCOMMON.datain[i].LOAD != '-') {
-      //     Loadin = "( Load ${_dataCOMMON.datain[i].LOAD} )";
-      //   }
-      //   ReportPDFCommonvar.datalist[i].ITEMname =
-      //       " ${_dataCOMMON.datain[i].ITEMname} ${Loadin}";
-      //   ReportPDFCommonvar.datalist[i].SCMARK = _dataCOMMON.datain[i].SCMARK;
-      //   ReportPDFCommonvar.datalist[i].METHODname =
-      //       _dataCOMMON.datain[i].METHODname;
-      //   ReportPDFCommonvar.datalist[i].FREQ = _dataCOMMON.datain[i].FREQ;
-      //   ReportPDFCommonvar.datalist[i].SPECIFICATIONname =
-      //       _dataCOMMON.datain[i].SPECIFICATION;
-      //   ReportPDFCommonvar.datalist[i].RESULT = _dataCOMMON.datain[i].RESULT;
-      //   ReportPDFCommonvar.datalist[i].REMARK = _dataCOMMON.datain[i].Remark;
-      //   //print(ReportPDFCommonvar.datalist[i].RESULT.length);
-      //   //Surface Hardness
+      for (var i = 0; i < _dataCOMMON.datain.length; i++) {
+        String Loadin = '';
+        if (_dataCOMMON.datain[i].LOAD != '' &&
+            _dataCOMMON.datain[i].LOAD != '-') {
+          Loadin = "( Load ${_dataCOMMON.datain[i].LOAD} )";
+        }
+        ReportPDFCommonvar.datalist[i].ITEMname =
+            " ${_dataCOMMON.datain[i].ITEMname} ${Loadin}";
+        ReportPDFCommonvar.datalist[i].SCMARK = _dataCOMMON.datain[i].SCMARK;
+        ReportPDFCommonvar.datalist[i].METHODname =
+            _dataCOMMON.datain[i].METHODname;
+        ReportPDFCommonvar.datalist[i].FREQUENCY = _dataCOMMON.datain[i].FREQUENCY;
+        ReportPDFCommonvar.datalist[i].SPECIFICATIONname =
+            _dataCOMMON.datain[i].SPECIFICATIONname;
+        ReportPDFCommonvar.datalist[i].REMARK = _dataCOMMON.datain[i].REMARK;
+        //print(ReportPDFCommonvar.datalist[i].RESULT.length);
+        //Surface Hardness
 
-      //     }
-
-          // ReportPDFCommonvar.rawlistGraphCore = rawlist(
-          //   DATAPCS: "Core",
-          //   DATA: ReportPDFCommonvar
-          //       .rawlistGraph[ReportPDFCommonvar.rawlistGraph.length - 1].DATA,
-          // );
-          // print(">>>${ReportPDFCommonvar.rawlistGraph.length}");
-          // ReportPDFCommonvar.rawlistGraph.removeLast();
+          }
 
       // print(ReportPDFCommonvar.datalist);
     } else {
@@ -144,12 +125,12 @@ void _showErrorDialog() {
         ReportPDFCommonlist(),
         ReportPDFCommonlist(),
         ReportPDFCommonlist(),
-        ReportPDFCommonlist(),
-        ReportPDFCommonlist(),
-        ReportPDFCommonlist(),
-        ReportPDFCommonlist(),
-        ReportPDFCommonlist(),
-        ReportPDFCommonlist(),
+        // ReportPDFCommonlist(),
+        // ReportPDFCommonlist(),
+        // ReportPDFCommonlist(),
+        // ReportPDFCommonlist(),
+        // ReportPDFCommonlist(),
+        // ReportPDFCommonlist(),
       ];
 
     }
@@ -471,16 +452,7 @@ void _showErrorDialog() {
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             // Header section
-                                            headerreport2(
-                                              CUSTOMERNAME: ReportPDFCommonvar.CUSTOMER,
-                                              PARTNAME: ReportPDFCommonvar.PARTNAME,
-                                              PARTNO: ReportPDFCommonvar.PART,
-                                              CONTROLPLANNO: ReportPDFCommonvar.CP,
-                                              PRODUCTSTAGES: ReportPDFCommonvar.CUSTOMER,
-                                              PROCESS: ReportPDFCommonvar.CUST_FULLNM,
-                                              MATERIAL: ReportPDFCommonvar.MATERIAL,
-                                              INSPECTIONSTDNO: ReportPDFCommonvar.CUSTOMER,
-                                            ),
+                                            headerreport2(),
 
                                             const SizedBox(height: 16), // spacing
                                             
@@ -578,13 +550,20 @@ void _showErrorDialog() {
                                   ),
 
                                   Column(
-                                    children: List.generate(3, (index) {
-                                      final remark = ReportPDFCommonvar.datalist[index].REMARK;
+                                  children: ReportPDFCommonvar.datalist
+                                      .asMap()
+                                      .entries
+                                      .take(3) // ✅ จำกัดให้เอาแค่ 3 รายการแรก
+                                      .map((entry) {
+                                        final index = entry.key;
+                                        final item = entry.value;
+                                        final remark = item.REMARK;
+
                                       return BODY7SLOT(
                                         ListFlex: [6, 1, 2, 2, 2, 4, 2],
                                         widget01: Center(
                                           child: Text(
-                                            "${index + 1}", // or any meaningful label
+                                            "${index + 1}",
                                             style: const TextStyle(fontSize: 16),
                                           ),
                                         ),
@@ -596,39 +575,40 @@ void _showErrorDialog() {
                                         ),
                                         widget03: Center(
                                           child: Text(
-                                            "2", // replace if needed
+                                            "2", // แก้ไขตามจริง
                                             style: const TextStyle(fontSize: 16),
                                           ),
                                         ),
                                         widget04: Center(
                                           child: Text(
-                                            "3", // replace if needed
+                                            "3", // แก้ไขตามจริง
                                             style: const TextStyle(fontSize: 16),
                                           ),
                                         ),
                                         widget05: Center(
                                           child: Text(
-                                            "4", // replace if needed
+                                            item.FREQUENCY,
                                             style: const TextStyle(fontSize: 16),
                                           ),
                                         ),
                                         widget06: Center(
                                           child: Text(
-                                            "5", // replace if needed
+                                            "5", // แก้ไขตามจริง
                                             style: const TextStyle(fontSize: 16),
                                           ),
                                         ),
                                         widget07: Center(
                                           child: Text(
-                                            remark,
+                                            "remark,",
                                             style: TextStyle(
                                               fontSize: remark.length > 30 ? 12 : 16,
                                             ),
                                           ),
                                         ),
                                       );
-                                    }),
+                                    }).toList(),
                                   ),
+
 
 
 // INCOMING INSPECTION END

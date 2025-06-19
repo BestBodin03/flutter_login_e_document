@@ -43,7 +43,7 @@ class FINALCHECKlistCommonClassModel extends FINALCHECKlistCommonClass {
     SPECIFICATIONname: jsonData['FINAL']['SPECIFICATION']['name'] ?? '',
     LOAD: jsonData['LOAD'] ?? '',
     Cross: jsonData['CROSS'] ?? '',
-    REMARK: jsonData['REmARK'] ?? '',
+    REMARK: jsonData['REMARK'] ?? '',
     REMARKDETAIL: jsonData['REMARKDETAIL'] ?? '',
 
 
