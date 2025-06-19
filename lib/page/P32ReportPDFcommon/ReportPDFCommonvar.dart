@@ -48,12 +48,12 @@ class ReportPDFCommonvar {
     ReportPDFCommonlist(),
     ReportPDFCommonlist(),
     ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
+    // ReportPDFCommonlist(),
+    // ReportPDFCommonlist(),
+    // ReportPDFCommonlist(),
+    // ReportPDFCommonlist(),
+    // ReportPDFCommonlist(),
+    // ReportPDFCommonlist(),
   ];
 }
 
@@ -122,11 +122,11 @@ ReportPDFACTclear() {
     ReportPDFCommonlist(),
     ReportPDFCommonlist(),
     ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
+    // ReportPDFCommonlist(),
+    // ReportPDFCommonlist(),
+    // ReportPDFCommonlist(),
+    // ReportPDFCommonlist(),
+    // ReportPDFCommonlist(),
+    // ReportPDFCommonlist(),
   ];
 }
