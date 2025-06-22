@@ -221,22 +221,22 @@ class headerreport2 extends StatelessWidget {
           ),
       BODY4SLOT(
         ListFlex: [4, 6, 4, 6],
-        widget01: Align(
+        widget01: const Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                ReportPDFCommonvar.PARTNAME != '' ?
-                ReportPDFCommonvar.PARTNAME :
-                "No data",
+                "Part Name",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16, // กำหนดขนาดตามต้องการ
                 ),
               ),
             ),
-        widget02: const Center(
+        widget02: Center(
               child: Text(
-                "CENTRAL SPRING CO., LTD.",
-              style: TextStyle(
+                ReportPDFCommonvar.PARTNAME != '' ?
+                ReportPDFCommonvar.PARTNAME :
+                "No Data",
+              style: const TextStyle(
                 fontSize: 16,
               ),
               textAlign: TextAlign.center,

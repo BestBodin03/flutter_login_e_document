@@ -5,6 +5,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:newmaster/bloc/BlocEvent/PhInspectionStandardBloc.dart';
 // import 'package:hydrated_bloc/hydrated_bloc.dart';
 // import 'package:path_provider/path_provider.dart';
 
@@ -42,6 +43,9 @@ class MyApp extends StatelessWidget {
       BlocProvider<BlocPageRebuild>(
         create: (BuildContext context) =>
             BlocPageRebuild(), //For rebuild only page inside without app bar/left menu
+      ),
+      BlocProvider<ReportPdfBloc>(  // <-- ✅ เพิ่ม Bloc นี้เข้าไป
+        create: (BuildContext context) => ReportPdfBloc(),
       ),
     ], child: const MainContext());
   }
