@@ -19,32 +19,4 @@ class LoadReportDataEvent extends PhInspectionStandardEvent {
   List<Object> get props => [po];
 }
 
-class UpdateReportDataEvent extends PhInspectionStandardEvent {
-  final CommonReportOutputModel reportData;
-  
-  const UpdateReportDataEvent({required this.reportData});
-  
-  @override
-  List<Object> get props => [reportData];
-}
-
 class ClearReportDataEvent extends PhInspectionStandardEvent {}
-
-class UpdateBasicDataEvent extends PhInspectionStandardEvent {
-  final BasicCommonDATAModel basicData;
-  
-  const UpdateBasicDataEvent({required this.basicData});
-  
-  @override
-  List<Object> get props => [basicData];
-}
-
-class UpdateChecklistItemEvent extends PhInspectionStandardEvent {
-  final int index;
-  final FINALCHECKlistCommonClassModel item;
-  
-  const UpdateChecklistItemEvent({required this.index, required this.item});
-  
-  @override
-  List<Object> get props => [index, item];
-}
