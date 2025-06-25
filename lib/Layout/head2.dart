@@ -1,68 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:newmaster/bloc/BlocEvent/PhInspectionStandardBloc.dart';
-import 'package:newmaster/bloc/BlocState/PhInspectionStandardState.dart';
+import 'package:newmaster/bloc/Cubit/report_pdf_cubit.dart';
 import 'package:newmaster/page/P32ReportPDFcommon/ReportPDFCommonvar.dart';
-import 'package:newmaster/page/P32ReportPDFcommon/entities_models/ReportPDF.dart';
 import 'package:newmaster/widget/ReportComponent/SingleSelectCheckboxRow.dart';
 
 import '../widget/ReportComponent/CommonReport.dart';
 
 class headerreport2 extends StatelessWidget {
   const headerreport2({Key? key}) : super(key: key);
-  // headerreport2({
-  //   super.key,
-  //   this.CUSTOMER,
-  //   this.PARTNAME,
-  //   this.PART,
-  //   this.CP,
-  //   this.CUST_FULLNM,
-  //   this.MATERIAL,
-  //   this.CONTROLPLANNO,
-  //   this.PRODUCTSTAGES,
-  //   this.PROCESS,
-  //   this.INSPECTIONSTDNO,
-  // });
-  // String? CUSTOMER;
-  // String? PARTNAME;
-  // String? PART;
-  // String? CP;
-  // String? CUST_FULLNM;
-  // String? MATERIAL;
-  // String? CONTROLPLANNO;
-  // String? PRODUCTSTAGES;
-  // String? PROCESS;
-  // String? INSPECTIONSTDNO;
-
-  // factory headerreport2.fromBasicData(BasicCommonDATA data) {
-  //   return headerreport2(
-  //       // 'CUSTOMER': String CUSTOMERNAME,
-  //       // 'PARTNAME': String PARTNAME,
-  //       // 'PARTNO': String PARTNO,
-  //       // 'CONTROLPLANNO': String CONTROLPLANNO,
-  //       // 'PRODUCTSTAGES': String PRODUCTSTAGES,
-  //       // 'PROCESS': String PROCESS,
-  //       // 'MATERIAL': String MATERIAL,
-  //       // 'INSPECTIONSTDNO': String INSPECTIONSTDNO,
-
-  //       CUSTOMER: data.CUSTOMER,
-  //       PARTNAME: data.PARTNAME,
-  //       PART: data.PART,
-  //       CP: data.CP,
-  //       CUST_FULLNM: data.CUST_FULLNM,
-  //       MATERIAL: data.MATERIAL,
-  //       CONTROLPLANNO: data.USER_STATUS ?? 'N/A',
-  //       PRODUCTSTAGES: data.USER_STATUS ?? 'N/A',
-  //       PROCESS: data.PROCESS,
-  //       INSPECTIONSTDNO: data.INSPECTIONSTDNO
-  //   );
-  // }
-
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ReportPdfBloc, PhInspectionStandardState>(
-    builder: (context, state) {
-      return Column(
+    return Column(
         children: [
           HEAD2SLOTNEW(
             ListFlex: const [5, 5],
@@ -361,7 +309,5 @@ class headerreport2 extends StatelessWidget {
       ),
         ],
       );
-    }
-    );
   }
 }
