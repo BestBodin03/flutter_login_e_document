@@ -7,7 +7,6 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:newmaster/bloc/BlocEvent/PhInspectionStandardBloc.dart';
 import 'package:newmaster/page/P32ReportPDFcommon/entities_models/ReportPDF.dart';
 import 'package:newmaster/page/P32ReportPDFcommon/entities_models/ReportPDFModels.dart';
 import 'package:newmaster/widget/ReportComponent/ReportImageCard.dart';
@@ -66,7 +65,7 @@ void initState() {
   @override
   Widget build(BuildContext context) {
     ReportPDFCommoncontext = context;
-    create: (context) => ReportPdfBloc();
+    create: (context) => ();
     child: const headerreport2();
     CommonReportOutput _dataCOMMON = widget.dataCommon ??
         CommonReportOutput(
@@ -85,25 +84,25 @@ void initState() {
 
       ReportPDFCommonvar.PASS = _dataCOMMON.databasic.PASS;
 
-      for (var i = 0; i < _dataCOMMON.datain.length; i++) {
-        String Loadin = '';
-        if (_dataCOMMON.datain[i].LOAD != '' &&
-            _dataCOMMON.datain[i].LOAD != '-') {
-          Loadin = "( Load ${_dataCOMMON.datain[i].LOAD} )";
-        }
-        ReportPDFCommonvar.datalist[i].ITEMname =
-            " ${_dataCOMMON.datain[i].ITEMname} ${Loadin}";
-        ReportPDFCommonvar.datalist[i].SCMARK = _dataCOMMON.datain[i].SCMARK;
-        ReportPDFCommonvar.datalist[i].METHODname =
-            _dataCOMMON.datain[i].METHODname;
-        ReportPDFCommonvar.datalist[i].FREQUENCY = _dataCOMMON.datain[i].FREQUENCY;
-        ReportPDFCommonvar.datalist[i].SPECIFICATIONname =
-            _dataCOMMON.datain[i].SPECIFICATIONname;
-        ReportPDFCommonvar.datalist[i].REMARK = _dataCOMMON.datain[i].REMARK;
-        //print(ReportPDFCommonvar.datalist[i].RESULT.length);
-        //Surface Hardness
+      // for (var i = 0; i < _dataCOMMON.datain.length; i++) {
+      //   String Loadin = '';
+      //   if (_dataCOMMON.datain[i].LOAD != '' &&
+      //       _dataCOMMON.datain[i].LOAD != '-') {
+      //     Loadin = "( Load ${_dataCOMMON.datain[i].LOAD} )";
+      //   }
+      //   ReportPDFCommonvar.datalist[i].ITEMname =
+      //       " ${_dataCOMMON.datain[i].ITEMname} ${Loadin}";
+      //   ReportPDFCommonvar.datalist[i].SCMARK = _dataCOMMON.datain[i].SCMARK;
+      //   ReportPDFCommonvar.datalist[i].METHODname =
+      //       _dataCOMMON.datain[i].METHODname;
+      //   ReportPDFCommonvar.datalist[i].FREQUENCY = _dataCOMMON.datain[i].FREQUENCY;
+      //   ReportPDFCommonvar.datalist[i].SPECIFICATIONname =
+      //       _dataCOMMON.datain[i].SPECIFICATIONname;
+      //   ReportPDFCommonvar.datalist[i].REMARK = _dataCOMMON.datain[i].REMARK;
+      //   //print(ReportPDFCommonvar.datalist[i].RESULT.length);
+      //   //Surface Hardness
 
-          }
+      //     }
 
       // print(ReportPDFCommonvar.datalist);
     } else {
@@ -117,21 +116,21 @@ void initState() {
       ReportPDFCommonvar.MATERIAL = '';
       ReportPDFCommonvar.CUST_FULLNM = '';
 
-      ReportPDFCommonvar.datalist = [
-        ReportPDFCommonlist(),
-        ReportPDFCommonlist(),
-        ReportPDFCommonlist(),
-        ReportPDFCommonlist(),
-        ReportPDFCommonlist(),
-        ReportPDFCommonlist(),
-        ReportPDFCommonlist(),
-        // ReportPDFCommonlist(),
-        // ReportPDFCommonlist(),
-        // ReportPDFCommonlist(),
-        // ReportPDFCommonlist(),
-        // ReportPDFCommonlist(),
-        // ReportPDFCommonlist(),
-      ];
+      // ReportPDFCommonvar.datalist = [
+      //   ReportPDFCommonlist(),
+      //   ReportPDFCommonlist(),
+      //   ReportPDFCommonlist(),
+      //   ReportPDFCommonlist(),
+      //   ReportPDFCommonlist(),
+      //   ReportPDFCommonlist(),
+      //   ReportPDFCommonlist(),
+      //   // ReportPDFCommonlist(),
+      //   // ReportPDFCommonlist(),
+      //   // ReportPDFCommonlist(),
+      //   // ReportPDFCommonlist(),
+      //   // ReportPDFCommonlist(),
+      //   // ReportPDFCommonlist(),
+      // ];
 
     }
 
@@ -550,14 +549,7 @@ void initState() {
                                   ),
 
                                   Column(
-                                  children: ReportPDFCommonvar.datalist
-                                      .asMap()
-                                      .entries
-                                      .take(3) // ✅ จำกัดให้เอาแค่ 3 รายการแรก
-                                      .map((entry) {
-                                        final index = entry.key;
-                                        final item = entry.value;
-                                        final remark = item.REMARK;
+                                  children: List.generate(7, (index) {
 
                                       return BODY7SLOT(
                                         ListFlex: [6, 1, 2, 2, 2, 4, 2],
@@ -587,7 +579,7 @@ void initState() {
                                         ),
                                         widget05: Center(
                                           child: Text(
-                                            item.FREQUENCY,
+                                            'item',
                                             style: const TextStyle(fontSize: 16),
                                           ),
                                         ),
@@ -601,7 +593,7 @@ void initState() {
                                           child: Text(
                                             "remark,",
                                             style: TextStyle(
-                                              fontSize: remark.length > 30 ? 12 : 16,
+                                              fontSize: 16,
                                             ),
                                           ),
                                         ),
@@ -706,7 +698,6 @@ void initState() {
 
                                   Column(
                                     children: List.generate(7, (index) {
-                                      final remark = ReportPDFCommonvar.datalist[index].REMARK;
                                       return BODY7SLOT(
                                         ListFlex: [6, 1, 2, 2, 2, 4, 2],
                                         widget01: Center(
@@ -747,9 +738,9 @@ void initState() {
                                         ),
                                         widget07: Center(
                                           child: Text(
-                                            remark,
+                                            'remark',
                                             style: TextStyle(
-                                              fontSize: remark.length > 30 ? 12 : 16,
+                                              fontSize: 16,
                                             ),
                                           ),
                                         ),

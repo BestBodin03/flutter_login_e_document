@@ -37,24 +37,7 @@ class ReportPDFCommonvar {
   static String TYPE = '';
   static String PASS = '';
   static String SignInsBy = '';
-
   
-
-  static List<ReportPDFCommonlist> datalist = [
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    // ReportPDFCommonlist(),
-    // ReportPDFCommonlist(),
-    // ReportPDFCommonlist(),
-    // ReportPDFCommonlist(),
-    // ReportPDFCommonlist(),
-    // ReportPDFCommonlist(),
-  ];
 }
 
 class ReportPDFCommonlist {
@@ -114,19 +97,4 @@ ReportPDFACTclear() {
   ReportPDFCommonvar.CUST_FULLNM = '';
   ReportPDFCommonvar.TPKLOTEDIT = '';
   ReportPDFCommonvar.TYPE = '';
-  ReportPDFCommonvar.datalist = [
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    ReportPDFCommonlist(),
-    // ReportPDFCommonlist(),
-    // ReportPDFCommonlist(),
-    // ReportPDFCommonlist(),
-    // ReportPDFCommonlist(),
-    // ReportPDFCommonlist(),
-    // ReportPDFCommonlist(),
-  ];
 }
