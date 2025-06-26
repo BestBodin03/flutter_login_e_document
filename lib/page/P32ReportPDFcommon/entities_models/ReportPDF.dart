@@ -1,4 +1,5 @@
 class FINALCHECKlistCommonClass {
+  // String SEQ;
   int NO;
   String TYPE;
   String ITEM;
@@ -17,10 +18,12 @@ class FINALCHECKlistCommonClass {
   String Cross;
   String REMARK;
   String REMARKDETAIL;
+  String DOCUMENT;
   // String SRAWDATA;
   // String RESULTDSW;
 
   FINALCHECKlistCommonClass({
+    // this.SEQ = '',
     this.NO = 0,
     this.TYPE = '',
     this.ITEM = '',
@@ -30,6 +33,7 @@ class FINALCHECKlistCommonClass {
     this.SCMARK = '',
     this.PCS = '',
     this.FREQUENCY = '',
+    this.DOCUMENT = '',
     // this.SPECIFICATION = '',
     this.SPECIFICATIONname = '',
     // this.SPECIFICATIONve = '',

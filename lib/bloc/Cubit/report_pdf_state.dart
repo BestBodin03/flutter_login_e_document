@@ -1,6 +1,7 @@
 // report_pdf_state.dart
 
 import 'package:equatable/equatable.dart';
+import 'package:newmaster/page/P32ReportPDFcommon/entities_models/ReportPDFModels.dart';
 
 abstract class ReportPDFState extends Equatable {
   const ReportPDFState();
@@ -13,7 +14,10 @@ class ReportPDFInitial extends ReportPDFState {}
 
 class ReportPDFLoading extends ReportPDFState {}
 
-class ReportPDFLoaded extends ReportPDFState {}
+class ReportPDFLoaded extends ReportPDFState {
+  final CommonReportOutputModel report; // model ของคุณ
+  ReportPDFLoaded(this.report);
+  }
 
 class ReportPDFError extends ReportPDFState {
   final String message;

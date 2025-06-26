@@ -7,6 +7,9 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:newmaster/bloc/Cubit/report_pdf_cubit.dart';
+import 'package:newmaster/bloc/Cubit/report_pdf_state.dart';
+import 'package:newmaster/page/P31ReportPDFcommon/ReportPDFCommonMain.dart';
 import 'package:newmaster/page/P32ReportPDFcommon/entities_models/ReportPDF.dart';
 import 'package:newmaster/page/P32ReportPDFcommon/entities_models/ReportPDFModels.dart';
 import 'package:newmaster/widget/ReportComponent/ReportImageCard.dart';
@@ -47,93 +50,40 @@ class ReportPDFCommon extends StatefulWidget {
 
 class _ReportPDFCommonState extends State<ReportPDFCommon> {
   @override
-void initState() {
-  super.initState();
-  ReportPDFCommonvar.TPKLOTEDIT = '';
-  print("ma rel");
-  
-  if (ReportPDFCommonvar.PO != '') {
-    ReportPDFCommonvar.canf = false;
-    // context
-    //     .read<ReportPDFCommon_Cubit>()
-    //     .ReportPDFCommonCubit(ReportPDFCommonvar.PO, "");
+  void initState() {
+    super.initState();
+    ReportPDFCommonvar.TPKLOTEDIT = '';
+    print("ma rel");
+
+    if (ReportPDFCommonvar.PO != '') {
+      ReportPDFCommonvar.canf = false;
+
+      // เรียกโหลดรายงานผ่าน Cubit โดยส่ง path ไฟล์ JSON (ตัวอย่าง)
+      context.read<ReportPDFCubit>().loadReportPDF('assets/mockData/testCP.json');
+    }
   }
-}
 
   final GlobalKey _globalKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
-    ReportPDFCommoncontext = context;
-    create: (context) => ();
-    child: const headerreport2();
-    CommonReportOutput _dataCOMMON = widget.dataCommon ??
-        CommonReportOutput(
-          databasic: BasicCommonDATA(),
-        );
-    if (_dataCOMMON.datain.isNotEmpty) {
-      //
-      ReportPDFCommonvar.STATUS = 'REPORT READY';
-      ReportPDFCommonvar.CP = '';
-      ReportPDFCommonvar.FG = '';
-      ReportPDFCommonvar.CUSTOMER = '';
-      ReportPDFCommonvar.PART = '';
-      ReportPDFCommonvar.PARTNAME = '';
-      ReportPDFCommonvar.MATERIAL = '';
-      ReportPDFCommonvar.CUST_FULLNM = '';
+    return BlocBuilder<ReportPDFCubit, ReportPDFState>(
+    builder: (context, state) {
+      if (state is ReportPDFLoading) {
+        return Center(child: CircularProgressIndicator());
+      } else if (state is ReportPDFLoaded) {
+        final report = state.report;
 
-      ReportPDFCommonvar.PASS = _dataCOMMON.databasic.PASS;
-
-      // for (var i = 0; i < _dataCOMMON.datain.length; i++) {
-      //   String Loadin = '';
-      //   if (_dataCOMMON.datain[i].LOAD != '' &&
-      //       _dataCOMMON.datain[i].LOAD != '-') {
-      //     Loadin = "( Load ${_dataCOMMON.datain[i].LOAD} )";
-      //   }
-      //   ReportPDFCommonvar.datalist[i].ITEMname =
-      //       " ${_dataCOMMON.datain[i].ITEMname} ${Loadin}";
-      //   ReportPDFCommonvar.datalist[i].SCMARK = _dataCOMMON.datain[i].SCMARK;
-      //   ReportPDFCommonvar.datalist[i].METHODname =
-      //       _dataCOMMON.datain[i].METHODname;
-      //   ReportPDFCommonvar.datalist[i].FREQUENCY = _dataCOMMON.datain[i].FREQUENCY;
-      //   ReportPDFCommonvar.datalist[i].SPECIFICATIONname =
-      //       _dataCOMMON.datain[i].SPECIFICATIONname;
-      //   ReportPDFCommonvar.datalist[i].REMARK = _dataCOMMON.datain[i].REMARK;
-      //   //print(ReportPDFCommonvar.datalist[i].RESULT.length);
-      //   //Surface Hardness
-
-      //     }
-
-      // print(ReportPDFCommonvar.datalist);
-    } else {
-      ReportPDFCommonvar.STATUS = 'WATTING or NO-DATA';
-
-      ReportPDFCommonvar.CP = '';
-      ReportPDFCommonvar.FG = '';
-      ReportPDFCommonvar.CUSTOMER = '';
-      ReportPDFCommonvar.PART = '';
-      ReportPDFCommonvar.PARTNAME = '';
-      ReportPDFCommonvar.MATERIAL = '';
-      ReportPDFCommonvar.CUST_FULLNM = '';
-
-      // ReportPDFCommonvar.datalist = [
-      //   ReportPDFCommonlist(),
-      //   ReportPDFCommonlist(),
-      //   ReportPDFCommonlist(),
-      //   ReportPDFCommonlist(),
-      //   ReportPDFCommonlist(),
-      //   ReportPDFCommonlist(),
-      //   ReportPDFCommonlist(),
-      //   // ReportPDFCommonlist(),
-      //   // ReportPDFCommonlist(),
-      //   // ReportPDFCommonlist(),
-      //   // ReportPDFCommonlist(),
-      //   // ReportPDFCommonlist(),
-      //   // ReportPDFCommonlist(),
-      // ];
-
-    }
-
+        if (report.datain.isNotEmpty) {
+          ReportPDFCommonvar.STATUS = 'REPORT READY';
+          ReportPDFCommonvar.PASS = report.databasic.PASS;
+          // รีเซ็ตค่าอื่น ๆ ตามต้องการ
+        } else {
+          ReportPDFCommonvar.STATUS = 'WAITING or NO-DATA';
+          // รีเซ็ตค่าอื่น ๆ ตามต้องการ
+        }
+        
+    
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -289,7 +239,7 @@ void initState() {
                 ),
               ] else ...[
                 if (USERDATA.UserLV > 5 &&
-                    _dataCOMMON.databasic.USER_STATUS == 'QCFN') ...[
+                    true) ...[
                   Padding(
                     padding: const EdgeInsets.all(3.0),
                     child: InkWell(
@@ -452,8 +402,19 @@ void initState() {
                                           children: [
                                             // Header section
                                             headerreport2(),
-
-                                            const SizedBox(height: 16), // spacing
+                                            // headerreport2(
+                                            //   CUSTOMER: ReportPDFCommonvar.CUSTOMER,
+                                            //   PARTNAME: ReportPDFCommonvar.PARTNAME,
+                                            //   PROCESS: ReportPDFCommonvar.PROCESS,
+                                            //   PARTNO: ReportPDFCommonvar.PART, 
+                                            //   MATERIAL: ReportPDFCommonvar.MATERIAL,
+                                            //   CONTROLPLANNO: ReportPDFCommonvar.CP,
+                                            //   INSPECTIONSTDNO: ReportPDFCommonvar.INSPECTIONSTDNO
+                                            // ),
+                                            const SizedBox(height: 16), 
+                                            // ignore: avoid_print
+                                            
+// spacing
                                             
                                           ],
                                         ),
@@ -549,57 +510,62 @@ void initState() {
                                   ),
 
                                   Column(
-                                  children: List.generate(7, (index) {
+                                    children: List.generate(
+                                      report.datain.length > 10 ? 10 : report.datain.length, // จำกัดไม่เกิน 10
+                                      (index) {
+                                        final item = report.datain[index]; // ใช้ตัวแปร item ตาม index
 
-                                      return BODY7SLOT(
-                                        ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                        widget01: Center(
-                                          child: Text(
-                                            "${index + 1}",
-                                            style: const TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                        widget02: const Center(
-                                          child: Text(
-                                            "",
-                                            style: TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                        widget03: Center(
-                                          child: Text(
-                                            "2", // แก้ไขตามจริง
-                                            style: const TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                        widget04: Center(
-                                          child: Text(
-                                            "3", // แก้ไขตามจริง
-                                            style: const TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                        widget05: Center(
-                                          child: Text(
-                                            'item',
-                                            style: const TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                        widget06: Center(
-                                          child: Text(
-                                            "5", // แก้ไขตามจริง
-                                            style: const TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                        widget07: Center(
-                                          child: Text(
-                                            "remark,",
-                                            style: TextStyle(
-                                              fontSize: 16,
+                                        return BODY7SLOT(
+                                          ListFlex: [6, 1, 2, 2, 2, 4, 2],
+                                          widget01: Center(
+                                            child: Text(
+                                              "${index + 1}",
+                                              style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
-                                        ),
-                                      );
-                                    }).toList(),
+                                          widget02: const Center(
+                                            child: Text(
+                                              "2",
+                                              style: TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                          widget03: Center(
+                                            child: Text(
+                                              item.DOCUMENT ?? '', // ✅ ดึงข้อมูลจาก item.DOCUMENT
+                                              style: const TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                          widget04: const Center(
+                                            child: Text(
+                                              "4",
+                                              style: TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                          widget05: const Center(
+                                            child: Text(
+                                              "5",
+                                              style: TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                          widget06: const Center(
+                                            child: Text(
+                                              "6",
+                                              style: TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                          widget07: const Center(
+                                            child: Text(
+                                              "remark",
+                                              style: TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ),
                                   ),
+
+
+
 
 
 
@@ -696,57 +662,59 @@ void initState() {
                                     ),
                                   ),
 
-                                  Column(
-                                    children: List.generate(7, (index) {
-                                      return BODY7SLOT(
-                                        ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                        widget01: Center(
-                                          child: Text(
-                                            "${index + 1}", // Dynamic Label
-                                            style: const TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                        widget02: Center(
-                                          child: Text(
-                                            "2", // replace if needed with dynamic content
-                                            style: const TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                        widget03: Center(
-                                          child: Text(
-                                            "3", // replace if needed
-                                            style: const TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                        widget04: Center(
-                                          child: Text(
-                                            "4", // replace if needed
-                                            style: const TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                        widget05: Center(
-                                          child: Text(
-                                            "5", // replace if needed
-                                            style: const TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                        widget06: Center(
-                                          child: Text(
-                                            "6", // replace if needed
-                                            style: const TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                        widget07: Center(
-                                          child: Text(
-                                            'remark',
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                            ),
-                                          ),
-                                        ),
-                                      );
-                                    }),
-                                  ),
+                                  // Column(
+                                  //   children: List.generate((data?.datain.length ?? 0) > 10 ? 10 : (data?.datain.length ?? 0),
+                                  //     (index) {
+                                  //     final item = data?.datain[index]; // ดึงแต่ละ object
+
+                                  //     return BODY7SLOT(
+                                  //       ListFlex: [6, 1, 2, 2, 2, 4, 2],
+                                  //       widget01: const Center(
+                                  //         child: Text(
+                                  //           "1", // ค่าคงที่หรือเปลี่ยนได้ตามต้องการ
+                                  //           style: TextStyle(fontSize: 16),
+                                  //         ),
+                                  //       ),
+                                  //       widget02: const Center(
+                                  //         child: Text(
+                                  //           "2",
+                                  //           style: TextStyle(fontSize: 16),
+                                  //         ),
+                                  //       ),
+                                  //       widget03: Center(
+                                  //         child: Text(
+                                  //           item?.DOCUMENT ?? '-',// ใส่ข้อมูลจาก datain ตรงนี้
+                                  //           style: const TextStyle(fontSize: 16),
+                                  //         ),
+                                  //       ),
+                                  //       widget04: const Center(
+                                  //         child: Text(
+                                  //           "4",
+                                  //           style: TextStyle(fontSize: 16),
+                                  //         ),
+                                  //       ),
+                                  //       widget05: const Center(
+                                  //         child: Text(
+                                  //           "5",
+                                  //           style: TextStyle(fontSize: 16),
+                                  //         ),
+                                  //       ),
+                                  //       widget06: const Center(
+                                  //         child: Text(
+                                  //           "6",
+                                  //           style: TextStyle(fontSize: 16),
+                                  //         ),
+                                  //       ),
+                                  //       widget07: const Center(
+                                  //         child: Text(
+                                  //           "remark",
+                                  //           style: TextStyle(fontSize: 16),
+                                  //         ),
+                                  //       ),
+                                  //     );
+                                  //   }),
+                                  // ),
+
 
 
 // Final Inspection END
@@ -763,9 +731,9 @@ void initState() {
                                   SIGNWITHCUSTOMERSLOT(
                                     signs: true,
                                     PASS: ReportPDFCommonvar.PASS,
-                                    NAME01:_dataCOMMON.databasic.ApproveSigned,
-                                    NAME02: _dataCOMMON.databasic.CheckedBySigned,
-                                    NAME03: _dataCOMMON.databasic.IssuedBySigned,
+                                    // NAME01:_dataCOMMON.databasic.ApproveSigned,
+                                    // NAME02: _dataCOMMON.databasic.CheckedBySigned,
+                                    // NAME03: _dataCOMMON.databasic.IssuedBySigned,
                                     // NAME01: "",
                                     // NAME02: "",
                                     // NAME03: "",
@@ -834,35 +802,8 @@ void initState() {
         ],
       ),
     );
+      }
+      throw Center(child: Text('Please wait...'));
+  });
   }
 }
-
-List<int> S16slot = const [
-  3,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1
-];

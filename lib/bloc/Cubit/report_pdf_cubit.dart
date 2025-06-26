@@ -14,37 +14,62 @@ Future<void> loadReportPDF(String assetPath) async {
   emit(ReportPDFLoading());
   try {
     final jsonString = await rootBundle.loadString(assetPath);
-    final rawData = jsonDecode(jsonString);
+    final jsonData = jsonDecode(jsonString);
+
+    // // ✅ ตรวจสอบ DOCUMENT และ SPECIFICATION.name จาก INCOMING
+    final incoming = jsonData['INCOMMING'] as List? ?? [];
+
+    // print(incoming);
+    // print(incoming.length);
+    // for (var item in incoming) {
+    //   final doc = item['SEQ']?.toString() ?? '';;
+    //   final specList = item['SPECIFICATION'] as List<dynamic>? ?? [];
+    //   final specName = specList.isNotEmpty
+    //       ? specList[0]['name']?.toString() ?? ''
+    //       : '';
+
+    //   print('📄 DOCUMENT: $doc');
+    //   print('🔧 SPECIFICATION name: $specName');
+    // }
 
     // Transform into expected structure
-    final transformed = {
-      'databasic': {
-        'CP': rawData['CP'],
-        'FG': rawData['FG'],
-        'CUSTOMER': rawData['CUSTOMER'],
-        'PART': rawData['PART'],
-        'PARTNAME': rawData['PARTNAME'],
-        'MATERIAL': rawData['MATERIAL'],
-        'CUST_FULLNM': rawData['CUST_FULLNM'],
-        'PROCESS': rawData['PROCESS'],
-        'INSPECTIONSTDNO': rawData['INSPECTIONSTDNO'] ?? '',
-        'TPKLOT': rawData['TPKLOT'] ?? '',
-        'Pimg': rawData['Pimg']?['P1'] ?? '',
-      },
-      'datain': rawData['FINAL'] ?? [],
-    };
+  final transformed = {
+    'databasic': {
+      'CP': jsonData['CP'],
+      'FG': jsonData['FG'],
+      'CUSTOMER': jsonData['CUSTOMER'],
+      'PART': jsonData['PART'],
+      'PARTNAME': jsonData['PARTNAME'],
+      'CONTROLPLANNO': jsonData['CP'],
+      'MATERIAL': jsonData['MATERIAL'],
+      'CUST_FULLNM': jsonData['CUST_FULLNM'],
+      'PROCESS': jsonData['PROCESS'],
+      'INSPECTIONSTDNO': jsonData['INSPECTIONSTDNO'] ?? '',
+      'TPKLOT': jsonData['TPKLOT'] ?? '',
+      'Pimg': jsonData['Pimg']?['P1'] ?? '',
+    },
+    'datain': incoming
+  };
+
 
     final report = CommonReportOutputModel.fromJson(transformed);
 
-    final basic = report.databasic;
-    ReportPDFCommonvar.CUSTOMER = basic.CUSTOMER ?? '';
-    ReportPDFCommonvar.PARTNAME = basic.PARTNAME ?? '';
-    ReportPDFCommonvar.PROCESS = basic.PROCESS ?? '';
-    ReportPDFCommonvar.PART = basic.PART ?? '';
-    ReportPDFCommonvar.MATERIAL = basic.MATERIAL ?? '';
-    ReportPDFCommonvar.INSPECTIONSTDNO = basic.INSPECTIONSTDNO ?? '';
+    /* 
+    IF WANT TO ASSIGN TO STATIC VAR
+    */
 
-    emit(ReportPDFLoaded());
+    // final basic = report.databasic;
+
+    // ReportPDFCommonvar.CUSTOMER = basic.CUSTOMER ?? '';
+    // ReportPDFCommonvar.PARTNAME = basic.PARTNAME ?? '';
+    // ReportPDFCommonvar.PROCESS = basic.PROCESS ?? '';
+    // ReportPDFCommonvar.PART = basic.PART ?? '';
+    // ReportPDFCommonvar.MATERIAL = basic.MATERIAL ?? '';
+    // ReportPDFCommonvar.INSPECTIONSTDNO = basic.INSPECTIONSTDNO ?? '';
+    // ReportPDFCommonvar.CP = basic.CP ?? '';
+
+
+    emit(ReportPDFLoaded(report));
   } catch (e) {
     emit(ReportPDFError('Failed to load: $e'));
   }
