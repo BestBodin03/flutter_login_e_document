@@ -20,6 +20,7 @@ class ReportPDFCommonvar {
   static String CUSLOT = '';
   static String TPKLOT = '';
   static String Pimg = '';
+  static String DOCUMENT = '';
 
   static String USER_STATUS = '';
   static String reportset = '';
@@ -42,6 +43,7 @@ class ReportPDFCommonvar {
 
 class ReportPDFCommonlist {
   ReportPDFCommonlist({
+    this.SEQ = '',
     this.NO = 0,
     this.TYPE = '',
     this.ITEM = '',
@@ -62,7 +64,9 @@ class ReportPDFCommonlist {
     this.REMARKDETAIL = '',
     // this.SRAWDATA = '',
     // this.RESULTDSW = '',
+    this.DOCUMENT = ''
   });
+  String SEQ;
   int NO;
   String TYPE;
   String ITEM;
@@ -81,6 +85,8 @@ class ReportPDFCommonlist {
   String Cross;
   String REMARK;
   String REMARKDETAIL;
+  String DOCUMENT;
+  
   // String SRAWDATA;
   // String RESULTDSW;
 }

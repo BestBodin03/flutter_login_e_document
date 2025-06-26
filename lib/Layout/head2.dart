@@ -1,15 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:newmaster/bloc/Cubit/report_pdf_cubit.dart';
+import 'package:newmaster/bloc/Cubit/report_pdf_state.dart';
 import 'package:newmaster/page/P32ReportPDFcommon/ReportPDFCommonvar.dart';
 import 'package:newmaster/widget/ReportComponent/SingleSelectCheckboxRow.dart';
 
 import '../widget/ReportComponent/CommonReport.dart';
 
 class headerreport2 extends StatelessWidget {
-  const headerreport2({Key? key}) : super(key: key);
+  const headerreport2({super.key});
+  //   this.CUSTOMER,
+  //   this.PARTNAME,
+  //   this.PROCESS,
+  //   this.PARTNO,
+  //   this.MATERIAL,
+  //   this.CONTROLPLANNO,
+  //   this.INSPECTIONSTDNO
+
+  // });
+  //   String ? CUSTOMER;
+  //   String ? PARTNAME;
+  //   String ? PROCESS;
+  //   String ? PARTNO;
+  //   String ? MATERIAL;
+  //   String ? CONTROLPLANNO;
+  //   String ? INSPECTIONSTDNO;
   @override
   Widget build(BuildContext context) {
+    final state = context.watch<ReportPDFCubit>().state;
+
+    if (state is ReportPDFLoaded) {
+    final data = state.report;
+    
     return Column(
         children: [
           HEAD2SLOTNEW(
@@ -92,7 +114,7 @@ class headerreport2 extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "(มาตรฐานการตรวจผลิตภัณฑ์ สำหรับกระบวนการ Phosphate)",
+                                "มาตรฐานการตรวจผลิตภัณฑ์ สำหรับกระบวนการ Phosphate",
                                 style: TextStyle(
                                   fontSize: 16,
                                 ),
@@ -147,12 +169,11 @@ class headerreport2 extends StatelessWidget {
 
             widget02: Center(
               child: Text(
-                // ReportPDFCommonvar.CUSTOMER !=''
-                // ? ReportPDFCommonvar.CUSTOMER
-                // : "No data",
-                ReportPDFCommonvar.CUSTOMER != '' ?
-                ReportPDFCommonvar.CUSTOMER :
-                "No data",
+              ((data.databasic.CUST_FULLNM ?? '').trim().isNotEmpty
+                  ? data.databasic.CUST_FULLNM
+                  : (data.databasic.CUSTOMER ?? '').trim().isNotEmpty
+                      ? data.databasic.CUSTOMER
+                      : '-')!,
               style: TextStyle(
                 fontSize: 16,
               ),
@@ -172,7 +193,7 @@ class headerreport2 extends StatelessWidget {
         widget01: const Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                "Part Name",
+                "PART NAME",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16, // กำหนดขนาดตามต้องการ
@@ -181,9 +202,9 @@ class headerreport2 extends StatelessWidget {
             ),
         widget02: Center(
               child: Text(
-                ReportPDFCommonvar.PARTNAME != '' ?
-                ReportPDFCommonvar.PARTNAME :
-                "No Data",
+                ((data.databasic.PARTNAME ?? '').trim().isNotEmpty
+                  ? data.databasic.PARTNAME
+                  : '-') ?? '-',
               style: const TextStyle(
                 fontSize: 16,
               ),
@@ -202,9 +223,9 @@ class headerreport2 extends StatelessWidget {
             ),
         widget04: Center(
               child: Text(
-                ReportPDFCommonvar.PROCESS != '' ?
-                ReportPDFCommonvar.PROCESS :
-                "No data",
+                ((data.databasic.PROCESS ?? '').trim().isNotEmpty
+                  ? data.databasic.PROCESS
+                  : '-') ?? '-',
               style: TextStyle(
                 fontSize: 16,
               ),
@@ -228,9 +249,9 @@ class headerreport2 extends StatelessWidget {
             ),
         widget02:  Center(
               child: Text(
-                ReportPDFCommonvar.PART != '' ?
-                ReportPDFCommonvar.PART :
-                "No data",
+                ((data.databasic.PART ?? '').trim().isNotEmpty
+                  ? data.databasic.PART
+                  : '-') ?? '-',
               style: TextStyle(
                 fontSize: 16,
               ),
@@ -249,9 +270,9 @@ class headerreport2 extends StatelessWidget {
             ),
         widget04: Center(
               child: Text(
-                ReportPDFCommonvar.MATERIAL != '' ?
-                ReportPDFCommonvar.MATERIAL :
-                "No data",
+                ((data.databasic.MATERIAL ?? '').trim().isNotEmpty
+                  ? data.databasic.MATERIAL
+                  : '-') ?? '-',
               style: TextStyle(
                 fontSize: 16,
               ),
@@ -275,9 +296,9 @@ class headerreport2 extends StatelessWidget {
             ),
         widget02: Center(
               child: Text(
-                ReportPDFCommonvar.CUSTOMER != '' ?
-                ReportPDFCommonvar.CUSTOMER :
-                "No data",
+                ((data.databasic.CP ?? '').trim().isNotEmpty
+                  ? data.databasic.CP
+                  : '-') ?? '-',
               style: TextStyle(
                 fontSize: 16,
               ),
@@ -296,9 +317,9 @@ class headerreport2 extends StatelessWidget {
             ),
         widget04: Center(
               child: Text(
-                ReportPDFCommonvar.INSPECTIONSTDNO != '' ?
-                ReportPDFCommonvar.INSPECTIONSTDNO :
-                "No data",
+                ((data.databasic.INSPECTIONSTDNO ?? '').trim().isNotEmpty
+                  ? data.databasic.INSPECTIONSTDNO
+                  : '-') ?? '-',
               style: TextStyle(
                 fontSize: 16,
               ),
@@ -309,5 +330,7 @@ class headerreport2 extends StatelessWidget {
       ),
         ],
       );
+  }
+  return const SizedBox();
   }
 }

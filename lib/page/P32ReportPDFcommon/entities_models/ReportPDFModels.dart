@@ -6,6 +6,7 @@ import 'ReportPDF.dart';
 
 class FINALCHECKlistCommonClassModel extends FINALCHECKlistCommonClass {
   FINALCHECKlistCommonClassModel({
+    // super.SEQ = '',
     super.NO = 0,
     super.TYPE = '',
     super.ITEM = '',
@@ -20,6 +21,7 @@ class FINALCHECKlistCommonClassModel extends FINALCHECKlistCommonClass {
     super.Cross = '',
     super.REMARK = '',
     super.REMARKDETAIL = '',
+    super.DOCUMENT = '',
 
     // this.SPECIFICATIONve = '',
     // this.RESULT = '',
@@ -31,28 +33,32 @@ class FINALCHECKlistCommonClassModel extends FINALCHECKlistCommonClass {
 
   factory FINALCHECKlistCommonClassModel.fromJson(Map<String, dynamic> jsonData) {
     return FINALCHECKlistCommonClassModel(
-    NO: jsonData['NO'] ?? 0,
-    TYPE: jsonData['TYPE'] ?? '',
-    ITEM: jsonData['ITEM'] ?? '',
-    ITEMname: jsonData['ITEMname'] ?? '',
-    METHOD: jsonData['METHOD'] ?? '',
-    METHODname: jsonData['METHODname'] ?? '',
-    SCMARK: jsonData['FINAL']['SEQ'] ?? '',
-    PCS: jsonData['FINAL']['PCS'] ?? '',
-    FREQUENCY: jsonData['FINAL']['FREQUENCY'] ?? '',
-    SPECIFICATIONname: jsonData['FINAL']['SPECIFICATION']['name'] ?? '',
-    LOAD: jsonData['LOAD'] ?? '',
-    Cross: jsonData['CROSS'] ?? '',
-    REMARK: jsonData['REMARK'] ?? '',
-    REMARKDETAIL: jsonData['REMARKDETAIL'] ?? '',
+      // SEQ: jsonData['SEQ']?? '',
+      NO: jsonData['NO'] ?? 0,
+      TYPE: jsonData['TYPE'] ?? '',
+      ITEM: jsonData['ITEM'] ?? '',
+      ITEMname: jsonData['ITEMname'] ?? '',
+      METHOD: jsonData['METHOD'] ?? '',
+      METHODname: jsonData['METHODname'] ?? '',
+      SCMARK: jsonData['SCMARK']?.toString() ?? '',
+      PCS: jsonData['PCS']?.toString() ?? '',
+      FREQUENCY: jsonData['FREQUENCY']?.toString() ?? '',
+      SPECIFICATIONname: (jsonData['SPECIFICATION'] as List?)?.isNotEmpty == true
+      ? jsonData['SPECIFICATION'][0]['name']?.toString() ?? ''
+      : '',
+      LOAD: jsonData['LOAD'] ?? '',
+      Cross: jsonData['CROSS'] ?? '',
+      REMARK: jsonData['REMARK'] ?? '',
+      REMARKDETAIL: jsonData['REMARKDETAIL'] ?? '',
+      DOCUMENT: jsonData['DOCUMENT']?.toString()?? '',
 
 
-      // SPECIFICATION: json['SPECIFICATION'] ?? '',
-      // SPECIFICATIONve: json['SPECIFICATIONve'] ?? '',
-      // RESULT: json['RESULT'] ?? '',
-      // CONTROLlimmit: json['CONTROLlimmit'] ?? '',
-      // SRAWDATA: json['SRAWDATA'] ?? '',
-      // RESULTDSW: json['RESULTDSW'] ?? '',
+        // SPECIFICATION: json['SPECIFICATION'] ?? '',
+        // SPECIFICATIONve: json['SPECIFICATIONve'] ?? '',
+        // RESULT: json['RESULT'] ?? '',
+        // CONTROLlimmit: json['CONTROLlimmit'] ?? '',
+        // SRAWDATA: json['SRAWDATA'] ?? '',
+        // RESULTDSW: json['RESULTDSW'] ?? '',
     );
   }
 }
@@ -92,6 +98,7 @@ class BasicCommonDATAModel extends BasicCommonDATA {
       CUSTOMER: json['CUSTOMER'] ?? '',
       PROCESS: json['PROCESS'] ?? '',
       PARTNAME: json['PARTNAME'] ?? '',
+      PART: json['PART'] ?? '',
       CUSLOT: json['CUSLOT'] ?? '',
       TPKLOT: json['TPKLOT'] ?? '',
       MATERIAL: json['MATERIAL'] ?? '',
@@ -125,17 +132,18 @@ class BasicCommonDATAModel extends BasicCommonDATA {
 
 class CommonReportOutputModel extends CommonReportOutput {
   CommonReportOutputModel({
-    super.datain,
     required super.databasic,
+    super.datain,
   });
 
   factory CommonReportOutputModel.fromJson(Map<String, dynamic> json) {
     return CommonReportOutputModel(
       databasic: BasicCommonDATAModel.fromJson(json['databasic']),
-      datain: (json['datain'] as List<dynamic>)
-          .map((item) => FINALCHECKlistCommonClassModel.fromJson(item))
+      datain: (json['datain'] as List? ?? [])
+          .map((e) => FINALCHECKlistCommonClassModel.fromJson(e))
           .toList(),
     );
   }
 }
+
 
