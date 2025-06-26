@@ -108,9 +108,11 @@ class BasicCommonDATA {
 class CommonReportOutput {
   CommonReportOutput({
     this.datain = const [],
+    this.datafn = const [],
     required this.databasic,
   });
 
   List<FINALCHECKlistCommonClass> datain;
+  List<FINALCHECKlistCommonClass> datafn;
   BasicCommonDATA databasic;
 }

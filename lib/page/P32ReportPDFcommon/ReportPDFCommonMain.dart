@@ -34,8 +34,6 @@ import '../../widget/common/IMGview.dart';
 import '../../widget/common/Safty.dart';
 import 'ReportPDFCommonvar.dart';
 
-Uint8List imageBytes = base64Decode(inspectStandarSampleImg);
-
 late BuildContext ReportPDFCommoncontext;
 
 class ReportPDFCommon extends StatefulWidget {
@@ -402,19 +400,7 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                           children: [
                                             // Header section
                                             headerreport2(),
-                                            // headerreport2(
-                                            //   CUSTOMER: ReportPDFCommonvar.CUSTOMER,
-                                            //   PARTNAME: ReportPDFCommonvar.PARTNAME,
-                                            //   PROCESS: ReportPDFCommonvar.PROCESS,
-                                            //   PARTNO: ReportPDFCommonvar.PART, 
-                                            //   MATERIAL: ReportPDFCommonvar.MATERIAL,
-                                            //   CONTROLPLANNO: ReportPDFCommonvar.CP,
-                                            //   INSPECTIONSTDNO: ReportPDFCommonvar.INSPECTIONSTDNO
-                                            // ),
                                             const SizedBox(height: 16), 
-                                            // ignore: avoid_print
-                                            
-// spacing
                                             
                                           ],
                                         ),
@@ -511,7 +497,7 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
 
                                   Column(
                                     children: List.generate(
-                                      report.datain.length > 10 ? 10 : report.datain.length, // จำกัดไม่เกิน 10
+                                      report.datain.length > 3 ? 3 : report.datain.length, // จำกัดไม่เกิน 3
                                       (index) {
                                         final item = report.datain[index]; // ใช้ตัวแปร item ตาม index
 
@@ -531,7 +517,7 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                           ),
                                           widget03: Center(
                                             child: Text(
-                                              item.DOCUMENT ?? '-', // ✅ ดึงข้อมูลจาก item.DOCUMENT
+                                              item.DOCUMENT?.trim().isNotEmpty == true ? item.DOCUMENT : '-',
                                               style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
@@ -543,13 +529,13 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                           ),
                                           widget05: Center(
                                             child: Text(
-                                              '${item.PCS ?? '-'} ${item.FREQUENCY ?? '-'}',
+                                              '${item.PCS?.trim().isNotEmpty == true ? item.PCS : ''} ${item.FREQUENCY?.trim().isNotEmpty == true ? item.FREQUENCY : ''}',
                                               style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
                                           widget06: Center(
                                             child: Text(
-                                              item.SPECIFICATIONname ?? '-',
+                                              item.SPECIFICATIONname?.trim().isNotEmpty == true ? item.SPECIFICATIONname : '-',
                                               style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
@@ -662,71 +648,71 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                     ),
                                   ),
 
-                                  // Column(
-                                  //   children: List.generate((data?.datain.length ?? 0) > 10 ? 10 : (data?.datain.length ?? 0),
-                                  //     (index) {
-                                  //     final item = data?.datain[index]; // ดึงแต่ละ object
+                                  Column(
+                                    children: List.generate((report.datafn.length ?? 0) > 10 ? 10 : (report.datafn.length ?? 0),
+                                      (index) {
+                                      final item = report.datafn[index]; // ดึงแต่ละ object
 
-                                  //     return BODY7SLOT(
-                                  //       ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                  //       widget01: const Center(
-                                  //         child: Text(
-                                  //           "1", // ค่าคงที่หรือเปลี่ยนได้ตามต้องการ
-                                  //           style: TextStyle(fontSize: 16),
-                                  //         ),
-                                  //       ),
-                                  //       widget02: const Center(
-                                  //         child: Text(
-                                  //           "2",
-                                  //           style: TextStyle(fontSize: 16),
-                                  //         ),
-                                  //       ),
-                                  //       widget03: Center(
-                                  //         child: Text(
-                                  //           item?.DOCUMENT ?? '-',// ใส่ข้อมูลจาก datain ตรงนี้
-                                  //           style: const TextStyle(fontSize: 16),
-                                  //         ),
-                                  //       ),
-                                  //       widget04: const Center(
-                                  //         child: Text(
-                                  //           "4",
-                                  //           style: TextStyle(fontSize: 16),
-                                  //         ),
-                                  //       ),
-                                  //       widget05: const Center(
-                                  //         child: Text(
-                                  //           "5",
-                                  //           style: TextStyle(fontSize: 16),
-                                  //         ),
-                                  //       ),
-                                  //       widget06: const Center(
-                                  //         child: Text(
-                                  //           "6",
-                                  //           style: TextStyle(fontSize: 16),
-                                  //         ),
-                                  //       ),
-                                  //       widget07: const Center(
-                                  //         child: Text(
-                                  //           "remark",
-                                  //           style: TextStyle(fontSize: 16),
-                                  //         ),
-                                  //       ),
-                                  //     );
-                                  //   }),
-                                  // ),
+
+                                        return BODY7SLOT(
+                                          ListFlex: [6, 1, 2, 2, 2, 4, 2],
+                                          widget01: Center(
+                                            child: Text(
+                                              "${index + 1}",
+                                              style: const TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                          widget02: const Center(
+                                            child: Text(
+                                              "2",
+                                              style: TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                          widget03: Center(
+                                            child: Text(
+                                              item.DOCUMENT.trim().isNotEmpty == true ? item.DOCUMENT : '-',
+                                              style: const TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                          widget04: const Center(
+                                            child: Text(
+                                              "4",
+                                              style: TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                          widget05: Center(
+                                            child: Text(
+                                              '${item.PCS.trim().isNotEmpty == true ? item.PCS : ''} ${item.FREQUENCY?.trim().isNotEmpty == true ? item.FREQUENCY : ''}',
+                                              style: const TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                          widget06: Center(
+                                            child: Text(
+                                              item.SPECIFICATIONname.trim().isNotEmpty == true ? item.SPECIFICATIONname : '-',
+                                              style: const TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                          widget07: const Center(
+                                            child: Text(
+                                              "remark",
+                                              style: TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                        );
+                                    }),
+                                  ),
 
 
 
 // Final Inspection END
 
-                                    ReportedImageCard(
-                                      base64Image: imageTestInspectionStandard,
-                                      description: "Weight = 90.8249 g/pc",
-                                      onReportedChange: (bool? value) {
-                                        print("Reported: $value");
-                                      },
-                                    ),
-
+                                  ReportedImageCard(
+                                    base64Image: ReportPDFCommonvar.Pimg, // ต้องเป็น String (ที่ถูกตัด prefix แล้ว)
+                                    description: "Weight = 90.8249 g/pc",
+                                    onReportedChange: (bool? value) {
+                                      print("Reported: $value");
+                                    },
+                                  ),
 
                                   SIGNWITHCUSTOMERSLOT(
                                     signs: true,

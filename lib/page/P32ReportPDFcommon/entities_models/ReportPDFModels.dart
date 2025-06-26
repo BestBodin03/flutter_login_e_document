@@ -134,12 +134,16 @@ class CommonReportOutputModel extends CommonReportOutput {
   CommonReportOutputModel({
     required super.databasic,
     super.datain,
+    super.datafn,
   });
 
   factory CommonReportOutputModel.fromJson(Map<String, dynamic> json) {
     return CommonReportOutputModel(
       databasic: BasicCommonDATAModel.fromJson(json['databasic']),
       datain: (json['datain'] as List? ?? [])
+          .map((e) => FINALCHECKlistCommonClassModel.fromJson(e))
+          .toList(),
+      datafn: (json['datafn'] as List? ?? [])
           .map((e) => FINALCHECKlistCommonClassModel.fromJson(e))
           .toList(),
     );

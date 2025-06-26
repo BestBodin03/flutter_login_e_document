@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:newmaster/page/P32ReportPDFcommon/ReportPDFCommonvar.dart';
 import 'package:newmaster/widget/ReportComponent/ReportRadioButton.dart';
 
 class ReportedImageCard extends StatefulWidget {
@@ -24,7 +25,13 @@ class _ReportedImageCardState extends State<ReportedImageCard> {
 
   @override
   Widget build(BuildContext context) {
-    Uint8List imageBytes = base64Decode(widget.base64Image);
+  Uint8List imageBytes = Uint8List(0);
+  try {
+    imageBytes = base64Decode(ReportPDFCommonvar.Pimg);
+  } catch (e) {
+    print('❌ Error decoding base64 image: $e');
+    print('Base64 string length: ${ReportPDFCommonvar.Pimg.length}');
+  }
 
     return Container(
       alignment: Alignment.centerLeft,
