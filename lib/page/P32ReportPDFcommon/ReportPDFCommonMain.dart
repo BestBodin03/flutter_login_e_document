@@ -531,7 +531,7 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                           ),
                                           widget03: Center(
                                             child: Text(
-                                              item.DOCUMENT ?? '', // ✅ ดึงข้อมูลจาก item.DOCUMENT
+                                              item.DOCUMENT ?? '-', // ✅ ดึงข้อมูลจาก item.DOCUMENT
                                               style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
@@ -541,16 +541,16 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                               style: TextStyle(fontSize: 16),
                                             ),
                                           ),
-                                          widget05: const Center(
+                                          widget05: Center(
                                             child: Text(
-                                              "5",
-                                              style: TextStyle(fontSize: 16),
+                                              '${item.PCS ?? '-'} ${item.FREQUENCY ?? '-'}',
+                                              style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
-                                          widget06: const Center(
+                                          widget06: Center(
                                             child: Text(
-                                              "6",
-                                              style: TextStyle(fontSize: 16),
+                                              item.SPECIFICATIONname ?? '-',
+                                              style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
                                           widget07: const Center(
