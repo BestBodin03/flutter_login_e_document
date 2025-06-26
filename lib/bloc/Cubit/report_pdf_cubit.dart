@@ -19,6 +19,9 @@ Future<void> loadReportPDF(String assetPath) async {
     // // ✅ ตรวจสอบ DOCUMENT และ SPECIFICATION.name จาก INCOMING
     final incoming = jsonData['INCOMMING'] as List? ?? [];
 
+    // print(imageT.runtimeType);
+    // print(imageT);
+
     // print(incoming);
     // print(incoming.length);
     // for (var item in incoming) {
@@ -48,7 +51,8 @@ Future<void> loadReportPDF(String assetPath) async {
       'TPKLOT': jsonData['TPKLOT'] ?? '',
       'Pimg': jsonData['Pimg']?['P1'] ?? '',
     },
-    'datain': incoming
+    'datain': incoming,
+    'datafn': jsonData['FINAL'] as List? ?? [],
   };
 
 
@@ -58,7 +62,7 @@ Future<void> loadReportPDF(String assetPath) async {
     IF WANT TO ASSIGN TO STATIC VAR
     */
 
-    // final basic = report.databasic;
+    final basic = report.databasic;
 
     // ReportPDFCommonvar.CUSTOMER = basic.CUSTOMER ?? '';
     // ReportPDFCommonvar.PARTNAME = basic.PARTNAME ?? '';
@@ -66,7 +70,18 @@ Future<void> loadReportPDF(String assetPath) async {
     // ReportPDFCommonvar.PART = basic.PART ?? '';
     // ReportPDFCommonvar.MATERIAL = basic.MATERIAL ?? '';
     // ReportPDFCommonvar.INSPECTIONSTDNO = basic.INSPECTIONSTDNO ?? '';
-    // ReportPDFCommonvar.CP = basic.CP ?? '';
+    String base64Image = basic.Pimg ?? '';
+
+if (base64Image.startsWith('data:image')) {
+  final parts = base64Image.split(',');
+  if (parts.length > 1) {
+    base64Image = parts[1];
+  } else {
+    base64Image = '';
+  }
+}
+
+ReportPDFCommonvar.Pimg = base64Image;
 
 
     emit(ReportPDFLoaded(report));
