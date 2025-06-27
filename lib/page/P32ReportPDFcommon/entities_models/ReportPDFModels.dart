@@ -102,6 +102,9 @@ class BasicCommonDATAModel extends BasicCommonDATA {
       CUSLOT: json['CUSLOT'] ?? '',
       TPKLOT: json['TPKLOT'] ?? '',
       MATERIAL: json['MATERIAL'] ?? '',
+      Pimg: json['Pimg']?['P1'] ?? '',
+
+
 
       USER_STATUS: json['USER_STATUS'] ?? '',
       reportset: json['reportset'] ?? '',

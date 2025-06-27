@@ -71,15 +71,31 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
         return Center(child: CircularProgressIndicator());
       } else if (state is ReportPDFLoaded) {
         final report = state.report;
+        final methodMapIN = state.methodToMachineMethod;
 
         if (report.datain.isNotEmpty) {
           ReportPDFCommonvar.STATUS = 'REPORT READY';
           ReportPDFCommonvar.PASS = report.databasic.PASS;
-          // รีเซ็ตค่าอื่น ๆ ตามต้องการ
+          ReportPDFCommonvar.Pimg = ReportPDFCommonvar.Pimg;
         } else {
           ReportPDFCommonvar.STATUS = 'WAITING or NO-DATA';
-          // รีเซ็ตค่าอื่น ๆ ตามต้องการ
+          // ReportPDFCommonvar.Pimg = '';
         }
+
+        Uint8List? imageBytes;
+        try {
+          final base64Str = ReportPDFCommonvar.Pimg;
+          if (base64Str.isNotEmpty) {
+            final cleanedBase64 = base64Str.contains(',')
+                ? base64Str.split(',').last
+                : base64Str;
+            imageBytes = base64Decode(cleanedBase64);
+          }
+        } catch (e) {
+          print('❌ Error decoding base64 image: $e');
+          imageBytes = null;
+        }
+
         
     
     return SingleChildScrollView(
@@ -521,10 +537,12 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                               style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
-                                          widget04: const Center(
+                                          widget04: Center(
                                             child: Text(
-                                              "4",
-                                              style: TextStyle(fontSize: 16),
+                                                  item.METHOD != null && methodMapIN.containsKey(item.METHOD)
+                                                    ? methodMapIN[item.METHOD]!
+                                                    : '-',  // กรณีไม่มี mapping,
+                                              style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
                                           widget05: Center(
@@ -706,12 +724,21 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
 
 // Final Inspection END
 
-                                  ReportedImageCard(
-                                    base64Image: ReportPDFCommonvar.Pimg, // ต้องเป็น String (ที่ถูกตัด prefix แล้ว)
-                                    description: "Weight = 90.8249 g/pc",
-                                    onReportedChange: (bool? value) {
-                                      print("Reported: $value");
-                                    },
+                                  Column(
+                                      children: [
+                                        // ... widget อื่น ๆ
+                                        if (imageBytes != null && imageBytes.isNotEmpty)
+                                          ReportedImageCard(
+                                            imageBytes: imageBytes!,
+                                            description: "Weight = 90.8249 g/pc",
+                                            onReportedChange: (bool? value) {
+                                              print("Reported: $value");
+                                            },
+                                          )
+                                        else
+                                          const Text('ไม่สามารถโหลดรูปภาพได้'),
+                                        // ... widget อื่น ๆ
+                                      ],
                                   ),
 
                                   SIGNWITHCUSTOMERSLOT(

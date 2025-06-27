@@ -15,12 +15,40 @@ Future<void> loadReportPDF(String assetPath) async {
   try {
     final jsonString = await rootBundle.loadString(assetPath);
     final jsonData = jsonDecode(jsonString);
-
     // // ✅ ตรวจสอบ DOCUMENT และ SPECIFICATION.name จาก INCOMING
     final incoming = jsonData['INCOMMING'] as List? ?? [];
+    final imageP = jsonData['Pimg']?['P1'] ?? '';
+    ReportPDFCommonvar.Pimg = imageP;
+    // print(imageP);
 
-    // print(imageT.runtimeType);
-    // print(imageT);
+    final Set<String> methodKeys = {
+      for (var item in incoming)
+        if (item['METHOD'] != null) item['METHOD'].toString()
+    };
+
+    final machineJsonStr = await rootBundle.loadString('assets/mockData/master_IC.MACHINE.json');
+    final List<dynamic> machineList = jsonDecode(machineJsonStr);
+
+    // สร้าง Map เชื่อม METHOD กับข้อมูล MACHINE
+    final Map<String, String> methodToMachineMethod = {};
+
+  for (final method in methodKeys) {
+    final match = machineList.firstWhere(
+      (m) => m['masterID'] == method,
+      orElse: () => null,
+    );
+    if (match != null) {
+      final machineMethod = match['METHOD'];
+      methodToMachineMethod[method] = machineMethod;
+
+      // ✅ แสดงผลเช็ค
+      print('🔍 METHOD Key: $method ➜ MACHINE METHOD: $machineMethod');
+    } else {
+      print('⚠️ ไม่พบ MACHINE ที่ masterID = $method');
+    }
+  }
+
+
 
     // print(incoming);
     // print(incoming.length);
@@ -49,7 +77,6 @@ Future<void> loadReportPDF(String assetPath) async {
       'PROCESS': jsonData['PROCESS'],
       'INSPECTIONSTDNO': jsonData['INSPECTIONSTDNO'] ?? '',
       'TPKLOT': jsonData['TPKLOT'] ?? '',
-      'Pimg': jsonData['Pimg']?['P1'] ?? '',
     },
     'datain': incoming,
     'datafn': jsonData['FINAL'] as List? ?? [],
@@ -70,21 +97,11 @@ Future<void> loadReportPDF(String assetPath) async {
     // ReportPDFCommonvar.PART = basic.PART ?? '';
     // ReportPDFCommonvar.MATERIAL = basic.MATERIAL ?? '';
     // ReportPDFCommonvar.INSPECTIONSTDNO = basic.INSPECTIONSTDNO ?? '';
-    String base64Image = basic.Pimg ?? '';
-
-if (base64Image.startsWith('data:image')) {
-  final parts = base64Image.split(',');
-  if (parts.length > 1) {
-    base64Image = parts[1];
-  } else {
-    base64Image = '';
-  }
-}
-
-ReportPDFCommonvar.Pimg = base64Image;
+    // String base64Image = basic.Pimg ?? '';
+    // ReportPDFCommonvar.Pimg = 
 
 
-    emit(ReportPDFLoaded(report));
+    emit(ReportPDFLoaded(report, methodToMachineMethod : methodToMachineMethod));
   } catch (e) {
     emit(ReportPDFError('Failed to load: $e'));
   }
