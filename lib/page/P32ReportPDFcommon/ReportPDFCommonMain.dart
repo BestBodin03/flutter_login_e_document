@@ -7,8 +7,8 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:newmaster/bloc/Cubit/report_pdf_cubit.dart';
-import 'package:newmaster/bloc/Cubit/report_pdf_state.dart';
+import 'package:newmaster/bloc/Cubit/ReportPDFCubit.dart';
+import 'package:newmaster/bloc/Cubit/ReportPDFState.dart';
 import 'package:newmaster/page/P31ReportPDFcommon/ReportPDFCommonMain.dart';
 import 'package:newmaster/page/P32ReportPDFcommon/entities_models/ReportPDF.dart';
 import 'package:newmaster/page/P32ReportPDFcommon/entities_models/ReportPDFModels.dart';
@@ -72,6 +72,11 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
       } else if (state is ReportPDFLoaded) {
         final report = state.report;
         final methodMapIN = state.methodToMachineMethod;
+        final methodMapFN = state.methodToMachineMethodFN;
+        final itemNameMapIN = state.itemToItemName;
+        final itemNameMapFN = state.itemToItemNameFN;
+        final remarkToComment = state.remarkToComment;
+        final remarkToCommentFN = state.remarkToCommentFN;
 
         if (report.datain.isNotEmpty) {
           ReportPDFCommonvar.STATUS = 'REPORT READY';
@@ -519,10 +524,16 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
 
                                         return BODY7SLOT(
                                           ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                          widget01: Center(
-                                            child: Text(
-                                              "${index + 1}",
-                                              style: const TextStyle(fontSize: 16),
+                                          widget01: Padding(
+                                            padding: const EdgeInsets.only(left: 8),
+                                            child: Align(
+                                              alignment: Alignment.centerLeft,
+                                              child: Text(
+                                          				itemNameMapIN.containsKey(item.ITEM)
+                                                  ? itemNameMapIN[item.ITEM]!
+                                                  : '-', 
+                                                style: const TextStyle(fontSize: 16),
+                                              ),
                                             ),
                                           ),
                                           widget02: Center(
@@ -563,9 +574,11 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                               style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
-                                          widget07: const Center(
+                                          widget07: Center(
                                             child: Text(
-                                              "remark",
+                                          				remarkToComment.containsKey(item.REMARK)
+                                                  ? remarkToComment[item.REMARK]!
+                                                  : '-', 
                                               style: TextStyle(fontSize: 16),
                                             ),
                                           ),
@@ -573,11 +586,6 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                       },
                                     ),
                                   ),
-
-
-
-
-
 
 // INCOMING INSPECTION END
 
@@ -680,10 +688,16 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
 
                                         return BODY7SLOT(
                                           ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                          widget01: Center(
-                                            child: Text(
-                                              "${index + 1}",
-                                              style: const TextStyle(fontSize: 16),
+                                          widget01: Padding(
+                                            padding: const EdgeInsets.only(left: 8),
+                                            child: Align(
+                                              alignment: Alignment.centerLeft,
+                                              child: Text(
+                                          				itemNameMapFN.containsKey(item.ITEM)
+                                                  ? itemNameMapFN[item.ITEM]!
+                                                  : '-', 
+                                                style: const TextStyle(fontSize: 16),
+                                              ),
                                             ),
                                           ),
                                           widget02: Center(
@@ -704,9 +718,11 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                               style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
-                                          widget04: const Center(
+                                          widget04: Center(
                                             child: Text(
-                                              "4",
+                                                  methodMapFN.containsKey(item.METHOD)
+                                                    ? methodMapFN[item.METHOD]!
+                                                    : '-',  // กรณีไม่มี mapping,
                                               style: TextStyle(fontSize: 16),
                                             ),
                                           ),
@@ -722,9 +738,11 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                               style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
-                                          widget07: const Center(
+                                          widget07: Center(
                                             child: Text(
-                                              "remark",
+                                          				remarkToCommentFN.containsKey(item.REMARK)
+                                                  ? remarkToCommentFN[item.REMARK]!
+                                                  : '-', 
                                               style: TextStyle(fontSize: 16),
                                             ),
                                           ),

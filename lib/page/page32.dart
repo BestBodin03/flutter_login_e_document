@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:newmaster/Layout/head2.dart';
-import 'package:newmaster/bloc/Cubit/report_pdf_cubit.dart';
-import 'package:newmaster/bloc/Cubit/report_pdf_state.dart';
+import 'package:newmaster/bloc/Cubit/ReportPDFCubit.dart';
+import 'package:newmaster/bloc/Cubit/ReportPDFState.dart';
 import 'package:newmaster/page/P31ReportPDFcommon/ReportPDFCommonMain.dart';
 
 import 'P32ReportPDFcommon/ReportPDFCommonMain.dart';

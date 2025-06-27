@@ -18,11 +18,19 @@ class ReportPDFLoaded extends ReportPDFState {
   final CommonReportOutputModel report;
   final Map<String, String> methodToMachineMethod;
   final Map<String, String> methodToMachineMethodFN;
+  final Map<String, String> itemToItemName;
+  final Map<String, String> itemToItemNameFN;
+  final Map<String, String> remarkToComment;
+  final Map<String, String> remarkToCommentFN;
 
-  ReportPDFLoaded(
+  const ReportPDFLoaded(
     this.report, {
     this.methodToMachineMethod = const {},
     this.methodToMachineMethodFN = const {},
+    this.itemToItemName = const {},
+    this.itemToItemNameFN = const {},
+    this.remarkToComment = const {},
+    this.remarkToCommentFN = const {}
   });
 }
 
