@@ -525,11 +525,17 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                               style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
-                                          widget02: const Center(
-                                            child: Text(
-                                              "2",
-                                              style: TextStyle(fontSize: 16),
-                                            ),
+                                          widget02: Center(
+                                            child: item.SCMARK?.trim().toUpperCase() == 'YES'
+                                              ? Image.asset(
+                                                  'assets/mockData/scMarkSymbol.png',
+                                                  height: 80,
+                                                  width: 80,
+                                                )
+                                              : const Text(
+                                                  '-',
+                                                  style: TextStyle(fontSize: 16),
+                                                ),
                                           ),
                                           widget03: Center(
                                             child: Text(
@@ -539,7 +545,7 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                           ),
                                           widget04: Center(
                                             child: Text(
-                                                  item.METHOD != null && methodMapIN.containsKey(item.METHOD)
+                                                  methodMapIN.containsKey(item.METHOD)
                                                     ? methodMapIN[item.METHOD]!
                                                     : '-',  // กรณีไม่มี mapping,
                                               style: const TextStyle(fontSize: 16),
@@ -680,11 +686,17 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                               style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
-                                          widget02: const Center(
-                                            child: Text(
-                                              "2",
-                                              style: TextStyle(fontSize: 16),
-                                            ),
+                                          widget02: Center(
+                                            child: item.SCMARK?.trim().toUpperCase() == 'YES'
+                                              ? Image.asset(
+                                                  'assets/mockData/scMarkSymbol.png',
+                                                  height: 80,
+                                                  width: 80,
+                                                )
+                                              : const Text(
+                                                  '-',
+                                                  style: TextStyle(fontSize: 16),
+                                                ),
                                           ),
                                           widget03: Center(
                                             child: Text(

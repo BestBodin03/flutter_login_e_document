@@ -17,10 +17,12 @@ class ReportPDFLoading extends ReportPDFState {}
 class ReportPDFLoaded extends ReportPDFState {
   final CommonReportOutputModel report;
   final Map<String, String> methodToMachineMethod;
+  final Map<String, String> methodToMachineMethodFN;
 
   ReportPDFLoaded(
     this.report, {
     this.methodToMachineMethod = const {},
+    this.methodToMachineMethodFN = const {},
   });
 }
 
