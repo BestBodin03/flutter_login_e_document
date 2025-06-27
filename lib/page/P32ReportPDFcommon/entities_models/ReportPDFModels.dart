@@ -36,7 +36,7 @@ class FINALCHECKlistCommonClassModel extends FINALCHECKlistCommonClass {
       // SEQ: jsonData['SEQ']?? '',
       NO: jsonData['NO'] ?? 0,
       TYPE: jsonData['TYPE'] ?? '',
-      ITEM: jsonData['ITEM'] ?? '',
+      ITEM: jsonData['ITEMs'] ?? '',
       ITEMname: jsonData['ITEMname'] ?? '',
       METHOD: jsonData['METHOD'] ?? '',
       METHODname: jsonData['METHODname'] ?? '',

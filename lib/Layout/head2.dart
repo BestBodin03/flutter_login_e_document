@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:newmaster/bloc/Cubit/report_pdf_cubit.dart';
-import 'package:newmaster/bloc/Cubit/report_pdf_state.dart';
+import 'package:newmaster/bloc/Cubit/ReportPDFCubit.dart';
+import 'package:newmaster/bloc/Cubit/ReportPDFState.dart';
 import 'package:newmaster/page/P32ReportPDFcommon/ReportPDFCommonvar.dart';
 import 'package:newmaster/widget/ReportComponent/SingleSelectCheckboxRow.dart';
 
