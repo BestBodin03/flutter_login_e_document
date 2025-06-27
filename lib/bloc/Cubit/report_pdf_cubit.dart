@@ -26,25 +26,32 @@ Future<void> loadReportPDF(String assetPath) async {
         if (item['METHOD'] != null) item['METHOD'].toString()
     };
 
+    final Set<String> methodKeysFN = {
+      for (var item in incoming)
+        if (item['METHOD'] != null) item['METHOD'].toString()
+    };
+
     final machineJsonStr = await rootBundle.loadString('assets/mockData/master_IC.MACHINE.json');
     final List<dynamic> machineList = jsonDecode(machineJsonStr);
-
-    // สร้าง Map เชื่อม METHOD กับข้อมูล MACHINE
     final Map<String, String> methodToMachineMethod = {};
 
-  for (final method in methodKeys) {
-    final match = machineList.firstWhere(
-      (m) => m['masterID'] == method,
+    final machineJsonStrFN = await rootBundle.loadString('assets/mockData/master_FN.MACHINE.json');
+    final List<dynamic> machineListFN = jsonDecode(machineJsonStr);
+    final Map<String, String> methodToMachineMethodFN = {};
+
+  for (final methodFN in methodKeysFN) {
+    final match = machineListFN.firstWhere(
+      (m) => m['masterID'] == methodFN,
       orElse: () => null,
     );
     if (match != null) {
-      final machineMethod = match['METHOD'];
-      methodToMachineMethod[method] = machineMethod;
+      final machineMethodFN = match['METHOD'];
+      methodToMachineMethodFN[methodFN] = machineMethodFN;
 
       // ✅ แสดงผลเช็ค
-      print('🔍 METHOD Key: $method ➜ MACHINE METHOD: $machineMethod');
+      print('🔍 METHOD Key: $methodFN ➜ MACHINE METHOD: $machineMethodFN');
     } else {
-      print('⚠️ ไม่พบ MACHINE ที่ masterID = $method');
+      print('⚠️ ไม่พบ MACHINE ที่ masterID = $methodFN');
     }
   }
 
@@ -101,7 +108,7 @@ Future<void> loadReportPDF(String assetPath) async {
     // ReportPDFCommonvar.Pimg = 
 
 
-    emit(ReportPDFLoaded(report, methodToMachineMethod : methodToMachineMethod));
+    emit(ReportPDFLoaded(report, methodToMachineMethod : methodToMachineMethod, methodToMachineMethodFN : methodToMachineMethodFN));
   } catch (e) {
     emit(ReportPDFError('Failed to load: $e'));
   }
