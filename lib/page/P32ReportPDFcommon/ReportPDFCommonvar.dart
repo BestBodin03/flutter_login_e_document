@@ -21,6 +21,7 @@ class ReportPDFCommonvar {
   static String TPKLOT = '';
   static String Pimg = '';
   static String DOCUMENT = '';
+  static int? ProductStage;
 
   static String USER_STATUS = '';
   static String reportset = '';
@@ -32,7 +33,7 @@ class ReportPDFCommonvar {
   static String ApproveSigned = '';
   static String CheckedBySigned = '';
   static String IssuedBySigned = '';
-
+  static bool IsReported = true;
   static String commp = 'Compound layer';
   static String TPKLOTEDIT = '';
   static String TYPE = '';

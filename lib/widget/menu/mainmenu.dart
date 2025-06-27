@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:newmaster/page/page32.dart';
 
 import '../../bloc/BlocEvent/LoginEvent.dart';
 import '../../mainBody.dart';
@@ -81,7 +82,7 @@ class Data_Menu_mainmenu extends StatelessWidget {
         ),
         menu_normal(
           name: "Page2",
-          page: Page2(),
+          page: Page32(),
           Lv: 1,
         ),
         menu_normal(

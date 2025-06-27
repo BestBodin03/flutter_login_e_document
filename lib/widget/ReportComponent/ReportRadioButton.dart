@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newmaster/page/P32ReportPDFcommon/ReportPDFCommonvar.dart';
 
 class ReportedRadioButton extends StatefulWidget {
   final Function(bool?) onReportedChange;
@@ -11,6 +12,11 @@ class ReportedRadioButton extends StatefulWidget {
 
 class _ReportedRadioButtonState extends State<ReportedRadioButton> {
   bool? _reportedToCustomer;
+  void initState() {
+    super.initState();
+    // sync ค่าจาก static variable
+    _reportedToCustomer = ReportPDFCommonvar.IsReported;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +38,8 @@ class _ReportedRadioButtonState extends State<ReportedRadioButton> {
               groupValue: _reportedToCustomer,
               onChanged: (val) {
                 setState(() => _reportedToCustomer = val);
+                ReportPDFCommonvar.IsReported = val!;
+                setState(() => _reportedToCustomer = val); // 💾 เก็บไว้
                 widget.onReportedChange(val);
               },
               activeColor: Colors.blue,
@@ -53,6 +61,8 @@ class _ReportedRadioButtonState extends State<ReportedRadioButton> {
               groupValue: _reportedToCustomer,
               onChanged: (val) {
                 setState(() => _reportedToCustomer = val);
+                ReportPDFCommonvar.IsReported = val!;
+                setState(() => _reportedToCustomer = val); // 💾 เก็บไว้
                 widget.onReportedChange(val);
               },
               activeColor: Colors.blueAccent,
