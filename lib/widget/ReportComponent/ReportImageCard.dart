@@ -5,13 +5,13 @@ import 'package:newmaster/page/P32ReportPDFcommon/ReportPDFCommonvar.dart';
 import 'package:newmaster/widget/ReportComponent/ReportRadioButton.dart';
 
 class ReportedImageCard extends StatefulWidget {
-  final String base64Image;
+  final Uint8List imageBytes;
   final String description;
   final Function(bool?) onReportedChange;
 
   const ReportedImageCard({
     super.key,
-    required this.base64Image,
+    required this.imageBytes,
     required this.description,
     required this.onReportedChange,
   });
@@ -25,14 +25,7 @@ class _ReportedImageCardState extends State<ReportedImageCard> {
 
   @override
   Widget build(BuildContext context) {
-  Uint8List imageBytes = Uint8List(0);
-  try {
-    imageBytes = base64Decode(ReportPDFCommonvar.Pimg);
-  } catch (e) {
-    print('❌ Error decoding base64 image: $e');
-    print('Base64 string length: ${ReportPDFCommonvar.Pimg.length}');
-  }
-
+    
     return Container(
       alignment: Alignment.centerLeft,
       height: 496,
@@ -68,7 +61,7 @@ class _ReportedImageCardState extends State<ReportedImageCard> {
                     maxHeight: 270, // จำกัดความสูงไม่เกิน 288
                   ),
                   child: Image.memory(
-                    imageBytes,
+                    widget.imageBytes,
                     width: 508,
                     fit: BoxFit.contain,
                   ),

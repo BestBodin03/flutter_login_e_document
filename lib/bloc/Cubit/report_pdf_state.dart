@@ -15,9 +15,15 @@ class ReportPDFInitial extends ReportPDFState {}
 class ReportPDFLoading extends ReportPDFState {}
 
 class ReportPDFLoaded extends ReportPDFState {
-  final CommonReportOutputModel report; // model ของคุณ
-  ReportPDFLoaded(this.report);
-  }
+  final CommonReportOutputModel report;
+  final Map<String, String> methodToMachineMethod;
+
+  ReportPDFLoaded(
+    this.report, {
+    this.methodToMachineMethod = const {},
+  });
+}
+
 
 class ReportPDFError extends ReportPDFState {
   final String message;
