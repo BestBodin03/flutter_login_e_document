@@ -155,274 +155,45 @@ class SIGNWITHCUSTOMERSLOT extends StatelessWidget {
                           ),
                         ),
                     ),
-                    // ไม่มี SizedBox หรือ padding ที่คั่นตรงนี้
-                    Column(
-                      children: [
-                        SizedBox(
-                          height: 30,
-                          child: BODY3SLOT(
+                    Container(
+                      alignment: Alignment.topLeft,
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: Column(
+                        children: List.generate(7, (index) {
+                          return SizedBox(
+                            height: 30,
+                            child: BODY3SLOT(
                               ListFlex: const [1, 2, 5],
                               widget01: Center(
                                 child: Text(
-                                  'Milk',
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
+                                  '', // 🔢 แสดงเลขลำดับ 1 ถึง 7
+                                  style: const TextStyle(fontSize: 12, color: Colors.black),
                                 ),
                               ),
-                              widget02: Center(
+                              widget02: const Center(
                                 child: Text(
-                                  formattedDateDetailsCol,
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
+                                  '',  // ว่าง
+                                  style: TextStyle(fontSize: 12, color: Colors.black),
                                 ),
                               ),
                               widget03: Container(
                                 alignment: Alignment.centerLeft,
-                                padding: EdgeInsets.only(left: 8),
-                                child: Text(
-                                  'Cream',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
+                                padding: const EdgeInsets.only(left: 8),
+                                child: const Text(
+                                  '',  // ว่าง
+                                  style: TextStyle(fontSize: 12, color: Colors.black),
                                 ),
                               ),
                             ),
-                        ),
-                                      
-                        SizedBox(
-                          height: 30,
-                          child: BODY3SLOT(
-                              ListFlex: const [1, 2, 5],
-                              widget01: Center(
-                                child: Text(
-                                  'Milk',
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                              widget02: Center(
-                                child: Text(
-                                  formattedDateDetailsCol,
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                              widget03: Container(
-                                alignment: Alignment.centerLeft,
-                                padding: EdgeInsets.only(left: 8),
-                                child: Text(
-                                  'Cream',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ),
-                        ),
-                                      
-                                      
-                        SizedBox(
-                          height: 30,
-                          child: BODY3SLOT(
-                              ListFlex: const [1, 2, 5],
-                              widget01: Center(
-                                child: Text(
-                                  'Milk',
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                              widget02: Center(
-                                child: Text(
-                                  formattedDateDetailsCol,
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                              widget03: Container(
-                                alignment: Alignment.centerLeft,
-                                padding: EdgeInsets.only(left: 8),
-                                child: Text(
-                                  'Cream',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ),
-                        ),
-                                      
-                                      
-                        SizedBox(
-                          height: 30,
-                          child: BODY3SLOT(
-                              ListFlex: const [1, 2, 5],
-                              widget01: Center(
-                                child: Text(
-                                  'Milk',
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                              widget02: Center(
-                                child: Text(
-                                  formattedDateDetailsCol,
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                              widget03: Container(
-                                alignment: Alignment.centerLeft,
-                                padding: EdgeInsets.only(left: 8),
-                                child: Text(
-                                  'Cream',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ),
-                        ),
-                                      
-                                      
-                        SizedBox(
-                          height: 30,
-                          child: BODY3SLOT(
-                              ListFlex: const [1, 2, 5],
-                              widget01: Center(
-                                child: Text(
-                                  'Milk',
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                              widget02: Center(
-                                child: Text(
-                                  formattedDateDetailsCol,
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                              widget03: Container(
-                                alignment: Alignment.centerLeft,
-                                padding: EdgeInsets.only(left: 8),
-                                child: Text(
-                                  'Cream',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                        
-                            ),
-                        ),
-                                      
-                        SizedBox(
-                          height: 30,
-                          child: BODY3SLOT(
-                              ListFlex: const [1, 2, 5],
-                              widget01: Center(
-                                child: Text(
-                                  'Milk',
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                              widget02: Center(
-                                child: Text(
-                                  formattedDateDetailsCol,
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                              widget03: Container(
-                                alignment: Alignment.centerLeft,
-                                padding: EdgeInsets.only(left: 8),
-                                child: Text(
-                                  'Cream',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                            ),
-                        ),
-                      ],
+                          );
+                        }),
+                      ),
                     ),
-              
-                    SizedBox(
-                      height: 29,
-                      child: BODY3SLOT(
-                          ListFlex: const [1, 2, 5],
-                          widget01: Center(
-                            child: Text(
-                              'Milk',
-                              style: const TextStyle(
-                                fontSize: 12,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                          widget02: Center(
-                            child: Text(
-                              formattedDateDetailsCol,
-                              style: const TextStyle(
-                                fontSize: 12,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                          widget03: Container(
-                            alignment: Alignment.centerLeft,
-                            padding: EdgeInsets.only(left: 8),
-                            child: Text(
-                              'Cream',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ),
-                    ),
-              
                   ],
-                ),
-
                 )
-                
               ),
           ),
+        ),
  // Spacing between sections
           
 

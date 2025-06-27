@@ -78,6 +78,7 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
         final itemNameMapFN = state.itemToItemNameFN;
         final remarkToComment = state.remarkToComment;
         final remarkToCommentFN = state.remarkToCommentFN;
+        final int rowCount = report.datafn.length < 7 ? 7 : report.datafn.length; 
 
         if (report.datain.isNotEmpty) {
           ReportPDFCommonvar.STATUS = 'REPORT READY';
@@ -517,28 +518,97 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                     ),
                                   ),
 
-                                  Column(
-                                    children: List.generate(
-                                      report.datain.length > 3 ? 3 : report.datain.length, // จำกัดไม่เกิน 3
-                                      (index) {
-                                        final item = report.datain[index]; // ใช้ตัวแปร item ตาม index
+                                  // Column(
+                                  //   children: List.generate(
+                                  //     report.datain.length > 3 ? 3 : report.datain.length, // จำกัดไม่เกิน 3
+                                  //     (index) {
+                                  //       final item = report.datain[index]; // ใช้ตัวแปร item ตาม index
 
-                                        return BODY7SLOT(
-                                          ListFlex: [6, 1, 2, 2, 2, 4, 2],
-                                          widget01: Padding(
-                                            padding: const EdgeInsets.only(left: 8),
-                                            child: Align(
-                                              alignment: Alignment.centerLeft,
-                                              child: Text(
-                                          				itemNameMapIN.containsKey(item.ITEM)
+                                  //       return BODY7SLOT(
+                                  //         ListFlex: [6, 1, 2, 2, 2, 4, 2],
+                                  //         widget01: Padding(
+                                  //           padding: const EdgeInsets.only(left: 8),
+                                  //           child: Align(
+                                  //             alignment: Alignment.centerLeft,
+                                  //             child: Text(
+                                  //         				itemNameMapIN.containsKey(item.ITEM)
+                                  //                 ? itemNameMapIN[item.ITEM]!
+                                  //                 : '-', 
+                                  //               style: const TextStyle(fontSize: 16),
+                                  //             ),
+                                  //           ),
+                                  //         ),
+                                  //         widget02: Center(
+                                  //           child: item.SCMARK?.trim().toUpperCase() == 'YES'
+                                  //             ? Image.asset(
+                                  //                 'assets/mockData/scMarkSymbol.png',
+                                  //                 height: 80,
+                                  //                 width: 80,
+                                  //               )
+                                  //             : const Text(
+                                  //                 '-',
+                                  //                 style: TextStyle(fontSize: 16),
+                                  //               ),
+                                  //         ),
+                                  //         widget03: Center(
+                                  //           child: Text(
+                                  //             item.DOCUMENT?.trim().isNotEmpty == true ? item.DOCUMENT : '-',
+                                  //             style: const TextStyle(fontSize: 16),
+                                  //           ),
+                                  //         ),
+                                  //         widget04: Center(
+                                  //           child: Text(
+                                  //                 methodMapIN.containsKey(item.METHOD)
+                                  //                   ? methodMapIN[item.METHOD]!
+                                  //                   : '-',  // กรณีไม่มี mapping,
+                                  //             style: const TextStyle(fontSize: 16),
+                                  //           ),
+                                  //         ),
+                                  //         widget05: Center(
+                                  //           child: Text(
+                                  //             '${item.PCS?.trim().isNotEmpty == true ? item.PCS : ''} ${item.FREQUENCY?.trim().isNotEmpty == true ? item.FREQUENCY : ''}',
+                                  //             style: const TextStyle(fontSize: 16),
+                                  //           ),
+                                  //         ),
+                                  //         widget06: Center(
+                                  //           child: Text(
+                                  //             item.SPECIFICATIONname?.trim().isNotEmpty == true ? item.SPECIFICATIONname : '-',
+                                  //             style: const TextStyle(fontSize: 16),
+                                  //           ),
+                                  //         ),
+                                  //         widget07: Center(
+                                  //           child: Text(
+                                  //         				remarkToComment.containsKey(item.REMARK)
+                                  //                 ? remarkToComment[item.REMARK]!
+                                  //                 : '-', 
+                                  //             style: TextStyle(fontSize: 16),
+                                  //           ),
+                                  //         ),
+                                  //       );
+                                  //     },
+                                  //   ),
+                                  // ),
+
+                                Column(
+                                  children: List.generate(3, (index) {
+                                    if (index < report.datain.length) {
+                                      final item = report.datain[index];
+                                      return BODY7SLOT(
+                                        ListFlex: [6, 1, 2, 2, 2, 4, 2],
+                                        widget01: Padding(
+                                          padding: const EdgeInsets.only(left: 8),
+                                          child: Align(
+                                            alignment: Alignment.centerLeft,
+                                            child: Text(
+                                              itemNameMapIN.containsKey(item.ITEM)
                                                   ? itemNameMapIN[item.ITEM]!
-                                                  : '-', 
-                                                style: const TextStyle(fontSize: 16),
-                                              ),
+                                                  : '-',
+                                              style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
-                                          widget02: Center(
-                                            child: item.SCMARK?.trim().toUpperCase() == 'YES'
+                                        ),
+                                        widget02: Center(
+                                          child: item.SCMARK?.trim().toUpperCase() == 'YES'
                                               ? Image.asset(
                                                   'assets/mockData/scMarkSymbol.png',
                                                   height: 80,
@@ -548,45 +618,58 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                                   '-',
                                                   style: TextStyle(fontSize: 16),
                                                 ),
+                                        ),
+                                        widget03: Center(
+                                          child: Text(
+                                            item.DOCUMENT?.trim().isNotEmpty == true ? item.DOCUMENT! : '-',
+                                            style: const TextStyle(fontSize: 16),
                                           ),
-                                          widget03: Center(
-                                            child: Text(
-                                              item.DOCUMENT?.trim().isNotEmpty == true ? item.DOCUMENT : '-',
-                                              style: const TextStyle(fontSize: 16),
-                                            ),
+                                        ),
+                                        widget04: Center(
+                                          child: Text(
+                                            methodMapIN.containsKey(item.METHOD)
+                                                ? methodMapIN[item.METHOD]!
+                                                : '-',
+                                            style: const TextStyle(fontSize: 16),
                                           ),
-                                          widget04: Center(
-                                            child: Text(
-                                                  methodMapIN.containsKey(item.METHOD)
-                                                    ? methodMapIN[item.METHOD]!
-                                                    : '-',  // กรณีไม่มี mapping,
-                                              style: const TextStyle(fontSize: 16),
-                                            ),
+                                        ),
+                                        widget05: Center(
+                                          child: Text(
+                                            '${item.PCS?.trim().isNotEmpty == true ? item.PCS : ''} ${item.FREQUENCY?.trim().isNotEmpty == true ? item.FREQUENCY : ''}',
+                                            style: const TextStyle(fontSize: 16),
                                           ),
-                                          widget05: Center(
-                                            child: Text(
-                                              '${item.PCS?.trim().isNotEmpty == true ? item.PCS : ''} ${item.FREQUENCY?.trim().isNotEmpty == true ? item.FREQUENCY : ''}',
-                                              style: const TextStyle(fontSize: 16),
-                                            ),
+                                        ),
+                                        widget06: Center(
+                                          child: Text(
+                                            item.SPECIFICATIONname?.trim().isNotEmpty == true ? item.SPECIFICATIONname! : '-',
+                                            style: const TextStyle(fontSize: 16),
                                           ),
-                                          widget06: Center(
-                                            child: Text(
-                                              item.SPECIFICATIONname?.trim().isNotEmpty == true ? item.SPECIFICATIONname : '-',
-                                              style: const TextStyle(fontSize: 16),
-                                            ),
+                                        ),
+                                        widget07: Center(
+                                          child: Text(
+                                            remarkToComment.containsKey(item.REMARK)
+                                                ? remarkToComment[item.REMARK]!
+                                                : '-',
+                                            style: const TextStyle(fontSize: 16),
                                           ),
-                                          widget07: Center(
-                                            child: Text(
-                                          				remarkToComment.containsKey(item.REMARK)
-                                                  ? remarkToComment[item.REMARK]!
-                                                  : '-', 
-                                              style: TextStyle(fontSize: 16),
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  ),
+                                        ),
+                                      );
+                                    } else {
+                                      // แถวว่าง (blank)
+                                      return BODY7SLOT(
+                                        ListFlex: [6, 1, 2, 2, 2, 4, 2],
+                                        widget01: const SizedBox.shrink(),
+                                        widget02: const SizedBox.shrink(),
+                                        widget03: const SizedBox.shrink(),
+                                        widget04: const SizedBox.shrink(),
+                                        widget05: const SizedBox.shrink(),
+                                        widget06: const SizedBox.shrink(),
+                                        widget07: const SizedBox.shrink(),
+                                      );
+                                    }
+                                  }),
+                                ),
+
 
 // INCOMING INSPECTION END
 
@@ -681,12 +764,79 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                     ),
                                   ),
 
+                                  // Column(
+                                  //   children: List.generate((report.datafn.length ?? 0) > 10 ? 10 : (report.datafn.length ?? 0),
+                                  //     (index) {
+                                  //     final item = report.datafn[index]; // ดึงแต่ละ object
+
+
+                                  //       return BODY7SLOT(
+                                  //         ListFlex: [6, 1, 2, 2, 2, 4, 2],
+                                  //         widget01: Padding(
+                                  //           padding: const EdgeInsets.only(left: 8),
+                                  //           child: Align(
+                                  //             alignment: Alignment.centerLeft,
+                                  //             child: Text(
+                                  //         				itemNameMapFN.containsKey(item.ITEM)
+                                  //                 ? itemNameMapFN[item.ITEM]!
+                                  //                 : '-', 
+                                  //               style: const TextStyle(fontSize: 16),
+                                  //             ),
+                                  //           ),
+                                  //         ),
+                                  //         widget02: Center(
+                                  //           child: item.SCMARK?.trim().toUpperCase() == 'YES'
+                                  //             ? Image.asset(
+                                  //                 'assets/mockData/scMarkSymbol.png',
+                                  //                 height: 80,
+                                  //                 width: 80,
+                                  //               )
+                                  //             : const Text(
+                                  //                 '-',
+                                  //                 style: TextStyle(fontSize: 16),
+                                  //               ),
+                                  //         ),
+                                  //         widget03: Center(
+                                  //           child: Text(
+                                  //             item.DOCUMENT.trim().isNotEmpty == true ? item.DOCUMENT : '-',
+                                  //             style: const TextStyle(fontSize: 16),
+                                  //           ),
+                                  //         ),
+                                  //         widget04: Center(
+                                  //           child: Text(
+                                  //                 methodMapFN.containsKey(item.METHOD)
+                                  //                   ? methodMapFN[item.METHOD]!
+                                  //                   : '-',  // กรณีไม่มี mapping,
+                                  //             style: TextStyle(fontSize: 16),
+                                  //           ),
+                                  //         ),
+                                  //         widget05: Center(
+                                  //           child: Text(
+                                  //             '${item.PCS.trim().isNotEmpty == true ? item.PCS : ''} ${item.FREQUENCY?.trim().isNotEmpty == true ? item.FREQUENCY : ''}',
+                                  //             style: const TextStyle(fontSize: 16),
+                                  //           ),
+                                  //         ),
+                                  //         widget06: Center(
+                                  //           child: Text(
+                                  //             item.SPECIFICATIONname.trim().isNotEmpty == true ? item.SPECIFICATIONname : '-',
+                                  //             style: const TextStyle(fontSize: 16),
+                                  //           ),
+                                  //         ),
+                                  //         widget07: Center(
+                                  //           child: Text(
+                                  //         				remarkToCommentFN.containsKey(item.REMARK)
+                                  //                 ? remarkToCommentFN[item.REMARK]!
+                                  //                 : '-', 
+                                  //             style: TextStyle(fontSize: 16),
+                                  //           ),
+                                  //         ),
+                                  //       );
+                                  //   }),
+                                  // ),
                                   Column(
-                                    children: List.generate((report.datafn.length ?? 0) > 10 ? 10 : (report.datafn.length ?? 0),
-                                      (index) {
-                                      final item = report.datafn[index]; // ดึงแต่ละ object
-
-
+                                    children: List.generate(rowCount, (index) {
+                                      if (index < report.datafn.length) {
+                                        final item = report.datafn[index];
                                         return BODY7SLOT(
                                           ListFlex: [6, 1, 2, 2, 2, 4, 2],
                                           widget01: Padding(
@@ -694,62 +844,76 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                             child: Align(
                                               alignment: Alignment.centerLeft,
                                               child: Text(
-                                          				itemNameMapFN.containsKey(item.ITEM)
-                                                  ? itemNameMapFN[item.ITEM]!
-                                                  : '-', 
+                                                itemNameMapFN.containsKey(item.ITEM)
+                                                    ? itemNameMapFN[item.ITEM]!
+                                                    : '-',
                                                 style: const TextStyle(fontSize: 16),
                                               ),
                                             ),
                                           ),
                                           widget02: Center(
                                             child: item.SCMARK?.trim().toUpperCase() == 'YES'
-                                              ? Image.asset(
-                                                  'assets/mockData/scMarkSymbol.png',
-                                                  height: 80,
-                                                  width: 80,
-                                                )
-                                              : const Text(
-                                                  '-',
-                                                  style: TextStyle(fontSize: 16),
-                                                ),
+                                                ? Image.asset(
+                                                    'assets/mockData/scMarkSymbol.png',
+                                                    height: 80,
+                                                    width: 80,
+                                                  )
+                                                : const Text(
+                                                    '-',
+                                                    style: TextStyle(fontSize: 16),
+                                                  ),
                                           ),
                                           widget03: Center(
                                             child: Text(
-                                              item.DOCUMENT.trim().isNotEmpty == true ? item.DOCUMENT : '-',
+                                              item.DOCUMENT.trim().isNotEmpty ? item.DOCUMENT : '-',
                                               style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
                                           widget04: Center(
                                             child: Text(
-                                                  methodMapFN.containsKey(item.METHOD)
-                                                    ? methodMapFN[item.METHOD]!
-                                                    : '-',  // กรณีไม่มี mapping,
-                                              style: TextStyle(fontSize: 16),
+                                              methodMapFN.containsKey(item.METHOD)
+                                                  ? methodMapFN[item.METHOD]!
+                                                  : '-',
+                                              style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
                                           widget05: Center(
                                             child: Text(
-                                              '${item.PCS.trim().isNotEmpty == true ? item.PCS : ''} ${item.FREQUENCY?.trim().isNotEmpty == true ? item.FREQUENCY : ''}',
+                                              '${item.PCS.trim().isNotEmpty ? item.PCS : ''} ${item.FREQUENCY?.trim().isNotEmpty == true ? item.FREQUENCY : ''}',
                                               style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
                                           widget06: Center(
                                             child: Text(
-                                              item.SPECIFICATIONname.trim().isNotEmpty == true ? item.SPECIFICATIONname : '-',
+                                              item.SPECIFICATIONname.trim().isNotEmpty ? item.SPECIFICATIONname : '-',
                                               style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
                                           widget07: Center(
                                             child: Text(
-                                          				remarkToCommentFN.containsKey(item.REMARK)
+                                              remarkToCommentFN.containsKey(item.REMARK)
                                                   ? remarkToCommentFN[item.REMARK]!
-                                                  : '-', 
-                                              style: TextStyle(fontSize: 16),
+                                                  : '-',
+                                              style: const TextStyle(fontSize: 16),
                                             ),
                                           ),
                                         );
+                                      } else {
+                                        // แถวว่าง
+                                        return BODY7SLOT(
+                                          ListFlex: [6, 1, 2, 2, 2, 4, 2],
+                                          widget01: const SizedBox.shrink(),
+                                          widget02: const SizedBox.shrink(),
+                                          widget03: const SizedBox.shrink(),
+                                          widget04: const SizedBox.shrink(),
+                                          widget05: const SizedBox.shrink(),
+                                          widget06: const SizedBox.shrink(),
+                                          widget07: const SizedBox.shrink(),
+                                        );
+                                      }
                                     }),
                                   ),
+
 
 
 
