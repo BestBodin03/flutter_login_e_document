@@ -41,10 +41,9 @@ Future<void> loadReportPDF(String assetPath) async {
          final machineMethod = match['METHOD'];
          methodToMachineMethod[method] = machineMethod;
 
-          // ✅ แสดงผลเช็ค
-        print('🔍 METHOD Key: $method ➜ MACHINE METHOD: $machineMethod');
+        // print('🔍 METHOD Key: $method ➜ MACHINE METHOD: $machineMethod');
       } else {
-          print('⚠️ ไม่พบ MACHINE ที่ masterID = $method');
+        // print('⚠️ ไม่พบ MACHINE ที่ masterID = $method');
         }
     }
 
@@ -68,10 +67,9 @@ Future<void> loadReportPDF(String assetPath) async {
         final machineMethodFN = matchFN['METHOD'];
         methodToMachineMethodFN[methodFN] = machineMethodFN;
 
-        // ✅ แสดงผลเช็ค
-        print('🔍 METHOD Key: $methodFN ➜ MACHINE METHOD: $machineMethodFN');
+        // print('🔍 METHOD Key: $methodFN ➜ MACHINE METHOD: $machineMethodFN');
       } else {
-        print('⚠️ ไม่พบ MACHINE ที่ masterID = $methodFN');
+        // print('⚠️ ไม่พบ MACHINE ที่ masterID = $methodFN');
       }
     }
 
@@ -95,10 +93,9 @@ Future<void> loadReportPDF(String assetPath) async {
         final itemNameIC = match['ITEMs'];
         itemToItemName[itemName] = itemNameIC;
 
-        // ✅ แสดงผลเช็ค
-        print('🔍 Items Key: $itemName ➜ MACHINE METHOD: $itemNameIC');
+        // print('🔍 Items Key: $itemName ➜ MACHINE METHOD: $itemNameIC');
       } else {
-        print('⚠️ ไม่พบ Items ที่ masterID = $itemName');
+        // print('⚠️ ไม่พบ Items ที่ masterID = $itemName');
       }
     }
 
@@ -122,10 +119,9 @@ Future<void> loadReportPDF(String assetPath) async {
         final itemNameFN = match['ITEMs'];
         itemToItemNameFN[itemFN] = itemNameFN;
 
-        // ✅ แสดงผลเช็ค
-        print('🔍 Items Key: $itemFN ➜ MACHINE METHOD: $itemNameFN');
+        // print('🔍 Items Key: $itemFN ➜ MACHINE METHOD: $itemNameFN');
       } else {
-        print('⚠️ ไม่พบ Items ที่ masterID = $itemFN');
+        // print('⚠️ ไม่พบ Items ที่ masterID = $itemFN');
       }
     }
 
@@ -149,10 +145,10 @@ Future<void> loadReportPDF(String assetPath) async {
         final remarkCommentFN = matchFN['COMMENT'];
         remarkToCommentFN[remarkFN] = remarkCommentFN;
 
-        // ✅ แสดงผลเช็ค
-        print('🔍 Remark Key: $remarkFN ➜ MACHINE METHOD: $remarkCommentFN');
+
+        // print('🔍 Remark Key: $remarkFN ➜ MACHINE METHOD: $remarkCommentFN');
       } else {
-        print('⚠️ ไม่พบ Remark ที่ masterID = $remarkFN');
+        // print('⚠️ ไม่พบ Remark ที่ masterID = $remarkFN');
       }
     }
 
@@ -176,10 +172,9 @@ Future<void> loadReportPDF(String assetPath) async {
         final remarkComment = match['COMMENT'];
         remarkToComment[remark] = remarkComment;
 
-        // ✅ แสดงผลเช็ค
-        print('🔍 Remark Key: $remark ➜ MACHINE METHOD: $remarkComment');
+        // print('🔍 Remark Key: $remark ➜ MACHINE METHOD: $remarkComment');
       } else {
-        print('⚠️ ไม่พบ Remark ที่ masterID = $remark');
+        // print('⚠️ ไม่พบ Remark ที่ masterID = $remark');
       }
     }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newmaster/page/P32ReportPDFcommon/ReportPDFCommonvar.dart';
 
 class SingleSelectCheckboxRow extends StatefulWidget {
   final List<String> options;
@@ -16,6 +17,11 @@ class SingleSelectCheckboxRow extends StatefulWidget {
 
 class _SingleSelectCheckboxRowState extends State<SingleSelectCheckboxRow> {
   int? _selectedIndex;
+  void initState() {
+    super.initState();
+    // sync ค่าจาก static variable
+    _selectedIndex = ReportPDFCommonvar.ProductStage;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +33,7 @@ class _SingleSelectCheckboxRowState extends State<SingleSelectCheckboxRow> {
               setState(() {
                 _selectedIndex = (_selectedIndex == index) ? null : index;
               });
+              ReportPDFCommonvar.ProductStage = index;
               widget.onChanged(_selectedIndex);
             },
             child: Row(
@@ -39,6 +46,7 @@ class _SingleSelectCheckboxRowState extends State<SingleSelectCheckboxRow> {
                     setState(() {
                       _selectedIndex = val! ? index : null;
                     });
+                    ReportPDFCommonvar.ProductStage = index;
                     widget.onChanged(_selectedIndex);
                   },
                 ),

@@ -53,6 +53,7 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
     ReportPDFCommonvar.TPKLOTEDIT = '';
     print("ma rel");
 
+
     if (ReportPDFCommonvar.PO != '') {
       ReportPDFCommonvar.canf = false;
 
@@ -759,7 +760,7 @@ class _ReportPDFCommonState extends State<ReportPDFCommon> {
                                         // ... widget อื่น ๆ
                                         if (imageBytes != null && imageBytes.isNotEmpty)
                                           ReportedImageCard(
-                                            imageBytes: imageBytes!,
+                                            imageBytes: imageBytes,
                                             description: "Weight = 90.8249 g/pc",
                                             onReportedChange: (bool? value) {
                                               print("Reported: $value");
